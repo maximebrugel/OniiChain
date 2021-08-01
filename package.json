@@ -1,6 +1,6 @@
 {
-  "name": "@maximebrugel/OlympusDAO",
-  "description": "Readable version of OlympusDAO smart contracts",
+  "name": "@maximebrugel/hypnosis",
+  "description": "On-chain generated NFTs",
   "version": "1.0.0",
   "devDependencies": {
     "@codechecks/client": "^0.1.10",
@@ -52,7 +52,7 @@
     "/contracts"
   ],
   "keywords": [
-    "blockchain",
+    "NFT",
     "ethereum",
     "hardhat",
     "smart-contracts",
