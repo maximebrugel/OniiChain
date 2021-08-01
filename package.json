@@ -36,6 +36,7 @@
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "mocha": "^9.0.1",
+    "openzeppelin-contracts": "^4.0.0",
     "prettier": "^2.3.2",
     "prettier-plugin-solidity": "^1.0.0-beta.11",
     "pretty-quick": "^3.1.1",
