@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "base64-sol/base64.sol";
+
 library BackgroundDetail {
     function item_1() internal pure returns (string memory) {
         return base("005507", "15FF31", "55FFB5");
@@ -19,9 +21,9 @@ library BackgroundDetail {
     }
 
     function base(
-        string stop1,
-        string stop2,
-        string stop3
+        string memory stop1,
+        string memory stop2,
+        string memory stop3
     ) private pure returns (string memory) {
         return
             string(

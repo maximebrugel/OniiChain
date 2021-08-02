@@ -22,6 +22,7 @@
     "@types/node": "^15.12.5",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
+    "base64-sol": "^1.0.1",
     "chai": "^4.3.4",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",

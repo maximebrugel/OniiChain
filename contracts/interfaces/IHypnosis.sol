@@ -9,11 +9,8 @@ interface IHypnosis {
     /// @return eye The eye item id
     /// @return nose The nose item id
     /// @return mouth The mouse item id
-    /// @return stop1 First color of background radial gradient
-    /// @return stop2 Second color of background radial gradient
-    /// @return stop3 Third color of background radial gradient
-    /// @return face Face color
-    /// @return neck Neck shadow color
+    /// @return background The background item id
+    /// @return skin The skin item id
     /// @return timestamp Creation date
     /// @return creator Address of the creator
     function details(uint256 tokenId)
@@ -24,11 +21,8 @@ interface IHypnosis {
             uint8 eye,
             uint8 nose,
             uint8 mouth,
-            string memory stop1,
-            string memory stop2,
-            string memory stop3,
-            string memory face,
-            string memory neck,
+            uint8 background,
+            uint8 skin,
             uint256 timestamp,
             address creator
         );

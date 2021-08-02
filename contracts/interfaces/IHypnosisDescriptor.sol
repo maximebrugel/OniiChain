@@ -34,18 +34,11 @@ interface IHypnosisDescriptor {
 
     /// @notice Generate randomly the background colors
     /// @param tokenId the current tokenId
-    /// @return the three background colors
-    function generateBackgroundColors(uint256 tokenId)
-        external
-        view
-        returns (
-            string memory,
-            string memory,
-            string memory
-        );
+    /// @return the background item id
+    function generateBackgroundColors(uint256 tokenId) external view returns (uint8);
 
     /// @notice Generate randomly the skin colors
     /// @param tokenId the current tokenId
-    /// @return the two skin colors
-    function generateSkinColors(uint256 tokenId) external view returns (string memory, string memory);
+    /// @return the skin item id
+    function generateSkinColors(uint256 tokenId) external view returns (uint8);
 }

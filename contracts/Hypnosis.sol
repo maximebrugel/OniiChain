@@ -24,23 +24,10 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis {
         uint8 eye;
         uint8 nose;
         uint8 mouth;
-        Background background;
-        Skin skin;
+        uint8 background;
+        uint8 skin;
         uint256 timestamp;
         address creator;
-    }
-
-    /// @notice The background is composed of three colors (radialGradient)
-    struct Background {
-        string stop1;
-        string stop2;
-        string stop3;
-    }
-
-    /// @notice The skin color (face and neck shadow)
-    struct Skin {
-        string face;
-        string neck;
     }
 
     constructor(address _tokenDescriptor_) ERC721("Hypnosis", "HYPNO") {
@@ -71,5 +58,24 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis {
     /// @notice Send funds from sales to the owner
     function withdrawAll() public payable onlyOwner {
         require(payable(0x838D23a8A17adaa6866969b86D35Ac0941C67510).send(address(this).balance));
+    }
+
+    /// @inheritdoc IHypnosis
+    function details(uint256 tokenId)
+        external
+        view
+        override
+        returns (
+            uint8 hair,
+            uint8 eye,
+            uint8 nose,
+            uint8 mouth,
+            uint8 background,
+            uint8 skin,
+            uint256 timestamp,
+            address creator
+        )
+    {
+        return (0, 0, 0, 0, 0, 0, 0, address(0)); // TODO
     }
 }

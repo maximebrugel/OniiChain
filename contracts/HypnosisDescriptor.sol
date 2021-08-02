@@ -12,4 +12,34 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
         // TODO
         return "";
     }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateHairId(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateEyeId(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateNoseId(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateMouthId(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateBackgroundColors(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
+
+    /// @inheritdoc IHypnosisDescriptor
+    function generateSkinColors(uint256 tokenId) external view override returns (uint8) {
+        return 0; // TODO
+    }
 }
