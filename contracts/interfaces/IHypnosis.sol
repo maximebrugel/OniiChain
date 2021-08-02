@@ -24,11 +24,11 @@ interface IHypnosis {
             uint8 eye,
             uint8 nose,
             uint8 mouth,
-            bytes8 stop1,
-            bytes8 stop2,
-            bytes8 stop3,
-            bytes8 face,
-            bytes8 neck,
+            string memory stop1,
+            string memory stop2,
+            string memory stop3,
+            string memory face,
+            string memory neck,
             uint256 timestamp,
             address creator
         );
