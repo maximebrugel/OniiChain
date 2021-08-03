@@ -4,6 +4,9 @@ pragma solidity ^0.8.0;
 import "base64-sol/base64.sol";
 
 library BackgroundDetail {
+    uint256 constant MAX = 100000;
+    uint256[] constant ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+
     function item_1() internal pure returns (string memory) {
         return base("005507", "15FF31", "55FFB5");
     }
