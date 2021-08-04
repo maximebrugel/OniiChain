@@ -3,12 +3,13 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "./interfaces/IHypnosis.sol";
 import "./interfaces/IHypnosisDescriptor.sol";
 
 /// @title Hypnosis NFTs
 /// @notice On-chain generated NFTs
-contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis {
+contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     /// @dev Price for one character
     uint256 private _unitPrice = 0.01 ether;
 
@@ -44,10 +45,8 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis {
 
     /// @notice Create randomly a character
     /// @param qty The quantity to buy
-    function create(uint256 qty) public payable {
+    function create(uint256 qty) public payable nonReentrant {
         require(msg.value >= _unitPrice * qty, "Ether sent is not correct");
-
-        // TODO reentrancy ?
 
         uint256 nextTokenId = totalSupply() + 1;
         _detail[nextTokenId] = Detail({
