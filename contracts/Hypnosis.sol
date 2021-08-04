@@ -47,11 +47,22 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis {
     function create(uint256 qty) public payable {
         require(msg.value >= _unitPrice * qty, "Ether sent is not correct");
 
-        // TODO generate detail
         // TODO reentrancy ?
 
+        uint256 nextTokenId = totalSupply() + 1;
+        _detail[nextTokenId] = Detail({
+            hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId),
+            eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId),
+            nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId),
+            mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId),
+            background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId),
+            skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId),
+            timestamp: block.timestamp,
+            creator: msg.sender
+        });
+
         for (uint256 i; i < qty; i++) {
-            _safeMint(msg.sender, totalSupply() + i);
+            _safeMint(msg.sender, nextTokenId);
         }
     }
 

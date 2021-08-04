@@ -8,6 +8,16 @@ import "@openzeppelin/contracts/utils/math/SafeCast.sol";
 /// @title Describes hypnosis characters
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract HypnosisDescriptor is IHypnosisDescriptor {
+    /// @dev Max value for defining probabilities
+    uint256 internal constant MAX = 100000;
+
+    uint256[] internal BACKGROUND_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal HAIR_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal EYE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal NOSE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal MOUTH_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal SKIN_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
         return ""; // TODO
@@ -15,32 +25,32 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
 
     /// @inheritdoc IHypnosisDescriptor
     function generateHairId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, HAIR_ITEMS, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateEyeId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, EYE_ITEMS, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateNoseId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, NOSE_ITEMS, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateMouthId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, MOUTH_ITEMS, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateBackgroundId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, BACKGROUND_ITEMS, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateSkinId(uint256 tokenId) external view override returns (uint8) {
-        return 0; // TODO
+        return generate(MAX, SKIN_ITEMS, tokenId);
     }
 
     /// @notice Generate a random number and return the index from the
@@ -50,7 +60,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @param tokenId the current tokenId
     function generate(
         uint256 max,
-        uint256[] calldata intervals,
+        uint256[] memory intervals,
         uint256 tokenId
     ) private view returns (uint8) {
         uint256 generated = generateRandom(max, tokenId);
@@ -70,7 +80,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @param val The random value
     /// @param intervals The intervals for the corresponding items
     /// @return the item ID where : intervals[] index + 1 = item ID
-    function pickItems(uint256 val, uint256[] calldata intervals) private view returns (uint8) {
+    function pickItems(uint256 val, uint256[] memory intervals) private view returns (uint8) {
         for (uint256 i = 1; i <= intervals.length; i++) {
             if (val > intervals[i]) {
                 return SafeCast.toUint8(i);
