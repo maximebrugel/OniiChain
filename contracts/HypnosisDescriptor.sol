@@ -3,7 +3,9 @@ pragma solidity ^0.8.0;
 
 import "./interfaces/IHypnosisDescriptor.sol";
 import "./interfaces/IHypnosis.sol";
+import "./libraries/NFTDescriptor.sol";
 import "@openzeppelin/contracts/utils/math/SafeCast.sol";
+import "base64-sol/base64.sol";
 
 /// @title Describes hypnosis characters
 /// @notice Produces a string containing the data URI for a JSON metadata string
@@ -20,7 +22,53 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
 
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
-        return ""; // TODO
+        (
+            uint8 hair,
+            uint8 eye,
+            uint8 nose,
+            uint8 mouth,
+            uint8 background,
+            uint8 skin,
+            uint256 timestamp,
+            address creator
+        ) = hypnosis.details(tokenId);
+        string memory image = Base64.encode(
+            bytes(
+                NFTDescriptor.generateSVGImage(
+                    NFTDescriptor.SVGParams({
+                        hair: hair,
+                        eye: eye,
+                        nose: nose,
+                        mouth: mouth,
+                        background: background,
+                        skin: skin,
+                        timestamp: timestamp,
+                        creator: creator
+                    })
+                )
+            )
+        );
+
+        return
+            string(
+                abi.encodePacked(
+                    "data:application/json;base64,",
+                    Base64.encode(
+                        bytes(
+                            abi.encodePacked(
+                                '{"name":"',
+                                "TODO",
+                                '", "description":"',
+                                "TODO",
+                                '", "image": "',
+                                "data:image/svg+xml;base64,",
+                                image,
+                                '"}'
+                            )
+                        )
+                    )
+                )
+            );
     }
 
     /// @inheritdoc IHypnosisDescriptor
