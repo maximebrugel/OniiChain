@@ -9,7 +9,7 @@ library DetailCaller {
     /// @param lib The library address
     /// @param id The item ID
     function getDetailSVG(address lib, uint8 id) external view returns (string memory) {
-        (bool success, bytes memory data) = lib.call(
+        (bool success, bytes memory data) = lib.staticcall(
             abi.encodeWithSignature(string(abi.encodePacked("item_", Strings.toString(id), "()")))
         );
         require(success);
