@@ -86,6 +86,16 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
             address creator
         )
     {
-        return (0, 0, 0, 0, 0, 0, 0, address(0)); // TODO
+        Detail memory detail = _detail[tokenId];
+        return (
+            detail.hair,
+            detail.eye,
+            detail.nose,
+            detail.mouth,
+            detail.background,
+            detail.skin,
+            detail.timestamp,
+            detail.creator
+        );
     }
 }
