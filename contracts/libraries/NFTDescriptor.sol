@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./BackgroundDetail.sol";
-import "./BodyDetail.sol";
+import "./details/BackgroundDetail.sol";
+import "./details/BodyDetail.sol";
 import "./DetailCaller.sol";
 
 library NFTDescriptor {
