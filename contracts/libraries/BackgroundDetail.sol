@@ -3,23 +3,49 @@ pragma solidity ^0.8.0;
 
 import "base64-sol/base64.sol";
 
+/// @title Background SVG generator
 library BackgroundDetail {
+    /// @dev background N°1 => Ordinary
     function item_1() internal pure returns (string memory) {
-        return base("005507", "15FF31", "55FFB5");
+        return base("636363", "CFCFCF", "ABABAB");
     }
 
+    /// @dev background N°2 => Unusual
     function item_2() internal pure returns (string memory) {
-        return base("005507", "15FF31", "55FFB5");
+        return base("207328", "00D658", "39B857");
     }
 
+    /// @dev background N°3 => Surprising
     function item_3() internal pure returns (string memory) {
-        return base("005507", "15FF31", "55FFB5");
+        return base("006EC2", "28F5BE", "2FD6DE");
     }
 
+    /// @dev background N°4 => Impressive
     function item_4() internal pure returns (string memory) {
-        return base("005507", "15FF31", "55FFB5");
+        return base("750178", "E208FF", "8E19D1");
     }
 
+    /// @dev background N°5 => Extraordinary
+    function item_5() internal pure returns (string memory) {
+        return base("D99100", "EBE483", "FF8A14");
+    }
+
+    /// @dev background N°6 => Artistic
+    function item_6() internal pure returns (string memory) {
+        return base("FF00E3", "EBE483", "00DEC1");
+    }
+
+    /// @dev background N°7 => Phenomenal
+    function item_7() internal pure returns (string memory) {
+        return base("000000", "F558E2", "FFD215");
+    }
+
+    /// @dev background N°8 => Unreal
+    function item_8() internal pure returns (string memory) {
+        return base("E0DF57", "8C1F86", "00263B");
+    }
+
+    /// @dev The base SVG for the backgrounds
     function base(
         string memory stop1,
         string memory stop2,
@@ -29,14 +55,12 @@ library BackgroundDetail {
             string(
                 abi.encodePacked(
                     '<g id="Background">',
-                    '<radialGradient id="SVGID_1_" cx="210" cy="210" r="210" gradientUnits="userSpaceOnUse">',
-                    Base64.encode(
-                        bytes(abi.encodePacked("<stop offset='5.594179e-07' style='stop-color:#", stop1, "'/>"))
-                    ),
-                    Base64.encode(bytes(abi.encodePacked("<stop offset='0.4905' style='stop-color:#", stop2, "'/>"))),
+                    '<radialGradient id="gradient" cx="210" cy="-134.05" r="210.025" gradientTransform="matrix(1 0 0 -1 0 76)" gradientUnits="userSpaceOnUse">',
+                    Base64.encode(bytes(abi.encodePacked("<stop offset='0' style='stop-color:#", stop1, "'/>"))),
+                    Base64.encode(bytes(abi.encodePacked("<stop offset='0.66' style='stop-color:#", stop2, "'/>"))),
                     Base64.encode(bytes(abi.encodePacked("<stop offset='1' style='stop-color:#", stop3, "'/>"))),
                     "</radialGradient>",
-                    '<rect class="st0" width="420" height="420"/>',
+                    '<path id="Phenomenal" fill="url(#gradient)" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
                     "</g>"
                 )
             );
