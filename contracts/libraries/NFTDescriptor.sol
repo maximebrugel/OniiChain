@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "./BackgroundDetail.sol";
+import "./BodyDetail.sol";
 import "./DetailCaller.sol";
 
 library NFTDescriptor {
@@ -19,7 +20,11 @@ library NFTDescriptor {
     function generateSVGImage(SVGParams memory params) internal view returns (string memory svg) {
         return
             string(
-                abi.encodePacked("TODO HEADER", DetailCaller.getDetailSVG(address(BackgroundDetail), params.background))
+                abi.encodePacked(
+                    "TODO HEADER",
+                    DetailCaller.getDetailSVG(address(BackgroundDetail), params.background),
+                    DetailCaller.getDetailSVG(address(BodyDetail), params.skin)
+                )
             );
     }
 }

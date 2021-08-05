@@ -18,7 +18,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     uint256[] internal EYE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
     uint256[] internal NOSE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
     uint256[] internal MOUTH_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
-    uint256[] internal SKIN_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
+    uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
 
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
