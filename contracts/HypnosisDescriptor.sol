@@ -60,6 +60,8 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                                 "TODO",
                                 '", "description":"',
                                 "TODO",
+                                '", "attributes":"',
+                                "TODO",
                                 '", "image": "',
                                 "data:image/svg+xml;base64,",
                                 image,

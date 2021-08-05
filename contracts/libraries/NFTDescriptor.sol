@@ -23,7 +23,8 @@ library NFTDescriptor {
                 abi.encodePacked(
                     "TODO HEADER",
                     DetailCaller.getDetailSVG(address(BackgroundDetail), params.background),
-                    DetailCaller.getDetailSVG(address(BodyDetail), params.skin)
+                    DetailCaller.getDetailSVG(address(BodyDetail), params.skin),
+                    "TODO FOOTER"
                 )
             );
     }
