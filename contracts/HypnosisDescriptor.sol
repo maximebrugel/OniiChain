@@ -33,22 +33,17 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
             uint256 timestamp,
             address creator
         ) = hypnosis.details(tokenId);
-        string memory image = Base64.encode(
-            bytes(
-                NFTDescriptor.generateSVGImage(
-                    NFTDescriptor.SVGParams({
-                        hair: hair,
-                        eye: eye,
-                        nose: nose,
-                        mouth: mouth,
-                        background: background,
-                        skin: skin,
-                        timestamp: timestamp,
-                        creator: creator
-                    })
-                )
-            )
-        );
+        NFTDescriptor.SVGParams memory params = NFTDescriptor.SVGParams({
+            hair: hair,
+            eye: eye,
+            nose: nose,
+            mouth: mouth,
+            background: background,
+            skin: skin,
+            timestamp: timestamp,
+            creator: creator
+        });
+        string memory image = Base64.encode(bytes(NFTDescriptor.generateSVGImage(params)));
 
         return
             string(
@@ -60,7 +55,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                                 '{"name":"',
                                 NFTDescriptor.generateName(background, tokenId),
                                 '", "description":"',
-                                "TODO",
+                                NFTDescriptor.generateDescription(params, tokenId),
                                 '", "attributes":"',
                                 "TODO",
                                 '", "image": "',
