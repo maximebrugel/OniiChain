@@ -45,6 +45,29 @@ library BackgroundDetail {
         return base("E0DF57", "8C1F86", "00263B");
     }
 
+    /// @notice Return the background name of the given id
+    /// @param id The background Id
+    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+        name = "";
+        if (id == 1) {
+            name = "Ordinary";
+        } else if (id == 2) {
+            name = "Unusual";
+        } else if (id == 3) {
+            name = "Surprising";
+        } else if (id == 4) {
+            name = "Impressive";
+        } else if (id == 5) {
+            name = "Extraordinary";
+        } else if (id == 6) {
+            name = "Artistic";
+        } else if (id == 7) {
+            name = "Phenomenal";
+        } else if (id == 8) {
+            name = "Unreal";
+        }
+    }
+
     /// @dev The base SVG for the backgrounds
     function base(
         string memory stop1,

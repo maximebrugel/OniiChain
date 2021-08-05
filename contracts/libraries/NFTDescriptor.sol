@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 import "./details/BackgroundDetail.sol";
 import "./details/BodyDetail.sol";
 import "./DetailCaller.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 library NFTDescriptor {
     struct SVGParams {
@@ -26,6 +27,13 @@ library NFTDescriptor {
                     DetailCaller.getDetailSVG(address(BodyDetail), params.skin),
                     "</svg>"
                 )
+            );
+    }
+
+    function generateName(uint8 backgroundId, uint256 tokenId) internal pure returns (string memory) {
+        return
+            string(
+                abi.encodePacked(BackgroundDetail.getItemNameById(backgroundId), " Onii ", Strings.toString(tokenId))
             );
     }
 

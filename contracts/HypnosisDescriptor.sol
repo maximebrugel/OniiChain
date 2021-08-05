@@ -6,6 +6,7 @@ import "./interfaces/IHypnosis.sol";
 import "./libraries/NFTDescriptor.sol";
 import "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import "base64-sol/base64.sol";
+import "./Hypnosis.sol";
 
 /// @title Describes hypnosis characters
 /// @notice Produces a string containing the data URI for a JSON metadata string
@@ -57,7 +58,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                         bytes(
                             abi.encodePacked(
                                 '{"name":"',
-                                "TODO",
+                                NFTDescriptor.generateName(background, tokenId),
                                 '", "description":"',
                                 "TODO",
                                 '", "attributes":"',

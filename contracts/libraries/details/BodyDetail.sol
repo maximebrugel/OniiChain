@@ -5,7 +5,7 @@ import "base64-sol/base64.sol";
 
 /// @title Body SVG generator
 library BodyDetail {
-    /// @dev Body N°1 => Casual
+    /// @dev Body N°1 => Human
     function item_1() internal pure returns (string memory) {
         return base("FFEBB4", "FFBE94");
     }
