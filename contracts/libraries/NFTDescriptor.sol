@@ -17,14 +17,24 @@ library NFTDescriptor {
         address creator;
     }
 
-    function generateSVGImage(SVGParams memory params) internal view returns (string memory svg) {
+    function generateSVGImage(SVGParams memory params) internal view returns (string memory) {
         return
             string(
                 abi.encodePacked(
-                    "TODO HEADER",
+                    generateSVGHead(),
                     DetailCaller.getDetailSVG(address(BackgroundDetail), params.background),
                     DetailCaller.getDetailSVG(address(BodyDetail), params.skin),
-                    "TODO FOOTER"
+                    "</svg>"
+                )
+            );
+    }
+
+    function generateSVGHead() private pure returns (string memory) {
+        return
+            string(
+                abi.encodePacked(
+                    '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"',
+                    'viewBox="0 0 420 420" style="enable-background:new 0 0 420 420;" xml:space="preserve">'
                 )
             );
     }
