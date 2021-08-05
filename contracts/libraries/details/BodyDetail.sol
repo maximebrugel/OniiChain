@@ -20,6 +20,19 @@ library BodyDetail {
         return base("ffffff", "696969");
     }
 
+    /// @notice Return the skin name of the given id
+    /// @param id The skin Id
+    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+        name = "";
+        if (id == 1) {
+            name = "Human";
+        } else if (id == 2) {
+            name = "Evil";
+        } else if (id == 3) {
+            name = "Pure";
+        }
+    }
+
     /// @dev The base SVG for the body
     function base(string memory skin, string memory shadow) private pure returns (string memory) {
         string memory pathBase = "<path fill-rule='evenodd' clip-rule='evenodd' fill='#";
