@@ -3,6 +3,8 @@ pragma solidity ^0.8.0;
 
 import "./details/BackgroundDetail.sol";
 import "./details/BodyDetail.sol";
+import "./details/HairDetail.sol";
+import "./details/MouthDetail.sol";
 import "./DetailCaller.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
@@ -25,6 +27,8 @@ library NFTDescriptor {
                     generateSVGHead(),
                     DetailCaller.getDetailSVG(address(BackgroundDetail), params.background),
                     DetailCaller.getDetailSVG(address(BodyDetail), params.skin),
+                    DetailCaller.getDetailSVG(address(MouthDetail), params.mouth),
+                    DetailCaller.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
                 )
             );
