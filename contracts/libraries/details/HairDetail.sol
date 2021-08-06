@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "base64-sol/base64.sol";
 
-/// @title Body SVG generator
+/// @title Eyes SVG generator
 library HairDetail {
     /// @dev Hair N°1 => Bald
     function item_1() internal pure returns (string memory) {

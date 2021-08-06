@@ -9,6 +9,7 @@ interface IHypnosis {
     /// @return eye The eye item id
     /// @return nose The nose item id
     /// @return mouth The mouse item id
+    /// @return tatoo The tatoo item id
     /// @return background The background item id
     /// @return skin The skin item id
     /// @return timestamp Creation date
@@ -21,6 +22,7 @@ interface IHypnosis {
             uint8 eye,
             uint8 nose,
             uint8 mouth,
+            uint8 tatoo,
             uint8 background,
             uint8 skin,
             uint256 timestamp,

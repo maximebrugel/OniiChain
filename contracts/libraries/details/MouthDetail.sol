@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "base64-sol/base64.sol";
 
-/// @title Body SVG generator
+/// @title Mouth SVG generator
 library MouthDetail {
     /// @dev Mouth N°1 => Neutral
     function item_1() internal pure returns (string memory) {
