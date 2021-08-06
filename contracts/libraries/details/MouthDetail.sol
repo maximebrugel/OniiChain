@@ -88,8 +88,20 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°7 => Dubu
+    /// @dev Mouth N°7 => Drool
     function item_7() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path fill="#FEBCA6" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M189,257.4c2.2,0.6,4.6,0.8,6.9,0.5l15.3-2.1c0,0,12-1.8,10.8,3.6c-1.2,5.4-2.1,9.3-4.8,9.8c0,0,2.9,9.7-2.6,9c-3.3-0.4-2.1-7.7-2.1-7.7s-13.6,3.2-29.6-3.1c-1.6-0.6-2.9-1.7-3.7-3c-4.6-7.7-2.3-9-2.3-9S175.9,253.7,189,257.4z"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°8 => Dubu
+    function item_8() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -100,8 +112,8 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°8 => Monster
-    function item_8() internal pure returns (string memory) {
+    /// @dev Mouth N°9 => Monster
+    function item_9() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -113,8 +125,8 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°9 => Uwu
-    function item_9() internal pure returns (string memory) {
+    /// @dev Mouth N°10 => Uwu
+    function item_10() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -144,10 +156,12 @@ library MouthDetail {
         } else if (id == 6) {
             name = "Angry";
         } else if (id == 7) {
-            name = "Dubu";
+            name = "Drool";
         } else if (id == 8) {
-            name = "Monster";
+            name = "Dubu";
         } else if (id == 9) {
+            name = "Monster";
+        } else if (id == 10) {
             name = "Uwu";
         }
     }

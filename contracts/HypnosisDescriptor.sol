@@ -18,7 +18,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     uint256[] internal HAIR_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
     uint256[] internal EYE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
     uint256[] internal NOSE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
-    uint256[] internal MOUTH_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 2000, 500, 0];
+    uint256[] internal MOUTH_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 1000, 100, 0];
     uint256[] internal SKIN_ITEMS = [200, 100, 0];
 
     /// @inheritdoc IHypnosisDescriptor
