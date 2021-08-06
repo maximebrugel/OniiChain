@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+pragma abicoder v2;
+
 interface IHypnosis {
     /// @notice Returns the details associated with a given token ID.
     /// @dev Throws if the token ID is not valid.

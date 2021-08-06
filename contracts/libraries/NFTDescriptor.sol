@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+pragma abicoder v2;
+
 import "./details/BackgroundDetail.sol";
 import "./details/BodyDetail.sol";
 import "./details/HairDetail.sol";
 import "./details/MouthDetail.sol";
+import "./details/NoseDetail.sol";
 import "./details/EyesDetail.sol";
 import "./details/EyebrowDetail.sol";
 import "./details/TatooDetail.sol";
@@ -34,14 +37,25 @@ library NFTDescriptor {
                 abi.encodePacked(
                     generateSVGHead(),
                     DetailHelper.getDetailSVG(address(BackgroundDetail), params.background),
-                    DetailHelper.getDetailSVG(address(BodyDetail), params.skin),
-                    DetailHelper.getDetailSVG(address(MouthDetail), params.mouth),
-                    DetailHelper.getDetailSVG(address(EyesDetail), params.eye),
-                    DetailHelper.getDetailSVG(address(EyebrowDetail), params.eyebrow),
+                    generateSVGFace(params),
                     DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
                     DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
+                )
+            );
+    }
+
+    /// @dev Combine face items
+    function generateSVGFace(SVGParams memory params) private view returns (string memory) {
+        return
+            string(
+                abi.encodePacked(
+                    DetailHelper.getDetailSVG(address(BodyDetail), params.skin),
+                    DetailHelper.getDetailSVG(address(MouthDetail), params.mouth),
+                    DetailHelper.getDetailSVG(address(NoseDetail), params.nose),
+                    DetailHelper.getDetailSVG(address(EyesDetail), params.eye),
+                    DetailHelper.getDetailSVG(address(EyebrowDetail), params.eyebrow)
                 )
             );
     }
