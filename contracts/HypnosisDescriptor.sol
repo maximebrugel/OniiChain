@@ -71,55 +71,73 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
 
     /// @inheritdoc IHypnosisDescriptor
     function generateHairId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, HAIR_ITEMS, tokenId);
+        return generate(MAX, HAIR_ITEMS, this.generateHairId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateEyeId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, EYE_ITEMS, tokenId);
+        return generate(MAX, EYE_ITEMS, this.generateEyeId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateNoseId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, NOSE_ITEMS, tokenId);
+        return generate(MAX, NOSE_ITEMS, this.generateNoseId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateMouthId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, MOUTH_ITEMS, tokenId);
+        return generate(MAX, MOUTH_ITEMS, this.generateMouthId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateBackgroundId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, BACKGROUND_ITEMS, tokenId);
+        return generate(MAX, BACKGROUND_ITEMS, this.generateBackgroundId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
     function generateSkinId(uint256 tokenId) external view override returns (uint8) {
-        return generate(MAX, SKIN_ITEMS, tokenId);
+        return generate(MAX, SKIN_ITEMS, this.generateSkinId.selector, tokenId);
     }
 
     /// @notice Generate a random number and return the index from the
     ///         corresponding interval.
     /// @param max The maximum value to generate
     /// @param intervals the intervals
+    /// @param selector Caller selector
     /// @param tokenId the current tokenId
     function generate(
         uint256 max,
         uint256[] memory intervals,
+        bytes4 selector,
         uint256 tokenId
     ) private view returns (uint8) {
-        uint256 generated = generateRandom(max, tokenId);
+        uint256 generated = generateRandom(max, tokenId, selector);
         return pickItems(generated, intervals);
     }
 
     /// @notice Generate random number between 1 and max
     /// @param max Maximum value of the random number
     /// @param tokenId Current tokenId used as seed
-    function generateRandom(uint256 max, uint256 tokenId) private view returns (uint256) {
+    /// @param selector Caller selector used as seed
+    function generateRandom(
+        uint256 max,
+        uint256 tokenId,
+        bytes4 selector
+    ) private view returns (uint256) {
         return
-            (uint256(keccak256(abi.encodePacked(block.difficulty, block.number, block.timestamp, tokenId))) %
-                (max + 1)) + 1;
+            (uint256(
+                keccak256(
+                    abi.encodePacked(
+                        block.difficulty,
+                        block.number,
+                        tx.origin,
+                        tx.gasprice,
+                        selector,
+                        block.timestamp,
+                        tokenId
+                    )
+                )
+            ) % (max + 1)) + 1;
     }
 
     /// @notice Pick an item for the given random value
