@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 interface IHypnosis {
     /// @notice Returns the details associated with a given token ID.
     /// @dev Throws if the token ID is not valid.
-    /// @param tokenId The ID of the token that represents the character
+    /// @param tokenId The ID of the token that represents the Onii
     /// @return hair The hair item id
     /// @return eye The eye item id
     /// @return nose The nose item id

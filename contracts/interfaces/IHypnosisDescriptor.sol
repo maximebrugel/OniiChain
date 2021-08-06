@@ -3,9 +3,9 @@ pragma solidity ^0.8.0;
 
 import "./IHypnosis.sol";
 
-/// @title Describes hypnosis character via URI
+/// @title Describes Onii via URI
 interface IHypnosisDescriptor {
-    /// @notice Produces the URI describing a particular character (token id)
+    /// @notice Produces the URI describing a particular Onii (token id)
     /// @dev Note this URI may be a data: URI with the JSON contents directly inlined
     /// @param hypnosis The hypnosis contract
     /// @param tokenId The ID of the token for which to produce a description

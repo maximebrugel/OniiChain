@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import "base64-sol/base64.sol";
 import "./Hypnosis.sol";
 
-/// @title Describes hypnosis characters
+/// @title Describes Onii
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @dev Max value for defining probabilities

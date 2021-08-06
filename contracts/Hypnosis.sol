@@ -10,16 +10,19 @@ import "./interfaces/IHypnosisDescriptor.sol";
 /// @title Hypnosis NFTs
 /// @notice On-chain generated NFTs
 contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
-    /// @dev Price for one character
-    uint256 private _unitPrice = 0.01 ether;
+    /// @dev Price for one Onii
+    uint256 private constant _unitPrice = 0.01 ether;
 
-    /// @dev The token ID character detail
+    /// @dev Number of sales to increase the price
+    uint256 private constant _step = 5000;
+
+    /// @dev The token ID onii detail
     mapping(uint256 => Detail) private _detail;
 
     /// @dev The address of the token descriptor contract, which handles generating token URIs.
     address private immutable _tokenDescriptor;
 
-    /// @notice Details about the character
+    /// @notice Details about the Onii
     struct Detail {
         uint8 hair;
         uint8 eye;
@@ -43,10 +46,10 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         return IHypnosisDescriptor(_tokenDescriptor).tokenURI(this, tokenId);
     }
 
-    /// @notice Create randomly a character
+    /// @notice Create randomly an Onii
     /// @param qty The quantity to buy
     function create(uint256 qty) public payable nonReentrant {
-        require(msg.value >= _unitPrice * qty, "Ether sent is not correct");
+        require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
 
         uint256 nextTokenId = totalSupply() + 1;
         _detail[nextTokenId] = Detail({
@@ -63,6 +66,13 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         for (uint256 i; i < qty; i++) {
             _safeMint(msg.sender, nextTokenId);
         }
+    }
+
+    /// @notice Get the current price of one Onii
+    /// The price is progressive. Every 5000 sales, the price increases by 0.01 ether
+    /// @return The Onii price
+    function getUnitPrice() public view returns (uint256) {
+        return ((totalSupply() / _step) * _unitPrice) + _unitPrice;
     }
 
     /// @notice Send funds from sales to the owner
