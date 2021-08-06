@@ -22,7 +22,7 @@ library EyesDetail {
 
     // TODO ADD OTHER ITEMS
 
-    /// @dev The base SVG for the hair
+    /// @dev The base SVG for the eyes
     function base(string memory children) private pure returns (string memory) {
         return string(abi.encodePacked('<g id="Eyes">', children, "</g>"));
     }

@@ -26,6 +26,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     struct Detail {
         uint8 hair;
         uint8 eye;
+        uint8 eyebrow;
         uint8 nose;
         uint8 mouth;
         uint8 tatoo;
@@ -56,6 +57,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         _detail[nextTokenId] = Detail({
             hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId),
             eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId),
+            eyebrow: IHypnosisDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId),
             nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId),
             mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId),
             tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId),
@@ -90,6 +92,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         returns (
             uint8 hair,
             uint8 eye,
+            uint8 eyebrow,
             uint8 nose,
             uint8 mouth,
             uint8 tatoo,
@@ -103,6 +106,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         return (
             detail.hair,
             detail.eye,
+            detail.eyebrow,
             detail.nose,
             detail.mouth,
             detail.tatoo,

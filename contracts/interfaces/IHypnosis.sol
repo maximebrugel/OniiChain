@@ -7,6 +7,7 @@ interface IHypnosis {
     /// @param tokenId The ID of the token that represents the Onii
     /// @return hair The hair item id
     /// @return eye The eye item id
+    /// @return eyebrow The eyebrow item id
     /// @return nose The nose item id
     /// @return mouth The mouse item id
     /// @return tatoo The tatoo item id
@@ -20,6 +21,7 @@ interface IHypnosis {
         returns (
             uint8 hair,
             uint8 eye,
+            uint8 eyebrow,
             uint8 nose,
             uint8 mouth,
             uint8 tatoo,

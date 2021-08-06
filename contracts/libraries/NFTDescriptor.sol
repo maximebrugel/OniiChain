@@ -6,6 +6,7 @@ import "./details/BodyDetail.sol";
 import "./details/HairDetail.sol";
 import "./details/MouthDetail.sol";
 import "./details/EyesDetail.sol";
+import "./details/EyebrowDetail.sol";
 import "./details/TatooDetail.sol";
 import "./DetailHelper.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -14,6 +15,7 @@ library NFTDescriptor {
     struct SVGParams {
         uint8 hair;
         uint8 eye;
+        uint8 eyebrow;
         uint8 nose;
         uint8 mouth;
         uint8 tatoo;
@@ -33,6 +35,7 @@ library NFTDescriptor {
                     DetailHelper.getDetailSVG(address(BodyDetail), params.skin),
                     DetailHelper.getDetailSVG(address(MouthDetail), params.mouth),
                     DetailHelper.getDetailSVG(address(EyesDetail), params.eye),
+                    DetailHelper.getDetailSVG(address(EyebrowDetail), params.eyebrow),
                     DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
@@ -41,10 +44,14 @@ library NFTDescriptor {
     }
 
     /// @dev generate Json Metadata name
-    function generateName(uint8 backgroundId, uint256 tokenId) internal pure returns (string memory) {
+    function generateName(SVGParams memory params, uint256 tokenId) internal pure returns (string memory) {
         return
             string(
-                abi.encodePacked(BackgroundDetail.getItemNameById(backgroundId), " Onii ", Strings.toString(tokenId))
+                abi.encodePacked(
+                    BackgroundDetail.getItemNameById(params.background),
+                    " Onii ",
+                    Strings.toString(tokenId)
+                )
             );
     }
 

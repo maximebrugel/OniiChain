@@ -22,6 +22,11 @@ interface IHypnosisDescriptor {
     /// @return the eye item id
     function generateEyeId(uint256 tokenId) external view returns (uint8);
 
+    /// @notice Generate randomly an ID for the eyebrow item
+    /// @param tokenId the current tokenId
+    /// @return the eyebrow item id
+    function generateEyebrowId(uint256 tokenId) external view returns (uint8);
+
     /// @notice Generate randomly an ID for the nose item
     /// @param tokenId the current tokenId
     /// @return the nose item id
@@ -34,7 +39,7 @@ interface IHypnosisDescriptor {
 
     /// @notice Generate randomly an ID for the tatoo item
     /// @param tokenId the current tokenId
-    /// @return the mouth item id
+    /// @return the tatoo item id
     function generateTatooId(uint256 tokenId) external view returns (uint8);
 
     /// @notice Generate randomly the background colors

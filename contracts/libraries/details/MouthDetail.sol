@@ -166,7 +166,7 @@ library MouthDetail {
         }
     }
 
-    /// @dev The base SVG for the hair
+    /// @dev The base SVG for the mouth
     function base(string memory children) private pure returns (string memory) {
         return string(abi.encodePacked('<g id="Mouth">', children, "</g>"));
     }
