@@ -42,6 +42,11 @@ interface IHypnosisDescriptor {
     /// @return the tatoo item id
     function generateTatooId(uint256 tokenId) external view returns (uint8);
 
+    /// @notice Generate randomly an ID for the expression item
+    /// @param tokenId the current tokenId
+    /// @return the expression item id
+    function generateExpressionId(uint256 tokenId) external view returns (uint8);
+
     /// @notice Generate randomly the background colors
     /// @param tokenId the current tokenId
     /// @return the background item id

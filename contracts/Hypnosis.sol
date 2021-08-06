@@ -30,6 +30,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
         uint8 nose;
         uint8 mouth;
         uint8 tatoo;
+        uint8 expression;
         uint8 background;
         uint8 skin;
         uint256 timestamp;
@@ -61,6 +62,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
             nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId),
             mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId),
             tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId),
+            expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId),
             background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId),
             skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId),
             timestamp: block.timestamp,
@@ -96,6 +98,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
             uint8 nose,
             uint8 mouth,
             uint8 tatoo,
+            uint8 expression,
             uint8 background,
             uint8 skin,
             uint256 timestamp,
@@ -110,6 +113,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
             detail.nose,
             detail.mouth,
             detail.tatoo,
+            detail.expression,
             detail.background,
             detail.skin,
             detail.timestamp,
