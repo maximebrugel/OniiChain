@@ -14,37 +14,37 @@ library BackgroundDetail {
 
     /// @dev background N°2 => Unusual
     function item_2() internal pure returns (string memory) {
-        return base("207328", "00D658", "39B857");
+        return base("004A06", "61E89B", "12B55F");
     }
 
     /// @dev background N°3 => Surprising
     function item_3() internal pure returns (string memory) {
-        return base("006EC2", "28F5BE", "2FD6DE");
+        return base("1A4685", "6BF0E3", "00ADC7");
     }
 
     /// @dev background N°4 => Impressive
     function item_4() internal pure returns (string memory) {
-        return base("750178", "E208FF", "8E19D1");
+        return base("380113", "D87AE6", "8A07BA");
     }
 
     /// @dev background N°5 => Extraordinary
     function item_5() internal pure returns (string memory) {
-        return base("D99100", "EBE483", "FF8A14");
+        return base("A33900", "FAF299", "FF9121");
     }
 
-    /// @dev background N°6 => Artistic
+    /// @dev background N°6 => Phenomenal
     function item_6() internal pure returns (string memory) {
-        return base("FF00E3", "EBE483", "00DEC1");
+        return base("000000", "C000E8", "DED52C");
     }
 
-    /// @dev background N°7 => Phenomenal
+    /// @dev background N°7 => Artistic
     function item_7() internal pure returns (string memory) {
-        return base("000000", "F558E2", "FFD215");
+        return base("FF00E3", "E8E18B", "00C4AD");
     }
 
     /// @dev background N°8 => Unreal
     function item_8() internal pure returns (string memory) {
-        return base("E0DF57", "8C1F86", "00263B");
+        return base("CCCC75", "54054D", "001E2E");
     }
 
     /// @notice Return the background name of the given id
@@ -85,7 +85,8 @@ library BackgroundDetail {
                     Base64.encode(bytes(abi.encodePacked("<stop offset='0.66' style='stop-color:#", stop2, "'/>"))),
                     Base64.encode(bytes(abi.encodePacked("<stop offset='1' style='stop-color:#", stop3, "'/>"))),
                     "</radialGradient>",
-                    '<path id="Phenomenal" fill="url(#gradient)" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
+                    '<path fill="url(#gradient)" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
+                    '<path id="Mask" opacity="0.1" fill="#48005E" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,134,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
                     "</g>"
                 )
             );
