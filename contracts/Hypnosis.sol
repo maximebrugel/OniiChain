@@ -24,21 +24,6 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     /// @dev The address of the token descriptor contract, which handles generating token URIs.
     address private immutable _tokenDescriptor;
 
-    /// @notice Details about the Onii
-    struct Detail {
-        uint8 hair;
-        uint8 eye;
-        uint8 eyebrow;
-        uint8 nose;
-        uint8 mouth;
-        uint8 tatoo;
-        uint8 expression;
-        uint8 background;
-        uint8 skin;
-        uint256 timestamp;
-        address creator;
-    }
-
     constructor(address _tokenDescriptor_) ERC721("Hypnosis", "HYPNO") {
         _tokenDescriptor = _tokenDescriptor_;
     }
@@ -64,6 +49,8 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
             nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId),
             mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId),
             tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId),
+            earrings: IHypnosisDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId),
+            accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId),
             expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId),
             background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId),
             skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId),
@@ -89,37 +76,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     }
 
     /// @inheritdoc IHypnosis
-    function details(uint256 tokenId)
-        external
-        view
-        override
-        returns (
-            uint8 hair,
-            uint8 eye,
-            uint8 eyebrow,
-            uint8 nose,
-            uint8 mouth,
-            uint8 tatoo,
-            uint8 expression,
-            uint8 background,
-            uint8 skin,
-            uint256 timestamp,
-            address creator
-        )
-    {
-        Detail memory detail = _detail[tokenId];
-        return (
-            detail.hair,
-            detail.eye,
-            detail.eyebrow,
-            detail.nose,
-            detail.mouth,
-            detail.tatoo,
-            detail.expression,
-            detail.background,
-            detail.skin,
-            detail.timestamp,
-            detail.creator
-        );
+    function details(uint256 tokenId) external view override returns (Detail memory detail) {
+        detail = _detail[tokenId];
     }
 }

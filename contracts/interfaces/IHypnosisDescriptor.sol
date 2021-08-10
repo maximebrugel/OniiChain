@@ -44,6 +44,16 @@ interface IHypnosisDescriptor {
     /// @return the tatoo item id
     function generateTatooId(uint256 tokenId) external view returns (uint8);
 
+    /// @notice Generate randomly an ID for the earrings item
+    /// @param tokenId the current tokenId
+    /// @return the earrings item id
+    function generateEarringsId(uint256 tokenId) external view returns (uint8);
+
+    /// @notice Generate randomly an ID for the accessory item
+    /// @param tokenId the current tokenId
+    /// @return the accessory item id
+    function generateAccessoryId(uint256 tokenId) external view returns (uint8);
+
     /// @notice Generate randomly an ID for the expression item
     /// @param tokenId the current tokenId
     /// @return the expression item id

@@ -11,6 +11,8 @@ import "./details/NoseDetail.sol";
 import "./details/EyesDetail.sol";
 import "./details/EyebrowDetail.sol";
 import "./details/TatooDetail.sol";
+import "./details/AccessoryDetail.sol";
+import "./details/EarringsDetail.sol";
 import "./details/ExpressionDetail.sol";
 import "./DetailHelper.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -23,6 +25,8 @@ library NFTDescriptor {
         uint8 nose;
         uint8 mouth;
         uint8 tatoo;
+        uint8 earring;
+        uint8 accessory;
         uint8 expression;
         uint8 background;
         uint8 skin;
@@ -39,6 +43,8 @@ library NFTDescriptor {
                     DetailHelper.getDetailSVG(address(BackgroundDetail), params.background),
                     generateSVGFace(params),
                     DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
+                    DetailHelper.getDetailSVG(address(EarringsDetail), params.tatoo),
+                    DetailHelper.getDetailSVG(address(AccessoryDetail), params.tatoo),
                     DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
