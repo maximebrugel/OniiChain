@@ -139,7 +139,7 @@ library TatooDetail {
             name = "Scars 2";
         } else if (id == 8) {
             name = "Ether";
-        } else if (id == 8) {
+        } else if (id == 9) {
             name = "Tori";
         }
     }
