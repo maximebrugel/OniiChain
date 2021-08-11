@@ -16,56 +16,67 @@ interface IHypnosisDescriptor {
 
     /// @notice Generate randomly an ID for the hair item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the hair item id
-    function generateHairId(uint256 tokenId) external view returns (uint8);
+    function generateHairId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the eye item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the eye item id
-    function generateEyeId(uint256 tokenId) external view returns (uint8);
+    function generateEyeId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the eyebrow item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the eyebrow item id
-    function generateEyebrowId(uint256 tokenId) external view returns (uint8);
+    function generateEyebrowId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the nose item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the nose item id
-    function generateNoseId(uint256 tokenId) external view returns (uint8);
+    function generateNoseId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the mouth item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the mouth item id
-    function generateMouthId(uint256 tokenId) external view returns (uint8);
+    function generateMouthId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the tatoo item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the tatoo item id
-    function generateTatooId(uint256 tokenId) external view returns (uint8);
+    function generateTatooId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the earrings item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the earrings item id
-    function generateEarringsId(uint256 tokenId) external view returns (uint8);
+    function generateEarringsId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the accessory item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the accessory item id
-    function generateAccessoryId(uint256 tokenId) external view returns (uint8);
+    function generateAccessoryId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the expression item
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the expression item id
-    function generateExpressionId(uint256 tokenId) external view returns (uint8);
+    function generateExpressionId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly the background colors
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the background item id
-    function generateBackgroundId(uint256 tokenId) external view returns (uint8);
+    function generateBackgroundId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly the skin colors
     /// @param tokenId the current tokenId
+    /// @param seed Used for the initialization of the number generator.
     /// @return the skin item id
-    function generateSkinId(uint256 tokenId) external view returns (uint8);
+    function generateSkinId(uint256 tokenId, uint256 seed) external view returns (uint8);
 }

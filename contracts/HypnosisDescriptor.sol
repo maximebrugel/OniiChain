@@ -135,58 +135,58 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateHairId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, HAIR_ITEMS, this.generateHairId.selector, tokenId);
+    function generateHairId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, HAIR_ITEMS, this.generateHairId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateEyeId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, EYE_ITEMS, this.generateEyeId.selector, tokenId);
+    function generateEyeId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, EYE_ITEMS, this.generateEyeId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateEyebrowId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, EYEBROW_ITEMS, this.generateEyebrowId.selector, tokenId);
+    function generateEyebrowId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, EYEBROW_ITEMS, this.generateEyebrowId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateNoseId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, NOSE_ITEMS, this.generateNoseId.selector, tokenId);
+    function generateNoseId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, NOSE_ITEMS, this.generateNoseId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateMouthId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, MOUTH_ITEMS, this.generateMouthId.selector, tokenId);
+    function generateMouthId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, MOUTH_ITEMS, this.generateMouthId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateTatooId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, TATOO_ITEMS, this.generateTatooId.selector, tokenId);
+    function generateTatooId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, TATOO_ITEMS, this.generateTatooId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateEarringsId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, EARRINGS_ITEMS, this.generateEarringsId.selector, tokenId);
+    function generateEarringsId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, EARRINGS_ITEMS, this.generateEarringsId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateAccessoryId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, ACCESSORY_ITEMS, this.generateAccessoryId.selector, tokenId);
+    function generateAccessoryId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, ACCESSORY_ITEMS, this.generateAccessoryId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateExpressionId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, EXPRESSION_ITEMS, this.generateExpressionId.selector, tokenId);
+    function generateExpressionId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, EXPRESSION_ITEMS, this.generateExpressionId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateBackgroundId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, BACKGROUND_ITEMS, this.generateBackgroundId.selector, tokenId);
+    function generateBackgroundId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, BACKGROUND_ITEMS, this.generateBackgroundId.selector, tokenId);
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateSkinId(uint256 tokenId) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, SKIN_ITEMS, this.generateSkinId.selector, tokenId);
+    function generateSkinId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, SKIN_ITEMS, this.generateSkinId.selector, tokenId);
     }
 
     /// @dev Get SVGParams from Hypnosis.Detail

@@ -40,25 +40,24 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     /// @param qty The quantity to buy
     function create(uint256 qty) public payable nonReentrant {
         require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
-
-        uint256 nextTokenId = totalSupply() + 1;
-        _detail[nextTokenId] = Detail({
-            hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId),
-            eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId),
-            eyebrow: IHypnosisDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId),
-            nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId),
-            mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId),
-            tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId),
-            earrings: IHypnosisDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId),
-            accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId),
-            expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId),
-            background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId),
-            skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId),
-            timestamp: block.timestamp,
-            creator: msg.sender
-        });
-
         for (uint256 i; i < qty; i++) {
+            uint256 seed = block.timestamp / (i + 1);
+            uint256 nextTokenId = totalSupply() + 1;
+            _detail[nextTokenId] = Detail({
+                hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
+                eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId, seed),
+                eyebrow: IHypnosisDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId, seed),
+                nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId, seed),
+                mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId, seed),
+                tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId, seed),
+                earrings: IHypnosisDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId, seed),
+                accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
+                expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
+                background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId, seed),
+                skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
+                timestamp: block.timestamp,
+                creator: msg.sender
+            });
             _safeMint(msg.sender, nextTokenId);
         }
     }
