@@ -26,7 +26,16 @@ library NoseDetail {
             );
     }
 
-    // TODO ADD OTHER ITEMS
+    /// @notice Return the nose name of the given id
+    /// @param id The nose Id
+    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+        name = "";
+        if (id == 1) {
+            name = "Classic";
+        } else if (id == 2) {
+            name = "Bleeding";
+        }
+    }
 
     /// @dev The base SVG for the Nose
     function base(string memory children) private pure returns (string memory) {
