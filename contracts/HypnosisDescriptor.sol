@@ -17,16 +17,91 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     uint256 internal constant MAX = 100000;
 
     uint256[] internal BACKGROUND_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 0];
-    uint256[] internal HAIR_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
-    uint256[] internal EYE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
-    uint256[] internal EYEBROW_ITEMS = [75000, 500, 0];
-    uint256[] internal NOSE_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 2000, 500, 200, 1, 0];
-    uint256[] internal MOUTH_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 1000, 100, 0];
-    uint256[] internal TATOO_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 1000, 100, 0];
-    uint256[] internal EARRINGS_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 0];
-    uint256[] internal ACCESSORY_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 1000, 100, 0];
-    uint256[] internal EXPRESSION_ITEMS = [75000, 55000, 40000, 27000, 15000, 7000, 3000, 0];
-    uint256[] internal SKIN_ITEMS = [200, 100, 0];
+    uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
+    uint256[] internal NOSE_ITEMS = [10, 0];
+    uint256[] internal TATOO_ITEMS = [25000, 18000, 12000, 6000, 3000, 1000, 40, 10, 0];
+    uint256[] internal EYEBROW_ITEMS = [50000, 20000, 0];
+    uint256[] internal EXPRESSION_ITEMS = [25000, 17000, 10000, 6000, 3000, 1000, 0];
+    uint256[] internal EARRINGS_ITEMS = [25000, 17000, 10000, 5000, 1000, 100, 30, 0];
+    uint256[] internal ACCESSORY_ITEMS = [10000, 3000, 30, 10, 0];
+    uint256[] internal MOUTH_ITEMS = [
+        80000,
+        63000,
+        48000,
+        36000,
+        27000,
+        19000,
+        12000,
+        7000,
+        4000,
+        2000,
+        1000,
+        500,
+        50,
+        0
+    ];
+    uint256[] internal HAIR_ITEMS = [
+        93500,
+        87000,
+        80500,
+        74000,
+        67500,
+        61000,
+        54500,
+        48000,
+        41500,
+        35000,
+        28500,
+        26500,
+        24500,
+        22500,
+        20500,
+        18500,
+        16500,
+        14500,
+        12500,
+        10500,
+        8500,
+        6500,
+        1000,
+        0
+    ];
+    uint256[] internal EYE_ITEMS = [
+        98000,
+        96000,
+        94000,
+        92000,
+        90000,
+        88000,
+        86000,
+        84000,
+        82000,
+        80000,
+        78000,
+        76000,
+        74000,
+        72000,
+        70000,
+        68000,
+        60800,
+        53700,
+        46700,
+        39900,
+        33400,
+        27200,
+        21200,
+        15300,
+        10600,
+        6600,
+        3600,
+        2600,
+        1700,
+        1000,
+        500,
+        100,
+        10,
+        0
+    ];
 
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
