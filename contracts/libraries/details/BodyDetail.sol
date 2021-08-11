@@ -12,12 +12,12 @@ library BodyDetail {
         return base("FFEBB4", "FFBE94");
     }
 
-    /// @dev Body N°2 => Evil
+    /// @dev Body N°2 => Shadow
     function item_2() internal pure returns (string memory) {
         return base("2d2d2d", "000000");
     }
 
-    /// @dev Body N°3 => Angel
+    /// @dev Body N°3 => Light
     function item_3() internal pure returns (string memory) {
         return base("ffffff", "696969");
     }
@@ -29,9 +29,9 @@ library BodyDetail {
         if (id == 1) {
             name = "Human";
         } else if (id == 2) {
-            name = "Evil";
+            name = "Shadow";
         } else if (id == 3) {
-            name = "Pure";
+            name = "Light";
         }
     }
 
