@@ -13,9 +13,9 @@ library MouthDetail {
             base(
                 string(
                     abi.encodePacked(
-                        '<path d="M178.3,262.1c3.3-0.1,6.6,0,9.9,0.2c3.3,0.2,6.6,0.5,9.8,1c-3.3,0.3-6.6,0.2-9.9,0C184.9,263.1,181.6,262.8,178.3,262.1z"/>',
-                        '<path d="M202,263.3c1.2-0.1,2.3-0.1,3.5-0.2l3.5-0.1l6.9-0.2c2.3,0,4.6-0.1,6.9-0.2c1.2,0,2.3-0.1,3.5-0.2l1.7-0.1c0.6-0.1,1.1-0.1,1.7-0.2c-2.2,0.7-4.5,1-6.9,1.3c-2.3,0.3-4.6,0.4-7,0.4c-2.3,0-4.6,0.1-7-0.1C206.6,263.8,204.3,263.6,202,263.3z"/>',
-                        '<path d="M195.7,271.6c0.8,0.5,1.8,0.8,2.6,1.1c0.9,0.3,1.8,0.5,2.7,0.5c0.9,0.1,1.8,0,2.8-0.1c0.9-0.1,1.8-0.4,2.8-0.7c-0.7,0.7-1.6,1.2-2.6,1.5c-1,0.3-2,0.4-3,0.3c-1-0.1-2-0.4-2.9-0.8C197.1,273,196.2,272.5,195.7,271.6z"/>'
+                        '<path d="M178.3,262.7c3.3-0.2,6.6-0.1,9.9,0c3.3,0.1,6.6,0.3,9.8,0.8c-3.3,0.3-6.6,0.3-9.9,0.2C184.8,263.6,181.5,263.3,178.3,262.7z"/>',
+                        '<path d="M201.9,263.4c1.2-0.1,2.3-0.1,3.5-0.2l3.5-0.2l6.9-0.3c2.3-0.1,4.6-0.2,6.9-0.4c1.2-0.1,2.3-0.2,3.5-0.3l1.7-0.2c0.6-0.1,1.1-0.2,1.7-0.2c-2.2,0.8-4.5,1.1-6.8,1.4s-4.6,0.5-7,0.6c-2.3,0.1-4.6,0.2-7,0.1C206.6,263.7,204.3,263.6,201.9,263.4z"/>',
+                        '<path d="M195.8,271.8c0.8,0.5,1.8,0.8,2.7,1s1.8,0.4,2.7,0.5s1.8,0,2.8-0.1c0.9-0.1,1.8-0.5,2.8-0.8c-0.7,0.7-1.6,1.3-2.6,1.6c-1,0.3-2,0.5-3,0.4s-2-0.3-2.9-0.8C197.3,273.2,196.4,272.7,195.8,271.8z"/>'
                     )
                 )
             );
@@ -27,71 +27,99 @@ library MouthDetail {
             base(
                 string(
                     abi.encodePacked(
-                        '<path d="M178.3,259.1c1.6,0.5,3.3,0.9,4.9,1.4c1.6,0.4,3.2,0.9,4.9,1.2c1.6,0.4,3.3,0.7,4.9,1c1.7,0.3,3.3,0.5,5,0.7c-1.7,0.2-3.4,0.2-5.1,0.1c-1.7-0.1-3.4-0.4-5.1-0.8C184.6,261.9,181.3,260.7,178.3,259.1z"/>',
-                        '<path d="M202,263.3l7-0.5c2.3-0.2,4.7-0.3,7-0.6c2.3-0.2,4.6-0.5,7-0.9c0.6-0.1,1.2-0.2,1.7-0.3l1.7-0.4l1.7-0.5l1.6-0.7c-0.5,0.3-1,0.6-1.5,0.9l-1.6,0.7c-1.1,0.4-2.3,0.7-3.4,1c-2.3,0.5-4.7,0.9-7,1.1c-2.4,0.2-4.7,0.3-7.1,0.3C206.7,263.7,204.3,263.6,202,263.3z"/>',
-                        '<path d="M195.7,271.6c0.8,0.5,1.8,0.8,2.6,1.1c0.9,0.3,1.8,0.5,2.7,0.5c0.9,0.1,1.8,0,2.8-0.1c0.9-0.1,1.8-0.4,2.8-0.7c-0.7,0.7-1.6,1.2-2.6,1.5c-1,0.3-2,0.4-3,0.3c-1-0.1-2-0.4-2.9-0.8C197.1,273,196.2,272.5,195.7,271.6z"/> '
+                        '<path d="M178.2,259.6c1.6,0.5,3.3,0.9,4.9,1.3c1.6,0.4,3.3,0.8,4.9,1.1c1.6,0.4,3.3,0.6,4.9,0.9c1.7,0.3,3.3,0.4,5,0.6c-1.7,0.2-3.4,0.3-5.1,0.2c-1.7-0.1-3.4-0.3-5.1-0.7C184.5,262.3,181.2,261.2,178.2,259.6z"/>',
+                        '<path d="M201.9,263.4l7-0.6c2.3-0.2,4.7-0.4,7-0.7c2.3-0.2,4.6-0.6,6.9-1c0.6-0.1,1.2-0.2,1.7-0.3l1.7-0.4l1.7-0.5l1.6-0.7c-0.5,0.3-1,0.7-1.5,0.9l-1.6,0.8c-1.1,0.4-2.2,0.8-3.4,1.1c-2.3,0.6-4.6,1-7,1.3s-4.7,0.4-7.1,0.5C206.7,263.6,204.3,263.6,201.9,263.4z"/>',
+                        '<path d="M195.8,271.8c0.8,0.5,1.8,0.8,2.7,1s1.8,0.4,2.7,0.5s1.8,0,2.8-0.1c0.9-0.1,1.8-0.5,2.8-0.8c-0.7,0.7-1.6,1.3-2.6,1.6c-1,0.3-2,0.5-3,0.4s-2-0.3-2.9-0.8C197.3,273.2,196.4,272.7,195.8,271.8z"/>'
                     )
                 )
             );
     }
 
-    /// @dev Mouth N°3 => Poker
+    /// @dev Mouth N°3 => Sulk
     function item_3() internal pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<line id="Poker" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="180.1" y1="263" x2="226" y2="263"/>'
+                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M179.2,263.2c0,0,24.5,3.1,43.3-0.6"/>',
+                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M176.7,256.8c0,0,6.7,6.8-0.6,11"/>',
+                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M225.6,256.9c0,0-6.5,7,1,11"/>'
                     )
                 )
             );
     }
 
-    /// @dev Mouth N°4 => Full
+    /// @dev Mouth N°4 => Poker
     function item_4() internal pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M179.3,262.7c0,0,24.4,3.6,43.3,0.3"/>',
-                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M176.9,256.2c0,0,6.6,6.9-0.8,11"/>',
-                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M225.8,257.3c0,0-6.6,6.9,0.8,11"/>'
+                        '<line id="Poker" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" x1="180" y1="263" x2="226" y2="263"/>'
                     )
                 )
             );
     }
 
-    /// @dev Mouth N°5 => Tongue
+    /// @dev Mouth N°5 => Angry
     function item_5() internal pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<path fill="#FF155D" d="M206.6,263.1c0,0,3.7,11.3,12.3,10.1c11.3-1.6,6.5-11.7,6.5-11.7L206.6,263.1z"/>',
-                        '<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#73093E" stroke-miterlimit="10" x1="216.7" y1="262.7" x2="218.5" y2="267.6"/>',
-                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M202,263.3c0,0,20.7,0.5,27.7-3.7"/>',
-                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M178.3,259.1c0,0,9.9,4.4,19.7,4.3"/>'
+                        '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M207.5,257.1c-7,1.4-17.3,0.3-21-0.9c-4-1.2-7.7,3.1-8.6,7.2c-0.5,2.5-1.2,7.4,3.4,10.1c5.9,2.4,5.6,0.1,9.2-1.9c3.4-2,10-1.1,15.3,1.9c5.4,3,13.4,2.2,17.9-0.4c2.9-1.7,3.3-7.6-4.2-14.1C217.3,257.2,215.5,255.5,207.5,257.1"/>',
+                        '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M205.9,265.5l4.1-2.2c0,0,3.7,2.9,5,3s4.9-3.2,4.9-3.2l3.9,1.4"/>',
+                        '<polyline fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" points="177.8,265.3 180.2,263.4183.3,265.5 186,265.4"/>'
                     )
                 )
             );
     }
 
-    /// @dev Mouth N°6 => Angry
+    /// @dev Mouth N°6 => Big Smile
     function item_6() internal pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M207.7,261.2c-3.2,0.8-17.3-0.1-21-1.3c-4-1.3-7.8,2.9-8.7,7c-0.6,2.5-1.7,4.6,2,8.8c0.4,0.4,0.8,0.8,1.3,1.1c6.1,4.3,5.5,0.5,9.2-1.5c3.4-1.9,10-0.9,15.3,2.2s13.4,2.5,17.9,0c2.9-1.6,2.8-9-5-13.9C216.2,262,209.7,260.2,207.7,261.2"/>',
-                        '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M205.9,269.5l4.1-2.1c0,0,3.6,3,4.9,3.1c1.3,0.1,5-3.1,5-3.1l3.9,1.5"/>',
-                        '<polyline fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" points="177.8,268.7180.3,266.9 183.3,269 186,269"/>'
+                        '<path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M238.1,255.9c-26.1,4-68.5,0.3-68.5,0.3C170.7,256.3,199.6,296.4,238.1,255.9"/>',
+                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M176.4,262.7c0,0,7.1,2.2,12,2.1"/>',
+                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M230.6,262.8c0,0-10.4,2.1-17.7,1.8"/>'
                     )
                 )
             );
     }
 
-    /// @dev Mouth N°7 => Drool
+    /// @dev Mouth N°7 => Evil
     function item_7() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M174.7,261.7c0,0,16.1-1.1,17.5-1.5s34.5,6.3,36.5,5.5s4.6-1.9,4.6-1.9s-14.1,8-43.6,7.9c0,0-3.9-0.7-4.7-1.8S177.1,262.1,174.7,261.7z"/>',
+                        '<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="181.6,266.7 185.5,265.3 189.1,266.5 190.3,265.9"/>',
+                        '<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="198.2,267 206.3,266.2 209.6,267.7 213.9,266.3 216.9,267.5 225.3,267"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°8 => Tongue
+    function item_8() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path fill="#FF155D" d="M206.5,263.1c0,0,4,11.2,12.5,9.8c11.3-1.8,6.3-11.8,6.3-11.8L206.5,263.1z"/>',
+                        '<line fill="none" stroke="#73093E" stroke-miterlimit="10" x1="216.7" y1="262.5" x2="218.5" y2="267.3"/>',
+                        '<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M201.9,263.4c0,0,20.7,0.1,27.7-4.3"/>',
+                        '<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M178.2,259.6c0,0,9.9,4.2,19.8,3.9"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°9 => O
+    function item_9() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -102,40 +130,64 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°8 => Dubu
-    function item_8() internal pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<path fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" d="M204.3,262c-8.7-7.2-25.1-4-4.7,6.6c-21.9-4.3-3.4,11.8,4.7,6.1"/>'
-                    )
-                )
-            );
-    }
-
-    /// @dev Mouth N°9 => Monster
-    function item_9() internal pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<path fill="#FFFFFF" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M161.6,255.1c0,0,0.5,0.1,1.3,0.4c7.4,1.9,44.5,9.1,85.7-0.4C248.6,255.1,198.1,307.7,161.6,255.1z"/>',
-                        '<polyline display="inline" fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" points="165.2,259 167.2,256.5 170.3,264.9 175.6,258.1 179,272.4 187.1,259.7 190.6,277.2 197.1,260.5 201.9,278.5 207.8,259.9213.6,276.6 217.8,259.5 224,272.6 226.3,258.8 232.6,267.8 235,258 238.7,263.8 241.4,256.6 244,259.4"/>'
-                    )
-                )
-            );
-    }
-
-    /// @dev Mouth N°10 => Uwu
+    /// @dev Mouth N°10 => Drool
     function item_10() internal pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<polyline display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" points="212.8,263.4216,268.1 217.6,261.9"/>',
-                        '<path display="inline" fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M176.6,255.4c0,0,5.4,13.6,23,4.7"/>',
-                        '<path display="inline" fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M224.9,255.2c0,0-9.8,14.8-25.3,4.9"/>'
+                        '<ellipse transform="matrix(0.9952 -9.745440e-02 9.745440e-02 0.9952 -24.6525 20.6528)" opacity="0.84" fill-rule="evenodd" clip-rule="evenodd" enable-background="new    " cx="199.1" cy="262.7" rx="3.2" ry="4.6"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°11 => Dubu
+    function item_11() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" d="M204.2,262c-8.9-7-25.1-3.5-4.6,6.6c-22-3.8-3.2,11.9,4.8,6"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°12 => Stitch
+    function item_12() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<polyline fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" points="165.1,258.9 167,256.3 170.3,264.6 175.4,257.7 179.2,271.9 187,259.1 190.8,276.5 197,259.7 202.1,277.5 207.8,259.1 213.8,275.4 217.9,258.7 224.1,271.2 226.5,257.9 232.7,266.2 235.1,256.8 238.6,262.1 241.3,255.8 243.8,257.6"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°13 => Uwu
+    function item_13() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<polyline fill="#FFFFFF" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" points="212.7,262.9 216,266.5 217.5,261.7"/>',
+                        '<path fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M176.4,256c0,0,5.7,13.4,23.1,4.2"/>',
+                        '<path fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M224.7,254.8c0,0-9.5,15-25.2,5.4"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Mouth N°14 => Monster
+    function item_14() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path fill="#FFFFFF" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" d="M161.4,255c0,0,0.5,0.1,1.3,0.3 c4.2,1,39.6,8.5,84.8-0.7C247.6,254.7,198.9,306.9,161.4,255z"/>',
+                        '<polyline fill="none" stroke="#000000" stroke-width="0.75" stroke-linejoin="round" stroke-miterlimit="10" points="165.1,258.9 167,256.3 170.3,264.6 175.4,257.7 179.2,271.9 187,259.1 190.8,276.5 197,259.7 202.1,277.5 207.8,259.1 213.8,275.4 217.9,258.7 224.1,271.2 226.5,257.9 232.7,266.2 235.1,256.8 238.6,262.1 241.3,255.8 243.8,257.6"/>'
                     )
                 )
             );
@@ -150,21 +202,29 @@ library MouthDetail {
         } else if (id == 2) {
             name = "Smile";
         } else if (id == 3) {
-            name = "Poker";
+            name = "Sulk";
         } else if (id == 4) {
-            name = "Full";
+            name = "Poker";
         } else if (id == 5) {
-            name = "Tongue";
-        } else if (id == 6) {
             name = "Angry";
+        } else if (id == 6) {
+            name = "Big Smile";
         } else if (id == 7) {
-            name = "Drool";
+            name = "Evil";
         } else if (id == 8) {
-            name = "Dubu";
+            name = "Tongue";
         } else if (id == 9) {
-            name = "Monster";
+            name = "O";
         } else if (id == 10) {
+            name = "Drool";
+        } else if (id == 11) {
+            name = "Dubu";
+        } else if (id == 12) {
+            name = "Stitch";
+        } else if (id == 13) {
             name = "Uwu";
+        } else if (id == 14) {
+            name = "Monster";
         }
     }
 
