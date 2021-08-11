@@ -7,8 +7,13 @@ import "base64-sol/base64.sol";
 
 /// @title Tatoo SVG generator
 library TatooDetail {
-    /// @dev Tatoo N°1 => Freckle
+    /// @dev Tatoo N°1 => Nothing
     function item_1() internal pure returns (string memory) {
+        return "";
+    }
+
+    /// @dev Tatoo N°2 => Freckle
+    function item_2() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -26,8 +31,8 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°2 => Chin
-    function item_2() internal pure returns (string memory) {
+    /// @dev Tatoo N°3 => Chin
+    function item_3() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -38,8 +43,8 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°3 => Moon
-    function item_3() internal pure returns (string memory) {
+    /// @dev Tatoo N°4 => Moon
+    function item_4() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -50,13 +55,13 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°4 => Dot
-    function item_4() internal pure returns (string memory) {
+    /// @dev Tatoo N°5 => Dot
+    function item_5() internal pure returns (string memory) {
         return base(string(abi.encodePacked('<circle cx="260.8" cy="215.8" r="2.1"/>')));
     }
 
-    /// @dev Tatoo N°5 => Scars 1
-    function item_5() internal pure returns (string memory) {
+    /// @dev Tatoo N°6 => Scars 1
+    function item_6() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -67,8 +72,8 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°6 => Scars 2
-    function item_6() internal pure returns (string memory) {
+    /// @dev Tatoo N°7 => Scars 2
+    function item_7() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -78,23 +83,6 @@ library TatooDetail {
                         '<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="174.1" y1="223.5" x2="174.1" y2="230.7"/>',
                         '<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="221.2" y1="222.4" x2="221.2" y2="229.5"/>',
                         '<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="242.1" y1="225.2" x2="242.1" y2="232.3"/>'
-                    )
-                )
-            );
-    }
-
-    /// @dev Tatoo N°7 => Tori
-    function item_7() internal pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="231.2" y1="221.5" x2="231.2" y2="228.4"/>',
-                        '<path fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M228.6,221.2c0,0,3.2,0.4,5.5,0.2"/>',
-                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M237.3,221.5c0,0-3.5,3.1,0,6.3C240.8,231,242.2,221.5,237.3,221.5z"/>',
-                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M243.2,227.8l-1.2-6.4c0,0,8.7-2,1,2.8l3.2,3"/>',
-                        '<line fill-rule="evenodd" clip-rule="evenodd" fill="#FFEBB4" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="248.5" y1="221" x2="248.5" y2="227.5"/>',
-                        '<path d="M254.2,226c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1-0.1l1.3-2.2c0.5-0.9-0.2-2.2-1.2-2c-0.6,0.1-0.8,0.7-0.9,0.8 c-0.1-0.1-0.5-0.5-1.1-0.4c-1,0.2-1.3,1.7-0.4,2.3L254.2,226z"/>'
                     )
                 )
             );
@@ -114,26 +102,45 @@ library TatooDetail {
             );
     }
 
+    /// @dev Tatoo N°9 => Tori
+    function item_9() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="231.2" y1="221.5" x2="231.2" y2="228.4"/>',
+                        '<path fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M228.6,221.2c0,0,3.2,0.4,5.5,0.2"/>',
+                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M237.3,221.5c0,0-3.5,3.1,0,6.3C240.8,231,242.2,221.5,237.3,221.5z"/>',
+                        '<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M243.2,227.8l-1.2-6.4c0,0,8.7-2,1,2.8l3.2,3"/>',
+                        '<line fill-rule="evenodd" clip-rule="evenodd" fill="#FFEBB4" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="248.5" y1="221" x2="248.5" y2="227.5"/>',
+                        '<path d="M254.2,226c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1-0.1l1.3-2.2c0.5-0.9-0.2-2.2-1.2-2c-0.6,0.1-0.8,0.7-0.9,0.8 c-0.1-0.1-0.5-0.5-1.1-0.4c-1,0.2-1.3,1.7-0.4,2.3L254.2,226z"/>'
+                    )
+                )
+            );
+    }
+
     /// @notice Return the tatoo name of the given id
     /// @param id The tatoo Id
     function getItemNameById(uint8 id) internal pure returns (string memory name) {
         name = "";
         if (id == 1) {
-            name = "Freckle";
+            name = "Nothing";
         } else if (id == 2) {
-            name = "Chin";
+            name = "Freckle";
         } else if (id == 3) {
-            name = "Moon";
+            name = "Chin";
         } else if (id == 4) {
-            name = "Dot";
+            name = "Moon";
         } else if (id == 5) {
-            name = "Scars 1";
+            name = "Dot";
         } else if (id == 6) {
-            name = "Scars 2";
+            name = "Scars 1";
         } else if (id == 7) {
-            name = "Tori";
+            name = "Scars 2";
         } else if (id == 8) {
             name = "Ether";
+        } else if (id == 8) {
+            name = "Tori";
         }
     }
 
