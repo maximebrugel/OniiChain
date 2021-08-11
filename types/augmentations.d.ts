@@ -4,13 +4,11 @@ import { Fixture } from "ethereum-waffle";
 // @ts-ignore
 import { Signers } from "./";
 
-import { Hypnosis } from "../typechain";
-import { HypnosisDescriptor } from "../typechain";
+import { Contract } from "ethers";
 
 declare module "mocha" {
   export interface Context {
-    hypnosis: Hypnosis;
-    hypnosisDescriptor: HypnosisDescriptor;
+    hypnosis: Contract;
     loadFixture: <T>(fixture: Fixture<T>) => Promise<T>;
     signers: Signers;
   }

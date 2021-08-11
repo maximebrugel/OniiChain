@@ -58,9 +58,23 @@ describe("Unit tests", function () {
 
       // Deploy Hypnosis
       let hypnosisFactory = await hre.ethers.getContractFactory("Hypnosis");
-      let hypnosis = await hypnosisFactory.deploy(hypnosisDescriptor.address);
+      this.hypnosis = await hypnosisFactory.deploy(hypnosisDescriptor.address);
     });
 
-    it("should be deployed", function () {});
+    it("Mint one NFT", async function () {
+      await this.hypnosis.create(5);
+      let details1 = await this.hypnosis.details(1);
+      let details2 = await this.hypnosis.details(2);
+      let details3 = await this.hypnosis.details(3);
+      let details4 = await this.hypnosis.details(4);
+      let details5 = await this.hypnosis.details(5);
+      console.log(details1);
+      console.log(details2);
+      console.log(details3);
+      console.log(details4);
+      console.log(details5);
+      let nft = await this.hypnosis.tokenURI(1);
+      console.log(nft);
+    });
   });
 });
