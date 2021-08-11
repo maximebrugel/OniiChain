@@ -43,8 +43,8 @@ library NFTDescriptor {
                     DetailHelper.getDetailSVG(address(BackgroundDetail), params.background),
                     generateSVGFace(params),
                     DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
-                    DetailHelper.getDetailSVG(address(EarringsDetail), params.tatoo),
-                    DetailHelper.getDetailSVG(address(AccessoryDetail), params.tatoo),
+                    DetailHelper.getDetailSVG(address(EarringsDetail), params.earring),
+                    DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
                     DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
