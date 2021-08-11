@@ -1,7 +1,8 @@
-import hre from "hardhat";
+import hre, { network } from "hardhat";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/dist/src/signer-with-address";
 
 import { Signers } from "../types";
+import { Contract } from "ethers";
 
 describe("Unit tests", function () {
   before(async function () {
@@ -62,19 +63,39 @@ describe("Unit tests", function () {
     });
 
     it("Mint one NFT", async function () {
-      await this.hypnosis.create(5);
-      let details1 = await this.hypnosis.details(1);
-      let details2 = await this.hypnosis.details(2);
-      let details3 = await this.hypnosis.details(3);
-      let details4 = await this.hypnosis.details(4);
-      let details5 = await this.hypnosis.details(5);
-      console.log(details1);
-      console.log(details2);
-      console.log(details3);
-      console.log(details4);
-      console.log(details5);
-      let nft = await this.hypnosis.tokenURI(1);
-      console.log(nft);
+      this.timeout(400000000); // Big timeout
+      await scoreTest(50, this.hypnosis);
     });
   });
 });
+
+async function scoreTest(loop: number, hypnosis: Contract) {
+  console.log("Max => 106");
+  let count = 0;
+  let best = 0;
+  while (count < loop) {
+    await network.provider.send("evm_increaseTime", [Math.floor(Math.random() * 10000)]);
+    await network.provider.send("evm_mine");
+    await hypnosis.create(1);
+    let detail = await hypnosis.details(count + 1);
+    count++;
+    let total =
+      detail.hair +
+      detail.eye +
+      detail.eyebrow +
+      detail.nose +
+      detail.mouth +
+      detail.tatoo +
+      detail.earrings +
+      detail.accessory +
+      detail.expression +
+      detail.background +
+      detail.skin -
+      11;
+    if (total > best) {
+      best = total;
+    }
+    console.log("= > ", total, " at ", detail.timestamp.toString());
+  }
+  console.log("Best => ", best);
+}

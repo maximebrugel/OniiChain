@@ -41,7 +41,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     function create(uint256 qty) public payable nonReentrant {
         require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
         for (uint256 i; i < qty; i++) {
-            uint256 seed = block.timestamp / (i + 1);
+            uint256 seed = block.timestamp << (i + 1);
             uint256 nextTokenId = totalSupply() + 1;
             _detail[nextTokenId] = Detail({
                 hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
