@@ -6,6 +6,7 @@ pragma abicoder v2;
 /// @title Color constants
 library Colors {
     string constant BLACK = "33333D";
+    string constant BLACK_DEEP = "000000";
     string constant BLUE = "18D2F5";
     string constant BROWN = "735742";
     string constant GRAY = "7F8B8C";
