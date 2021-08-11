@@ -78,8 +78,25 @@ library EarringsDetail {
             );
     }
 
-    /// @dev Earrings N°7 => Drop Ether
+    /// @dev Earrings N°7 => Ether
     function item_7() internal pure returns (string memory) {
+        return
+            base(
+                string(
+                    abi.encodePacked(
+                        '<path d="M285.7,242.7l-4.6-2.2l4.6,8l4.6-8L285.7,242.7z"/>',
+                        '<path d="M289.8,238.9l-4.1-7.1l-4.1,7.1l4.1-1.9L289.8,238.9z"/>',
+                        '<path d="M282,239.9l3.7,1.8l3.8-1.8l-3.8-1.8L282,239.9z"/>',
+                        '<path d="M134.5,241.8l-3.4-1.9l3.7,7.3l2.8-7.7L134.5,241.8z"/>',
+                        '<path d="M137.3,238l-3.3-6.5l-2.5,6.9l2.8-2L137.3,238z"/>',
+                        '<path d="M131.7,239.2l2.8,1.5l2.6-1.8l-2.8-1.5L131.7,239.2z"/>'
+                    )
+                )
+            );
+    }
+
+    /// @dev Earrings N°8 => Drop Ether
+    function item_8() internal pure returns (string memory) {
         return
             base(
                 string(
@@ -92,23 +109,6 @@ library EarringsDetail {
                         '<path d="M135.1,279.7l-4-2.2l4,8l4-8L135.1,279.7z"/>',
                         '<path d="M138.7,275.9l-3.6-7.1l-3.6,7.1l3.6-1.9L138.7,275.9z"/>',
                         '<path d="M131.8,276.9l3.3,1.8l3.3-1.8l-3.3-1.8L131.8,276.9z"/>'
-                    )
-                )
-            );
-    }
-
-    /// @dev Earrings N°8 => Ether
-    function item_8() internal pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<path d="M285.7,242.7l-4.6-2.2l4.6,8l4.6-8L285.7,242.7z"/>',
-                        '<path d="M289.8,238.9l-4.1-7.1l-4.1,7.1l4.1-1.9L289.8,238.9z"/>',
-                        '<path d="M282,239.9l3.7,1.8l3.8-1.8l-3.8-1.8L282,239.9z"/>',
-                        '<path d="M134.5,241.8l-3.4-1.9l3.7,7.3l2.8-7.7L134.5,241.8z"/>',
-                        '<path d="M137.3,238l-3.3-6.5l-2.5,6.9l2.8-2L137.3,238z"/>',
-                        '<path d="M131.7,239.2l2.8,1.5l2.6-1.8l-2.8-1.5L131.7,239.2z"/>'
                     )
                 )
             );
@@ -147,9 +147,9 @@ library EarringsDetail {
         } else if (id == 6) {
             name = "Drop Heart";
         } else if (id == 7) {
-            name = "Drop Ether";
-        } else if (id == 8) {
             name = "Ether";
+        } else if (id == 8) {
+            name = "Drop Ether";
         }
     }
 
