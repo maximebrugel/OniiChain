@@ -65,7 +65,7 @@ describe("Unit tests", function () {
 
     it("Mint one NFT", async function () {
       this.timeout(400000000); // Big timeout
-      await svgTest(2, this.hypnosis);
+      await svgTest(100, this.hypnosis);
     });
   });
 });
@@ -79,26 +79,12 @@ async function svgTest(loop: number, hypnosis: Contract) {
     let detail = await hypnosis.details(count);
     let nft = await hypnosis.tokenURI(count);
 
-    let total =
-      detail.hair +
-      detail.eye +
-      detail.eyebrow +
-      detail.nose +
-      detail.mouth +
-      detail.tatoo +
-      detail.earrings +
-      detail.accessory +
-      detail.expression +
-      detail.background +
-      detail.skin -
-      11;
-
     let bufJson = Buffer.from(nft.substring(29), "base64");
     let jsonObj = JSON.parse(bufJson.toString());
     let bufSvg = Buffer.from(jsonObj.image.substring(26), "base64");
-    await fs.writeFileSync("oniis/" + count + "_" + total + "_onii.svg", bufSvg.toString());
+    await fs.writeFileSync("oniis/" + count + "_onii.svg", bufSvg.toString());
 
-    console.log("= > ", total, " at ", detail.timestamp.toString());
+    console.log("= > at ", detail.timestamp.toString());
     count++;
   }
 }

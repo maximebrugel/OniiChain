@@ -53,7 +53,6 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
                 earrings: IHypnosisDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId, seed),
                 accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
                 expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
-                background: IHypnosisDescriptor(_tokenDescriptor).generateBackgroundId(nextTokenId, seed),
                 skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
                 timestamp: block.timestamp,
                 creator: msg.sender

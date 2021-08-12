@@ -60,7 +60,7 @@ library DetailHelper {
     /// @param val The random value
     /// @param intervals The intervals for the corresponding items
     /// @return the item ID where : intervals[] index + 1 = item ID
-    function pickItems(uint256 val, uint256[] memory intervals) private pure returns (uint8) {
+    function pickItems(uint256 val, uint256[] memory intervals) internal pure returns (uint8) {
         for (uint256 i; i < intervals.length; i++) {
             if (val > intervals[i]) {
                 return SafeCast.toUint8(i + 1);

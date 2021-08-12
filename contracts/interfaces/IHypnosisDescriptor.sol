@@ -68,12 +68,6 @@ interface IHypnosisDescriptor {
     /// @return the expression item id
     function generateExpressionId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
-    /// @notice Generate randomly the background colors
-    /// @param tokenId the current tokenId
-    /// @param seed Used for the initialization of the number generator.
-    /// @return the background item id
-    function generateBackgroundId(uint256 tokenId, uint256 seed) external view returns (uint8);
-
     /// @notice Generate randomly the skin colors
     /// @param tokenId the current tokenId
     /// @param seed Used for the initialization of the number generator.

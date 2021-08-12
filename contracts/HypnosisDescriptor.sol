@@ -10,13 +10,15 @@ import "./libraries/DetailHelper.sol";
 import "base64-sol/base64.sol";
 import "./Hypnosis.sol";
 
+import "hardhat/console.sol";
+
 /// @title Describes Onii
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @dev Max value for defining probabilities
     uint256 internal constant MAX = 100000;
 
-    uint256[] internal BACKGROUND_ITEMS = [75000, 55000, 38000, 23000, 11000, 5000, 1000, 0];
+    uint256[] internal BACKGROUND_ITEMS = [800, 700, 600, 500, 400, 300, 200, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
     uint256[] internal TATOO_ITEMS = [25000, 18000, 12000, 6000, 3000, 1000, 40, 10, 0];
@@ -106,6 +108,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
         NFTDescriptor.SVGParams memory params = getSVGParams(hypnosis, tokenId);
+        params.background = getBackgroundId(params);
         string memory image = Base64.encode(bytes(NFTDescriptor.generateSVGImage(params)));
         string memory name = NFTDescriptor.generateName(params, tokenId);
         string memory description = NFTDescriptor.generateDescription(params);
@@ -180,11 +183,6 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     }
 
     /// @inheritdoc IHypnosisDescriptor
-    function generateBackgroundId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, seed, BACKGROUND_ITEMS, this.generateBackgroundId.selector, tokenId);
-    }
-
-    /// @inheritdoc IHypnosisDescriptor
     function generateSkinId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, SKIN_ITEMS, this.generateSkinId.selector, tokenId);
     }
@@ -203,10 +201,33 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                 earring: detail.earrings,
                 accessory: detail.accessory,
                 expression: detail.expression,
-                background: detail.background,
+                background: 0,
                 skin: detail.skin,
                 timestamp: detail.timestamp,
                 creator: detail.creator
             });
+    }
+
+    function getBackgroundId(NFTDescriptor.SVGParams memory params) private view returns (uint8) {
+        uint256 score = itemScorePosition(params.hair, HAIR_ITEMS) +
+            itemScoreProba(params.accessory, ACCESSORY_ITEMS) +
+            itemScoreProba(params.earring, EARRINGS_ITEMS) +
+            itemScoreProba(params.expression, EXPRESSION_ITEMS) +
+            itemScorePosition(params.mouth, MOUTH_ITEMS) +
+            (itemScoreProba(params.skin, SKIN_ITEMS) * 2) +
+            itemScoreProba(params.nose, NOSE_ITEMS) +
+            itemScoreProba(params.tatoo, TATOO_ITEMS) +
+            itemScorePosition(params.eye, EYE_ITEMS) +
+            itemScoreProba(params.eyebrow, EYEBROW_ITEMS);
+        console.logUint(score);
+        return DetailHelper.pickItems(score, BACKGROUND_ITEMS);
+    }
+
+    function itemScoreProba(uint8 item, uint256[] memory ITEMS) private view returns (uint256) {
+        return ((item == 1 ? MAX : ITEMS[item - 2]) - ITEMS[item - 1]) / 1000;
+    }
+
+    function itemScorePosition(uint8 item, uint256[] memory ITEMS) private view returns (uint256) {
+        return ITEMS[item - 1] / 1000;
     }
 }

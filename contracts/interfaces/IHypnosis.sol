@@ -15,7 +15,6 @@ interface IHypnosis {
         uint8 earrings;
         uint8 accessory;
         uint8 expression;
-        uint8 background;
         uint8 skin;
         uint256 timestamp;
         address creator;

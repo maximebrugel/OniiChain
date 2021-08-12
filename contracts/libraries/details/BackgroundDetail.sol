@@ -62,9 +62,9 @@ library BackgroundDetail {
         } else if (id == 5) {
             name = "Extraordinary";
         } else if (id == 6) {
-            name = "Artistic";
-        } else if (id == 7) {
             name = "Phenomenal";
+        } else if (id == 7) {
+            name = "Artistic";
         } else if (id == 8) {
             name = "Unreal";
         }
