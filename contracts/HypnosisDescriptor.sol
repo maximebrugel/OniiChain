@@ -106,11 +106,32 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @inheritdoc IHypnosisDescriptor
     function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
         NFTDescriptor.SVGParams memory params = getSVGParams(hypnosis, tokenId);
-        string memory image = NFTDescriptor.generateSVGImage(params);
+        string memory image = Base64.encode(bytes(NFTDescriptor.generateSVGImage(params)));
         string memory name = NFTDescriptor.generateName(params, tokenId);
         string memory description = NFTDescriptor.generateDescription(params);
 
-        return image;
+        return
+            string(
+                abi.encodePacked(
+                    "data:application/json;base64,",
+                    Base64.encode(
+                        bytes(
+                            abi.encodePacked(
+                                '{"name":"',
+                                name,
+                                '", "description":"',
+                                description,
+                                '", "attributes":"',
+                                "TODO",
+                                '", "image": "',
+                                "data:image/svg+xml;base64,",
+                                image,
+                                '"}'
+                            )
+                        )
+                    )
+                )
+            );
     }
 
     /// @inheritdoc IHypnosisDescriptor
