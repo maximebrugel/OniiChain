@@ -9,119 +9,119 @@ import "./constants/Colors.sol";
 /// @title Eyes SVG generator
 library HairDetail {
     /// @dev Hair N°1 => Classic Brown
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return base(classicHairs(Colors.BROWN));
     }
 
     /// @dev Hair N°2 => Classic Black
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return base(classicHairs(Colors.BLACK));
     }
 
     /// @dev Hair N°3 => Classic Gray
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return base(classicHairs(Colors.GRAY));
     }
 
     /// @dev Hair N°4 => Classic White
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return base(classicHairs(Colors.WHITE));
     }
 
     /// @dev Hair N°5 => Classic Blue
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return base(classicHairs(Colors.BLUE));
     }
 
     /// @dev Hair N°6 => Classic Yellow
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return base(classicHairs(Colors.YELLOW));
     }
 
     /// @dev Hair N°7 => Classic Pink
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return base(classicHairs(Colors.PINK));
     }
 
     /// @dev Hair N°8 => Classic Red
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return base(classicHairs(Colors.RED));
     }
 
     /// @dev Hair N°9 => Classic Purple
-    function item_9() internal pure returns (string memory) {
+    function item_9() public pure returns (string memory) {
         return base(classicHairs(Colors.PURPLE));
     }
 
     /// @dev Hair N°10 => Classic Green
-    function item_10() internal pure returns (string memory) {
+    function item_10() public pure returns (string memory) {
         return base(classicHairs(Colors.GREEN));
     }
 
     /// @dev Hair N°11 => Classic Saiki
-    function item_11() internal pure returns (string memory) {
+    function item_11() public pure returns (string memory) {
         return base(classicHairs(Colors.SAIKI));
     }
 
     //////////
 
     /// @dev Hair N°12 => Short Brown
-    function item_12() internal pure returns (string memory) {
+    function item_12() public pure returns (string memory) {
         return base(shortHairs(Colors.BROWN));
     }
 
     /// @dev Hair N°13 => Short Black
-    function item_13() internal pure returns (string memory) {
+    function item_13() public pure returns (string memory) {
         return base(shortHairs(Colors.BLACK));
     }
 
     /// @dev Hair N°14 => Short Gray
-    function item_14() internal pure returns (string memory) {
+    function item_14() public pure returns (string memory) {
         return base(shortHairs(Colors.GRAY));
     }
 
     /// @dev Hair N°15 => Short White
-    function item_15() internal pure returns (string memory) {
+    function item_15() public pure returns (string memory) {
         return base(shortHairs(Colors.WHITE));
     }
 
     /// @dev Hair N°16 => Short Blue
-    function item_16() internal pure returns (string memory) {
+    function item_16() public pure returns (string memory) {
         return base(shortHairs(Colors.BLUE));
     }
 
     /// @dev Hair N°17 => Short Yellow
-    function item_17() internal pure returns (string memory) {
+    function item_17() public pure returns (string memory) {
         return base(shortHairs(Colors.YELLOW));
     }
 
     /// @dev Hair N°18 => Short Pink
-    function item_18() internal pure returns (string memory) {
+    function item_18() public pure returns (string memory) {
         return base(shortHairs(Colors.PINK));
     }
 
     /// @dev Hair N°19 => Short Red
-    function item_19() internal pure returns (string memory) {
+    function item_19() public pure returns (string memory) {
         return base(shortHairs(Colors.RED));
     }
 
     /// @dev Hair N°20 => Short Purple
-    function item_20() internal pure returns (string memory) {
+    function item_20() public pure returns (string memory) {
         return base(shortHairs(Colors.PURPLE));
     }
 
     /// @dev Hair N°21 => Short Green
-    function item_21() internal pure returns (string memory) {
+    function item_21() public pure returns (string memory) {
         return base(shortHairs(Colors.GREEN));
     }
 
     /// @dev Hair N°22 => Short Saiki
-    function item_22() internal pure returns (string memory) {
+    function item_22() public pure returns (string memory) {
         return base(shortHairs(Colors.SAIKI));
     }
 
     /// @dev Hair N°23 => Monk
-    function item_23() internal pure returns (string memory) {
+    function item_23() public pure returns (string memory) {
         return
             base(
                 string(
@@ -137,7 +137,7 @@ library HairDetail {
     }
 
     /// @dev Hair N°24 => Bald
-    function item_24() internal pure returns (string memory) {
+    function item_24() public pure returns (string memory) {
         return
             base(
                 string(
@@ -170,16 +170,18 @@ library HairDetail {
                                 '<path opacity="0.2" d="M209.2,118c0,0-13.7,36.6-18.5,40.9c-1.7-7.2-1.9-7.9-4.2-20.3c0,0-0.1,2.7-1.4,5.3c0.7,8.2,4.1,24.4,4,24.5S206.4,136.6,209.2,118z"/>',
                                 '<path opacity="0.2" d="M187.6,134.7c0,0-9.6,25.5-10,26.9l-0.4-3.6C177.1,158.1,186.8,135.8,187.6,134.7z"/>',
                                 '<path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M180.7,129.6c0,0-16.7,22.3-17.7,24.2s0,12.4,0.3,12.8S165.9,153,180.7,129.6z"/>',
-                                '<path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M180.4,130.6c0,0-0.2,20.5-0.6,21.5c-0.4,0.9-2.6,5.8-2.6,5.8S176.1,147.1,180.4,130.6z"/>',
-                                '<path opacity="0.2" d="M163.9,138c0,0-16.3,25.3-17.9,26.3c0,0-3.8-12.8-3-14.7s-9.6,10.3-9.9,17c0,0-8.4-0.6-11-7.4c-1-2.5,1.4-9.1,2.1-12.2c0,0-6.5,7.9-9.4,22.5c0,0,0.6,8.8,1.1,10c0,0,3.5-14.8,4.9-17.7c0,0-0.3,33.3,13.6,46.7c0,0-3.7-18.6-2.6-21l9.4-18.6c0,0,2.1,10.5,3.1,12.3l13.9-33.1L163.9,138z"/>',
-                                '<path fill="#FFFFFF" d="M204,82.3c0,0-10.3,24.4-11.5,30.4c0,0,11.1-20.6,12.6-20.8c0,0,11.4,20.4,12,22.2C217.2,114.1,208.2,88.2,204,82.3z"/>',
-                                '<path fill="#FFFFFF" d="M185.6,83.5c0,0-1,29.2,0,39.2c0,0-4-21.4-3.6-25.5c0.4-4-13.5,19.6-16,23.9c0,0,7.5-20.6,10.5-25.8c0,0-14.4,9.4-22,21.3C154.6,116.7,170.1,93.4,185.6,83.5z"/>',
-                                '<path fill="#FFFFFF" d="M158.6,96.2c0,0-12,15.3-14.7,23.2"/>',
-                                '<path fill="#FFFFFF" d="M125.8,125.9c0,0,9.5-20.6,23.5-27.7"/>',
-                                '<path fill="#FFFFFF" d="M296.5,121.6c0,0-9.5-20.6-23.5-27.7"/>',
-                                '<path fill="#FFFFFF" d="M216.1,88.5c0,0,10.9,19.9,11.6,23.6s3.7-5.5-10.6-23.6"/>',
-                                '<path fill="#FFFFFF" d="M227,92c0,0,21.1,25.4,22,27.4s-4.9-23.8-12.9-29.5c0,0,9.5,20.7,9.9,21.9C246.3,113,233.1,94.1,227,92z"/>',
-                                '<path fill="#FFFFFF" d="M263.1,119.5c0,0-9.5-26.8-10.6-28.3s15.5,14.1,16.2,22.5c0,0-11.1-16.1-11.8-16.9C256.1,96,264.3,114.1,263.1,119.5z"/>'
+                                abi.encodePacked(
+                                    '<path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M180.4,130.6c0,0-0.2,20.5-0.6,21.5c-0.4,0.9-2.6,5.8-2.6,5.8S176.1,147.1,180.4,130.6z"/>',
+                                    '<path opacity="0.2" d="M163.9,138c0,0-16.3,25.3-17.9,26.3c0,0-3.8-12.8-3-14.7s-9.6,10.3-9.9,17c0,0-8.4-0.6-11-7.4c-1-2.5,1.4-9.1,2.1-12.2c0,0-6.5,7.9-9.4,22.5c0,0,0.6,8.8,1.1,10c0,0,3.5-14.8,4.9-17.7c0,0-0.3,33.3,13.6,46.7c0,0-3.7-18.6-2.6-21l9.4-18.6c0,0,2.1,10.5,3.1,12.3l13.9-33.1L163.9,138z"/>',
+                                    '<path fill="#FFFFFF" d="M204,82.3c0,0-10.3,24.4-11.5,30.4c0,0,11.1-20.6,12.6-20.8c0,0,11.4,20.4,12,22.2C217.2,114.1,208.2,88.2,204,82.3z"/>',
+                                    '<path fill="#FFFFFF" d="M185.6,83.5c0,0-1,29.2,0,39.2c0,0-4-21.4-3.6-25.5c0.4-4-13.5,19.6-16,23.9c0,0,7.5-20.6,10.5-25.8c0,0-14.4,9.4-22,21.3C154.6,116.7,170.1,93.4,185.6,83.5z"/>',
+                                    '<path fill="#FFFFFF" d="M158.6,96.2c0,0-12,15.3-14.7,23.2"/>',
+                                    '<path fill="#FFFFFF" d="M125.8,125.9c0,0,9.5-20.6,23.5-27.7"/>',
+                                    '<path fill="#FFFFFF" d="M296.5,121.6c0,0-9.5-20.6-23.5-27.7"/>',
+                                    '<path fill="#FFFFFF" d="M216.1,88.5c0,0,10.9,19.9,11.6,23.6s3.7-5.5-10.6-23.6"/>',
+                                    '<path fill="#FFFFFF" d="M227,92c0,0,21.1,25.4,22,27.4s-4.9-23.8-12.9-29.5c0,0,9.5,20.7,9.9,21.9C246.3,113,233.1,94.1,227,92z"/>',
+                                    '<path fill="#FFFFFF" d="M263.1,119.5c0,0-9.5-26.8-10.6-28.3s15.5,14.1,16.2,22.5c0,0-11.1-16.1-11.8-16.9C256.1,96,264.3,114.1,263.1,119.5z"/>'
+                                )
                             )
                         )
                     )
@@ -214,7 +216,7 @@ library HairDetail {
 
     /// @notice Return the hair cut name of the given id
     /// @param id The hair Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Classic Brown";

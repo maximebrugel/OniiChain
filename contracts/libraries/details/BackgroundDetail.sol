@@ -8,48 +8,48 @@ import "base64-sol/base64.sol";
 /// @title Background SVG generator
 library BackgroundDetail {
     /// @dev background N°1 => Ordinary
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return base("636363", "CFCFCF", "ABABAB");
     }
 
     /// @dev background N°2 => Unusual
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return base("004A06", "61E89B", "12B55F");
     }
 
     /// @dev background N°3 => Surprising
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return base("1A4685", "6BF0E3", "00ADC7");
     }
 
     /// @dev background N°4 => Impressive
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return base("380113", "D87AE6", "8A07BA");
     }
 
     /// @dev background N°5 => Extraordinary
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return base("A33900", "FAF299", "FF9121");
     }
 
     /// @dev background N°6 => Phenomenal
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return base("000000", "C000E8", "DED52C");
     }
 
     /// @dev background N°7 => Artistic
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return base("FF00E3", "E8E18B", "00C4AD");
     }
 
     /// @dev background N°8 => Unreal
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return base("CCCC75", "54054D", "001E2E");
     }
 
     /// @notice Return the background name of the given id
     /// @param id The background Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Ordinary";

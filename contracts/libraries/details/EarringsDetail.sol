@@ -8,12 +8,12 @@ import "base64-sol/base64.sol";
 /// @title Earrings SVG generator
 library EarringsDetail {
     /// @dev Earrings N°1 => Nothing
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return "";
     }
 
     /// @dev Earrings N°2 => Circle
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -26,7 +26,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°3 => Ring
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -39,7 +39,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°4 => Heart
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return
             base(
                 string(
@@ -52,7 +52,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°5 => Gold
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return
             base(
                 string(
@@ -64,7 +64,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°6 => Drop Heart
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return
             base(
                 string(
@@ -79,7 +79,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°7 => Ether
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return
             base(
                 string(
@@ -96,7 +96,7 @@ library EarringsDetail {
     }
 
     /// @dev Earrings N°8 => Drop Ether
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return
             base(
                 string(
@@ -132,7 +132,7 @@ library EarringsDetail {
 
     /// @notice Return the earring name of the given id
     /// @param id The earring Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Nothing";

@@ -8,12 +8,12 @@ import "base64-sol/base64.sol";
 /// @title Expressions SVG generator
 library ExpressionDetail {
     /// @dev Expressions N°1 => Expressionless
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return "";
     }
 
     /// @dev Expressions N°2 => Blush Cheeks
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -28,7 +28,7 @@ library ExpressionDetail {
     }
 
     /// @dev Expressions N°3 => Blush
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -40,7 +40,7 @@ library ExpressionDetail {
     }
 
     /// @dev Expressions N°4 => Dark Circle
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return
             base(
                 string(
@@ -55,7 +55,7 @@ library ExpressionDetail {
     }
 
     /// @dev Expressions N°5 => Blase
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return
             base(
                 string(
@@ -70,7 +70,7 @@ library ExpressionDetail {
     }
 
     /// @dev Expressions N°6 => Sweat
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return
             base(
                 string(
@@ -84,7 +84,7 @@ library ExpressionDetail {
     }
 
     /// @dev Expressions N°7 => Angry
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return
             base(
                 string(
@@ -100,7 +100,7 @@ library ExpressionDetail {
 
     /// @notice Return the expression name of the given id
     /// @param id The expression Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Expressionless";

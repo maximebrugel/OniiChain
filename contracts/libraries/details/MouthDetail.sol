@@ -8,7 +8,7 @@ import "base64-sol/base64.sol";
 /// @title Mouth SVG generator
 library MouthDetail {
     /// @dev Mouth N°1 => Neutral
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return
             base(
                 string(
@@ -22,7 +22,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°2 => Smile
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -36,7 +36,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°3 => Sulk
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -50,7 +50,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°4 => Poker
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return
             base(
                 string(
@@ -62,7 +62,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°5 => Angry
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return
             base(
                 string(
@@ -76,7 +76,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°6 => Big Smile
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return
             base(
                 string(
@@ -90,7 +90,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°7 => Evil
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return
             base(
                 string(
@@ -104,7 +104,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°8 => Tongue
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return
             base(
                 string(
@@ -119,7 +119,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°9 => O
-    function item_9() internal pure returns (string memory) {
+    function item_9() public pure returns (string memory) {
         return
             base(
                 string(
@@ -131,7 +131,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°10 => Drool
-    function item_10() internal pure returns (string memory) {
+    function item_10() public pure returns (string memory) {
         return
             base(
                 string(
@@ -143,7 +143,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°11 => Dubu
-    function item_11() internal pure returns (string memory) {
+    function item_11() public pure returns (string memory) {
         return
             base(
                 string(
@@ -155,7 +155,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°12 => Stitch
-    function item_12() internal pure returns (string memory) {
+    function item_12() public pure returns (string memory) {
         return
             base(
                 string(
@@ -167,7 +167,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°13 => Uwu
-    function item_13() internal pure returns (string memory) {
+    function item_13() public pure returns (string memory) {
         return
             base(
                 string(
@@ -181,7 +181,7 @@ library MouthDetail {
     }
 
     /// @dev Mouth N°14 => Monster
-    function item_14() internal pure returns (string memory) {
+    function item_14() public pure returns (string memory) {
         return
             base(
                 string(
@@ -195,7 +195,7 @@ library MouthDetail {
 
     /// @notice Return the mouth name of the given id
     /// @param id The mouth Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Neutral";

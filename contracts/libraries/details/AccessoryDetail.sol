@@ -8,12 +8,12 @@ import "base64-sol/base64.sol";
 /// @title Accessory SVG generator
 library AccessoryDetail {
     /// @dev Accessory N°1 => Nothing
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return "";
     }
 
     /// @dev Accessory N°2 => Glasses
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -29,7 +29,7 @@ library AccessoryDetail {
     }
 
     /// @dev Accessory N°3 => Saiki
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -46,7 +46,7 @@ library AccessoryDetail {
     }
 
     /// @dev Accessory N°4 => Horns
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return
             base(
                 string(
@@ -59,7 +59,7 @@ library AccessoryDetail {
     }
 
     /// @dev Accessory N°5 => Halo
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return
             base(
                 string(
@@ -72,7 +72,7 @@ library AccessoryDetail {
 
     /// @notice Return the accessory name of the given id
     /// @param id The accessory Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Nothing";

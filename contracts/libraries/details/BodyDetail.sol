@@ -8,23 +8,23 @@ import "base64-sol/base64.sol";
 /// @title Body SVG generator
 library BodyDetail {
     /// @dev Body N°1 => Human
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return base("FFEBB4", "FFBE94");
     }
 
     /// @dev Body N°2 => Shadow
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return base("2d2d2d", "000000");
     }
 
     /// @dev Body N°3 => Light
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return base("ffffff", "696969");
     }
 
     /// @notice Return the skin name of the given id
     /// @param id The skin Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Human";

@@ -8,7 +8,7 @@ import "base64-sol/base64.sol";
 /// @title Eyebrow SVG generator
 library EyebrowDetail {
     /// @dev Eyebrow N°1 => Classic
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return
             base(
                 string(
@@ -21,7 +21,7 @@ library EyebrowDetail {
     }
 
     /// @dev Eyebrow N°2 => Thick
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -34,7 +34,7 @@ library EyebrowDetail {
     }
 
     /// @dev Eyebrow N°3 => Small
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -48,7 +48,7 @@ library EyebrowDetail {
 
     /// @notice Return the eyebrow name of the given id
     /// @param id The eyebrow Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Classic";

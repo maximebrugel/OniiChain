@@ -8,12 +8,12 @@ import "base64-sol/base64.sol";
 /// @title Nose SVG generator
 library NoseDetail {
     /// @dev Nose N°1 => Classic
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return "";
     }
 
     /// @dev Nose N°2 => Bleeding
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -28,7 +28,7 @@ library NoseDetail {
 
     /// @notice Return the nose name of the given id
     /// @param id The nose Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Classic";

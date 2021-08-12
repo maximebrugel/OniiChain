@@ -9,87 +9,87 @@ import "./constants/Colors.sol";
 /// @title Eyes SVG generator
 library EyesDetail {
     /// @dev Eyes N°1 => Color White/Brown
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.BROWN);
     }
 
     /// @dev Eyes N°2 => Color White/Gray
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.GRAY);
     }
 
     /// @dev Eyes N°3 => Color White/Blue
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.BLUE);
     }
 
     /// @dev Eyes N°4 => Color White/Green
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.GREEN);
     }
 
     /// @dev Eyes N°5 => Color White/Black
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.BLACK_DEEP);
     }
 
     /// @dev Eyes N°6 => Color White/Yellow
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.YELLOW);
     }
 
     /// @dev Eyes N°7 => Color White/Red
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.RED);
     }
 
     /// @dev Eyes N°8 => Color White/Purple
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.PURPLE);
     }
 
     /// @dev Eyes N°9 => Color White/Pink
-    function item_9() internal pure returns (string memory) {
+    function item_9() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.PINK);
     }
 
     /// @dev Eyes N°10 => Color White/White
-    function item_10() internal pure returns (string memory) {
+    function item_10() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.WHITE);
     }
 
     /// @dev Eyes N°11 => Color Black/Gray
-    function item_11() internal pure returns (string memory) {
+    function item_11() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.BLACK, Colors.GRAY);
     }
 
     /// @dev Eyes N°12 => Color Black/Yellow
-    function item_12() internal pure returns (string memory) {
+    function item_12() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.BLACK, Colors.YELLOW);
     }
 
     /// @dev Eyes N°13 => Color Black/White
-    function item_13() internal pure returns (string memory) {
+    function item_13() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.BLACK, Colors.WHITE);
     }
 
     /// @dev Eyes N°14 => Color Black/Black
-    function item_14() internal pure returns (string memory) {
+    function item_14() public pure returns (string memory) {
         return eyesNoFillAndColorPupils(Colors.BLACK, Colors.BLACK_DEEP);
     }
 
     /// @dev Eyes N°15 => Blank White/White
-    function item_15() internal pure returns (string memory) {
+    function item_15() public pure returns (string memory) {
         return eyesNoFillAndBlankPupils(Colors.WHITE, Colors.WHITE);
     }
 
     /// @dev Eyes N°16 => Blank Black/White
-    function item_16() internal pure returns (string memory) {
+    function item_16() public pure returns (string memory) {
         return eyesNoFillAndBlankPupils(Colors.BLACK_DEEP, Colors.WHITE);
     }
 
     /// @dev Eyes N°17 => Shine (no-fill)
-    function item_17() internal pure returns (string memory) {
+    function item_17() public pure returns (string memory) {
         return
             base(
                 string(
@@ -103,7 +103,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°18 => Stun (no-fill)
-    function item_18() internal pure returns (string memory) {
+    function item_18() public pure returns (string memory) {
         return
             base(
                 string(
@@ -117,7 +117,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°19 => Squint (no-fill)
-    function item_19() internal pure returns (string memory) {
+    function item_19() public pure returns (string memory) {
         return
             base(
                 string(
@@ -131,7 +131,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°20 => Shock (no-fill)
-    function item_20() internal pure returns (string memory) {
+    function item_20() public pure returns (string memory) {
         return
             base(
                 string(
@@ -145,7 +145,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°21 => Cat (no-fill)
-    function item_21() internal pure returns (string memory) {
+    function item_21() public pure returns (string memory) {
         return
             base(
                 string(
@@ -159,7 +159,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°22 => Ether (no-fill)
-    function item_22() internal pure returns (string memory) {
+    function item_22() public pure returns (string memory) {
         return
             base(
                 string(
@@ -177,7 +177,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°23 => Feels
-    function item_23() internal pure returns (string memory) {
+    function item_23() public pure returns (string memory) {
         return
             base(
                 string(
@@ -194,7 +194,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°24 => Happy
-    function item_24() internal pure returns (string memory) {
+    function item_24() public pure returns (string memory) {
         return
             base(
                 string(
@@ -215,7 +215,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°25 => Arrow
-    function item_25() internal pure returns (string memory) {
+    function item_25() public pure returns (string memory) {
         return
             base(
                 string(
@@ -228,7 +228,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°26 => Closed
-    function item_26() internal pure returns (string memory) {
+    function item_26() public pure returns (string memory) {
         return
             base(
                 string(
@@ -241,7 +241,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°27 => Suspicious
-    function item_27() internal pure returns (string memory) {
+    function item_27() public pure returns (string memory) {
         return
             base(
                 string(
@@ -257,18 +257,20 @@ library EyesDetail {
                         '<path opacity="0.81" fill="#FFFFFF" d="M177.1,202.5c0.6,4.6-0.1,5.8-1.6,8.3 c-0.9,1.5-1,2.5-8.2-1.2c-6.1,0.4-8.2-1.6-16,2.5c-3,0-4-3.8-5.1-7.7c-0.6-2.2,0.2-4.6,2-5.9c3.4-2.5,9-6,13.4-5.3 c3.9,0.7,7.7,1.9,11.3,3.6C175.2,197.9,176.4,197.3,177.1,202.5z"/>',
                         '<path d="M145.9,200c-0.7-0.8-0.9-2.9-0.9-3.7c0.1,0.6,1.3,1.5,2,2.2c0.2-0.2,0.4-0.5,0.6-0.7c-0.5-1-0.7-2.7-0.7-3.4 c0.1,0.6,1.2,1.5,1.9,2.1c2.4-2.2,5.8-4.4,10.4-4.9c7.4-1,14.7,2.3,18.9,8.6c-5.3-4.2-12.1-6-18.9-5.1c-6,0.9-11.5,4-15.4,8.5 C143.8,203.4,144.5,201.9,145.9,200z"/>',
                         '<path d="M146.9,194.4L146.9,194.4C146.9,194,146.9,194.1,146.9,194.4z"/>',
-                        '<path d="M145,196.3L145,196.3C144.9,195.9,144.9,196,145,196.3z"/>',
-                        '<path d="M167.8,187.6c-1.1-0.3-2.1-0.6-3.3-0.7c-1.1-0.1-2.2-0.1-3.3,0s-2.2,0.3-3.3,0.6s-2.1,0.7-3.1,1.3l0,0 c1.1-0.3,2.1-0.7,3.2-0.9c1.1-0.3,2.1-0.5,3.2-0.6c1.1-0.1,2.2-0.2,3.3-0.1C165.6,187.2,166.6,187.3,167.8,187.6L167.8,187.6z"/>',
-                        '<path d="M171.3,189c0.9,0.7,1.8,1.3,2.8,1.9c0.9,0.7,1.8,1.4,2.8,1.9c-0.4-0.5-0.8-0.9-1.2-1.3c-0.4-0.4-0.9-0.8-1.4-1.1 s-1-0.7-1.5-0.9C172.4,189.4,171.8,189.1,171.3,189z"/>',
-                        '<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M175.4,212.8c0,0-9.8-7.3-26.9,0"/>',
-                        '<path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-miterlimit="10" d="M168.5,195.2c0,0,4.6,8.5-0.7,14.4 c0,0-8.8-1.5-11.6,0.4c0,0-4.7-5.7-1.5-12.5S168.5,195.2,168.5,195.2z"/>'
+                        abi.encodePacked(
+                            '<path d="M145,196.3L145,196.3C144.9,195.9,144.9,196,145,196.3z"/>',
+                            '<path d="M167.8,187.6c-1.1-0.3-2.1-0.6-3.3-0.7c-1.1-0.1-2.2-0.1-3.3,0s-2.2,0.3-3.3,0.6s-2.1,0.7-3.1,1.3l0,0 c1.1-0.3,2.1-0.7,3.2-0.9c1.1-0.3,2.1-0.5,3.2-0.6c1.1-0.1,2.2-0.2,3.3-0.1C165.6,187.2,166.6,187.3,167.8,187.6L167.8,187.6z"/>',
+                            '<path d="M171.3,189c0.9,0.7,1.8,1.3,2.8,1.9c0.9,0.7,1.8,1.4,2.8,1.9c-0.4-0.5-0.8-0.9-1.2-1.3c-0.4-0.4-0.9-0.8-1.4-1.1 s-1-0.7-1.5-0.9C172.4,189.4,171.8,189.1,171.3,189z"/>',
+                            '<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M175.4,212.8c0,0-9.8-7.3-26.9,0"/>',
+                            '<path fill-rule="evenodd" clip-rule="evenodd" stroke="#000000" stroke-miterlimit="10" d="M168.5,195.2c0,0,4.6,8.5-0.7,14.4 c0,0-8.8-1.5-11.6,0.4c0,0-4.7-5.7-1.5-12.5S168.5,195.2,168.5,195.2z"/>'
+                        )
                     )
                 )
             );
     }
 
     /// @dev Eyes N°28 => Annoyed 1
-    function item_28() internal pure returns (string memory) {
+    function item_28() public pure returns (string memory) {
         return
             base(
                 string(
@@ -283,7 +285,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°29 => Annoyed 2
-    function item_29() internal pure returns (string memory) {
+    function item_29() public pure returns (string memory) {
         return
             base(
                 string(
@@ -298,7 +300,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°30 => RIP
-    function item_30() internal pure returns (string memory) {
+    function item_30() public pure returns (string memory) {
         return
             base(
                 string(
@@ -313,7 +315,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°31 => Heart
-    function item_31() internal pure returns (string memory) {
+    function item_31() public pure returns (string memory) {
         return
             base(
                 string(
@@ -326,7 +328,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°32 => Scribble
-    function item_32() internal pure returns (string memory) {
+    function item_32() public pure returns (string memory) {
         return
             base(
                 string(
@@ -339,7 +341,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°33 => Wide
-    function item_33() internal pure returns (string memory) {
+    function item_33() public pure returns (string memory) {
         return
             base(
                 string(
@@ -354,7 +356,7 @@ library EyesDetail {
     }
 
     /// @dev Eyes N°34 => Dubu
-    function item_34() internal pure returns (string memory) {
+    function item_34() public pure returns (string memory) {
         return
             base(
                 string(
@@ -482,7 +484,7 @@ library EyesDetail {
 
     /// @notice Return the eyes name of the given id
     /// @param id The eyes Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Color White/Brown";

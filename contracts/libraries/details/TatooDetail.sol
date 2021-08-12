@@ -8,12 +8,12 @@ import "base64-sol/base64.sol";
 /// @title Tatoo SVG generator
 library TatooDetail {
     /// @dev Tatoo N°1 => Nothing
-    function item_1() internal pure returns (string memory) {
+    function item_1() public pure returns (string memory) {
         return "";
     }
 
     /// @dev Tatoo N°2 => Freckle
-    function item_2() internal pure returns (string memory) {
+    function item_2() public pure returns (string memory) {
         return
             base(
                 string(
@@ -32,7 +32,7 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°3 => Chin
-    function item_3() internal pure returns (string memory) {
+    function item_3() public pure returns (string memory) {
         return
             base(
                 string(
@@ -44,7 +44,7 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°4 => Moon
-    function item_4() internal pure returns (string memory) {
+    function item_4() public pure returns (string memory) {
         return
             base(
                 string(
@@ -56,12 +56,12 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°5 => Dot
-    function item_5() internal pure returns (string memory) {
+    function item_5() public pure returns (string memory) {
         return base(string(abi.encodePacked('<circle cx="260.8" cy="215.8" r="2.1"/>')));
     }
 
     /// @dev Tatoo N°6 => Scars 1
-    function item_6() internal pure returns (string memory) {
+    function item_6() public pure returns (string memory) {
         return
             base(
                 string(
@@ -73,7 +73,7 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°7 => Scars 2
-    function item_7() internal pure returns (string memory) {
+    function item_7() public pure returns (string memory) {
         return
             base(
                 string(
@@ -89,7 +89,7 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°8 => Ether
-    function item_8() internal pure returns (string memory) {
+    function item_8() public pure returns (string memory) {
         return
             base(
                 string(
@@ -103,7 +103,7 @@ library TatooDetail {
     }
 
     /// @dev Tatoo N°9 => Tori
-    function item_9() internal pure returns (string memory) {
+    function item_9() public pure returns (string memory) {
         return
             base(
                 string(
@@ -121,7 +121,7 @@ library TatooDetail {
 
     /// @notice Return the tatoo name of the given id
     /// @param id The tatoo Id
-    function getItemNameById(uint8 id) internal pure returns (string memory name) {
+    function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
             name = "Nothing";
