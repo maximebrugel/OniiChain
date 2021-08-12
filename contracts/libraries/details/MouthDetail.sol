@@ -69,7 +69,7 @@ library MouthDetail {
                     abi.encodePacked(
                         '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M207.5,257.1c-7,1.4-17.3,0.3-21-0.9c-4-1.2-7.7,3.1-8.6,7.2c-0.5,2.5-1.2,7.4,3.4,10.1c5.9,2.4,5.6,0.1,9.2-1.9c3.4-2,10-1.1,15.3,1.9c5.4,3,13.4,2.2,17.9-0.4c2.9-1.7,3.3-7.6-4.2-14.1C217.3,257.2,215.5,255.5,207.5,257.1"/>',
                         '<path fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M205.9,265.5l4.1-2.2c0,0,3.7,2.9,5,3s4.9-3.2,4.9-3.2l3.9,1.4"/>',
-                        '<polyline fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" points="177.8,265.3 180.2,263.4183.3,265.5 186,265.4"/>'
+                        '<polyline fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" points="177.8,265.3 180.2,263.4 183.3,265.5 186,265.4"/>'
                     )
                 )
             );
