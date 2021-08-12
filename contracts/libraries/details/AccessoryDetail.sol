@@ -34,12 +34,12 @@ library AccessoryDetail {
             base(
                 string(
                     abi.encodePacked(
-                        '<polygon opacity="0.68" fill="#7FFF35" points="126,189.5 185.7,191.8 188.6,199.6 184.6,207.4157.3,217.9 128.6,203.7"/>',
-                        '<polygon opacity="0.68" fill="#7FFF35" points="265.7,189.5 206.7,191.8 203.8,199.6 207.7,207.4234.8,217.9 263.2,203.7"/>',
-                        '<polyline fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="196.5,195.7 191.8,195.4187,190.9 184.8,192.3 188.5,198.9 183,206.8 187.6,208.3 193.1,201.2 196.5,201.2"/>',
-                        '<polyline fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="196.4,195.7 201.1,195.4205.9,190.9 208.1,192.3 204.4,198.9 209.9,206.8 205.3,208.3 199.8,201.2 196.4,201.2"/>',
-                        '<polygon fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="123.8,189.5 126.3,203 129.2,204.4127.5,189.5"/>',
-                        '<polygon fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="265.8,189.4 263.3,203.7284.3,200.6 285.3,189.4"/>'
+                        '<polygon opacity="0.68" fill="#7FFF35" points="126,189.5 185.7,191.8 188.6,199.6 184.6,207.4 157.3,217.9 128.6,203.7"/>',
+                        '<polygon opacity="0.68" fill="#7FFF35" points="265.7,189.5 206.7,191.8 203.8,199.6 207.7,207.4 234.8,217.9 263.2,203.7"/>',
+                        '<polyline fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="196.5,195.7 191.8,195.4 187,190.9 184.8,192.3 188.5,198.9 183,206.8 187.6,208.3 193.1,201.2 196.5,201.2"/>',
+                        '<polyline fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="196.4,195.7 201.1,195.4 205.9,190.9 208.1,192.3 204.4,198.9 209.9,206.8 205.3,208.3 199.8,201.2 196.4,201.2"/>',
+                        '<polygon fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="123.8,189.5 126.3,203 129.2,204.4 127.5,189.5"/>',
+                        '<polygon fill="#FFFFFF" stroke="#424242" stroke-width="0.5" stroke-miterlimit="10" points="265.8,189.4 263.3,203.7 284.3,200.6 285.3,189.4"/>'
                     )
                 )
             );
