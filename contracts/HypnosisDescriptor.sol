@@ -10,15 +10,13 @@ import "./libraries/DetailHelper.sol";
 import "base64-sol/base64.sol";
 import "./Hypnosis.sol";
 
-import "hardhat/console.sol";
-
 /// @title Describes Onii
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract HypnosisDescriptor is IHypnosisDescriptor {
     /// @dev Max value for defining probabilities
     uint256 internal constant MAX = 100000;
 
-    uint256[] internal BACKGROUND_ITEMS = [800, 700, 600, 500, 400, 300, 200, 0];
+    uint256[] internal BACKGROUND_ITEMS = [750, 650, 575, 475, 400, 350, 300, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
     uint256[] internal TATOO_ITEMS = [25000, 18000, 12000, 6000, 3000, 1000, 40, 10, 0];
@@ -214,12 +212,12 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
             itemScoreProba(params.earring, EARRINGS_ITEMS) +
             itemScoreProba(params.expression, EXPRESSION_ITEMS) +
             itemScorePosition(params.mouth, MOUTH_ITEMS) +
-            (itemScoreProba(params.skin, SKIN_ITEMS) * 2) +
+            (itemScoreProba(params.skin, SKIN_ITEMS) / 2) +
+            itemScoreProba(params.skin, SKIN_ITEMS) +
             itemScoreProba(params.nose, NOSE_ITEMS) +
             itemScoreProba(params.tatoo, TATOO_ITEMS) +
             itemScorePosition(params.eye, EYE_ITEMS) +
             itemScoreProba(params.eyebrow, EYEBROW_ITEMS);
-        console.logUint(score);
         return DetailHelper.pickItems(score, BACKGROUND_ITEMS);
     }
 
