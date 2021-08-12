@@ -3,6 +3,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/dist/src/signer-wit
 
 import { Signers } from "../types";
 import { Contract } from "ethers";
+const fs = require("fs");
 
 describe("Unit tests", function () {
   before(async function () {
@@ -64,10 +65,43 @@ describe("Unit tests", function () {
 
     it("Mint one NFT", async function () {
       this.timeout(400000000); // Big timeout
-      await scoreTest(50, this.hypnosis);
+      await this.hypnosis.create(1);
+      let nft = await this.hypnosis.tokenURI(1);
+      console.log(nft);
     });
   });
 });
+
+async function svgTest(loop: number, hypnosis: Contract) {
+  let count = 1;
+  while (count <= loop) {
+    await network.provider.send("evm_increaseTime", [Math.floor(Math.random() * 10000000)]);
+    await network.provider.send("evm_mine");
+    await hypnosis.create(1);
+    let detail = await hypnosis.details(count);
+    let nft = await hypnosis.tokenURI(count);
+
+    let total =
+      detail.hair +
+      detail.eye +
+      detail.eyebrow +
+      detail.nose +
+      detail.mouth +
+      detail.tatoo +
+      detail.earrings +
+      detail.accessory +
+      detail.expression +
+      detail.background +
+      detail.skin -
+      11;
+
+    let buf = Buffer.from(nft);
+    await fs.writeFileSync("oniis/" + count + "_" + total + "_onii.svg", buf.toString());
+
+    console.log("= > ", total, " at ", detail.timestamp.toString());
+    count++;
+  }
+}
 
 async function scoreTest(loop: number, hypnosis: Contract) {
   console.log("Max => 106");
@@ -96,6 +130,7 @@ async function scoreTest(loop: number, hypnosis: Contract) {
       best = total;
     }
     console.log("= > ", total, " at ", detail.timestamp.toString());
+    console.log("HAIR : ", detail.hair, " EYE : ", detail.eye, " MOUTH : ", detail.mouth);
   }
   console.log("Best => ", best);
 }
