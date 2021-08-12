@@ -42,10 +42,9 @@ library NFTDescriptor {
                     generateSVGHead(),
                     DetailHelper.getDetailSVG(address(BackgroundDetail), params.background),
                     generateSVGFace(params),
-                    DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
+                    DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(EarringsDetail), params.earring),
                     DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
-                    DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     "</svg>"
                 )
@@ -58,6 +57,7 @@ library NFTDescriptor {
             string(
                 abi.encodePacked(
                     DetailHelper.getDetailSVG(address(BodyDetail), params.skin),
+                    DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
                     DetailHelper.getDetailSVG(address(MouthDetail), params.mouth),
                     DetailHelper.getDetailSVG(address(NoseDetail), params.nose),
                     DetailHelper.getDetailSVG(address(EyesDetail), params.eye),
