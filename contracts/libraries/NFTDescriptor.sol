@@ -42,10 +42,10 @@ library NFTDescriptor {
                     generateSVGHead(),
                     DetailHelper.getDetailSVG(address(BackgroundDetail), params.background),
                     generateSVGFace(params),
-                    DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(EarringsDetail), params.earring),
-                    DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
+                    DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
+                    DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
                     "</svg>"
                 )
             );
