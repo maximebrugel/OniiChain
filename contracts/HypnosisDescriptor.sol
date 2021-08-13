@@ -110,6 +110,7 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
         string memory image = Base64.encode(bytes(NFTDescriptor.generateSVGImage(params)));
         string memory name = NFTDescriptor.generateName(params, tokenId);
         string memory description = NFTDescriptor.generateDescription(params);
+        string memory attributes = NFTDescriptor.generateAttributes(params);
 
         return
             string(
@@ -122,9 +123,9 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                                 name,
                                 '", "description":"',
                                 description,
-                                '", "attributes":"',
-                                "TODO",
-                                '", "image": "',
+                                '", "attributes":',
+                                attributes,
+                                ', "image": "',
                                 "data:image/svg+xml;base64,",
                                 image,
                                 '"}'
@@ -221,11 +222,13 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
         return DetailHelper.pickItems(score, BACKGROUND_ITEMS);
     }
 
-    function itemScoreProba(uint8 item, uint256[] memory ITEMS) private view returns (uint256) {
+    /// @dev Get item score based on his probability
+    function itemScoreProba(uint8 item, uint256[] memory ITEMS) private pure returns (uint256) {
         return ((item == 1 ? MAX : ITEMS[item - 2]) - ITEMS[item - 1]) / 1000;
     }
 
-    function itemScorePosition(uint8 item, uint256[] memory ITEMS) private view returns (uint256) {
+    /// @dev Get item score based on his index
+    function itemScorePosition(uint8 item, uint256[] memory ITEMS) private pure returns (uint256) {
         return ITEMS[item - 1] / 1000;
     }
 }

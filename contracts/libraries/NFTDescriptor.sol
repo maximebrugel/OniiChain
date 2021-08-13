@@ -101,4 +101,40 @@ library NFTDescriptor {
                 )
             );
     }
+
+    /// @dev generate Json Metadata attributes
+    function generateAttributes(SVGParams memory params) internal pure returns (string memory) {
+        return
+            string(
+                abi.encodePacked(
+                    "[",
+                    getJsonAttribute("Body", BodyDetail.getItemNameById(params.skin), false),
+                    getJsonAttribute("Hair", HairDetail.getItemNameById(params.hair), false),
+                    getJsonAttribute("Mouth", MouthDetail.getItemNameById(params.mouth), false),
+                    getJsonAttribute("Nose", NoseDetail.getItemNameById(params.nose), false),
+                    getJsonAttribute("Eyes", EyesDetail.getItemNameById(params.eye), false),
+                    getJsonAttribute("Eyebrown", EyebrowDetail.getItemNameById(params.eyebrow), false),
+                    abi.encodePacked(
+                        getJsonAttribute("Tatoo", TatooDetail.getItemNameById(params.tatoo), false),
+                        getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
+                        getJsonAttribute("Earring", EarringsDetail.getItemNameById(params.earring), false),
+                        getJsonAttribute("Expression", EarringsDetail.getItemNameById(params.expression), true),
+                        "]"
+                    )
+                )
+            );
+    }
+
+    /// @dev Get the json attribute as
+    ///    {
+    ///      "trait_type": "Skin",
+    ///      "value": "Human"
+    ///    }
+    function getJsonAttribute(
+        string memory trait,
+        string memory value,
+        bool end
+    ) private pure returns (string memory json) {
+        return string(abi.encodePacked('{ "trait_type" : "', trait, '", "value" : "', value, '" }', end ? "" : ","));
+    }
 }
