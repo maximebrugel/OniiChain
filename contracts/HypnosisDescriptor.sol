@@ -200,8 +200,9 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
                 earring: detail.earrings,
                 accessory: detail.accessory,
                 expression: detail.expression,
-                background: 0,
                 skin: detail.skin,
+                original: detail.original,
+                background: 0,
                 timestamp: detail.timestamp,
                 creator: detail.creator
             });

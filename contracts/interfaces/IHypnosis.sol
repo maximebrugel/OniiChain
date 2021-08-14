@@ -16,6 +16,7 @@ interface IHypnosis {
         uint8 accessory;
         uint8 expression;
         uint8 skin;
+        bool original;
         uint256 timestamp;
         address creator;
     }

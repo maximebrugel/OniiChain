@@ -28,6 +28,9 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
     /// @dev The address of the token descriptor contract, which handles generating token URIs.
     address private immutable _tokenDescriptor;
 
+    /// @dev all oniis generated based on ids hash
+    mapping(bytes32 => bool) private oniis;
+
     /// @dev Chainlink keyhash
     bytes32 internal keyHash;
 
@@ -64,7 +67,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
         for (uint256 i; i < qty; i++) {
             uint256 seed = (block.timestamp + randomResult) << (i + 1);
             uint256 nextTokenId = totalSupply() + 1;
-            _detail[nextTokenId] = Detail({
+            Detail memory newDetail = Detail({
                 hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
                 eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId, seed),
                 eyebrow: IHypnosisDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId, seed),
@@ -75,9 +78,12 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
                 accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
                 expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
                 skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
+                original: true,
                 timestamp: block.timestamp,
                 creator: msg.sender
             });
+            newDetail.original = copyOnii(newDetail);
+            _detail[nextTokenId] = newDetail;
             _safeMint(msg.sender, nextTokenId);
         }
     }
@@ -104,5 +110,28 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
      */
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
         randomResult = randomness;
+    }
+
+    function copyOnii(Detail memory detail) internal returns (bool) {
+        bytes32 hash = keccak256(
+            abi.encode(
+                detail.hair,
+                detail.eye,
+                detail.eyebrow,
+                detail.nose,
+                detail.mouth,
+                detail.tatoo,
+                detail.earrings,
+                detail.accessory,
+                detail.expression,
+                detail.skin
+            )
+        );
+        if (!oniis[hash]) {
+            oniis[hash] = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 }

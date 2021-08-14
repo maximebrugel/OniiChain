@@ -30,6 +30,7 @@ library NFTDescriptor {
         uint8 expression;
         uint8 background;
         uint8 skin;
+        bool original;
         uint256 timestamp;
         address creator;
     }
@@ -46,6 +47,7 @@ library NFTDescriptor {
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
                     DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
                     DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
+                    generateCopy(params.original),
                     "</svg>"
                 )
             );
@@ -100,6 +102,18 @@ library NFTDescriptor {
                     ' viewBox="0 0 420 420" style="enable-background:new 0 0 420 420;" xml:space="preserve">'
                 )
             );
+    }
+
+    /// @dev generate the "Copy" SVG if the onii is not the original
+    function generateCopy(bool original) private pure returns (string memory) {
+        return
+            !original
+                ? string(
+                    abi.encodePacked(
+                        '<text transform="matrix(0.9345 -0.3561 0.3561 0.9345 278.3762 377.9179)" font-family="Anonymous Pro" fill="#FFAA73" font-size="9px">COPY</text>'
+                    )
+                )
+                : "";
     }
 
     /// @dev generate Json Metadata attributes
