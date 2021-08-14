@@ -81,19 +81,25 @@ library BackgroundDetail {
                 abi.encodePacked(
                     '<g id="Background">',
                     '<radialGradient id="gradient" cx="210" cy="-134.05" r="210.025" gradientTransform="matrix(1 0 0 -1 0 76)" gradientUnits="userSpaceOnUse">',
-                    "<stop offset='0' style='stop-color:#",
+                    "<style>",
+                    ".color-anim {animation: col 3s infinite;animation-timing-function: ease-in-out;}",
+                    "@keyframes col {0%,71% {stop-color:none} 72% {stop-color:#3E1D3A} 75%,100% {stop-color:none}}",
+                    "</style>",
+                    "<stop offset='0' class='color-anim' style='stop-color:#",
                     stop1,
                     "'/>",
                     "<stop offset='0.66' style='stop-color:#",
                     stop2,
-                    "'/>",
+                    "'><animate attributeName='offset' dur='8s' values='0.64;0.76;0.64' repeatCount='indefinite'/></stop>",
                     "<stop offset='1' style='stop-color:#",
                     stop3,
-                    "'/>",
-                    "</radialGradient>",
-                    '<path fill="url(#gradient)" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
-                    '<path id="Mask" opacity="0.1" fill="#48005E" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
-                    "</g>"
+                    "'><animate attributeName='offset' dur='8s' values='2;1;2' repeatCount='indefinite'/></stop>",
+                    abi.encodePacked(
+                        "</radialGradient>",
+                        '<path fill="url(#gradient)" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
+                        '<path id="Mask" opacity="0.1" fill="#48005E" d="M390,420H30c-16.6,0-30-13.4-30-30V30C0,13.4,13.4,0,30,0h360c16.6,0,30,13.4,30,30v360C420,406.6,406.6,420,390,420z"/>',
+                        "</g>"
+                    )
                 )
             );
     }
