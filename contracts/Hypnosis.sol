@@ -8,15 +8,19 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "./interfaces/IHypnosis.sol";
 import "./interfaces/IHypnosisDescriptor.sol";
+import "./chainlink/VRFConsumerBase.sol";
 
 /// @title Hypnosis NFTs
 /// @notice On-chain generated NFTs
-contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
+contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFConsumerBase {
     /// @dev Price for one Onii
     uint256 private constant _unitPrice = 0.01 ether;
 
     /// @dev Number of sales to increase the price
     uint256 private constant _step = 5000;
+
+    /// @dev Count the number of calls to the create function
+    uint256 private createCall = 0;
 
     /// @dev The token ID onii detail
     mapping(uint256 => Detail) private _detail;
@@ -24,8 +28,25 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     /// @dev The address of the token descriptor contract, which handles generating token URIs.
     address private immutable _tokenDescriptor;
 
-    constructor(address _tokenDescriptor_) ERC721("Hypnosis", "HYPNO") {
+    /// @dev Chainlink keyhash
+    bytes32 internal keyHash;
+
+    /// @dev Chainlink RNG fee
+    uint256 internal fee;
+
+    /// @dev Number received from chainlink RNG
+    uint256 internal randomResult = 0;
+
+    constructor(address _tokenDescriptor_)
+        ERC721("Hypnosis", "HYPNO")
+        VRFConsumerBase(
+            0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B, // VRF Coordinator
+            0x01BE23585060835E02B77ef475b0Cc51aA1e0709 // LINK Token
+        )
+    {
         _tokenDescriptor = _tokenDescriptor_;
+        keyHash = 0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311;
+        fee = 0.1 * 10**18;
     }
 
     // save bytecode by removing implementation of unused method
@@ -41,7 +62,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     function create(uint256 qty) public payable nonReentrant {
         require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
         for (uint256 i; i < qty; i++) {
-            uint256 seed = block.timestamp << (i + 1);
+            uint256 seed = (block.timestamp + randomResult) << (i + 1);
             uint256 nextTokenId = totalSupply() + 1;
             _detail[nextTokenId] = Detail({
                 hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
@@ -76,5 +97,12 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard {
     /// @inheritdoc IHypnosis
     function details(uint256 tokenId) external view override returns (Detail memory detail) {
         detail = _detail[tokenId];
+    }
+
+    /**
+     * Callback function used by VRF Coordinator
+     */
+    function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
+        randomResult = randomness;
     }
 }
