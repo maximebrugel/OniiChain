@@ -138,7 +138,7 @@ library NFTDescriptor {
                     abi.encodePacked(
                         getJsonAttribute("Tatoo", TatooDetail.getItemNameById(params.tatoo), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
-                        getJsonAttribute("Earring", EarringsDetail.getItemNameById(params.earring), false),
+                        getJsonAttribute("Earrings", EarringsDetail.getItemNameById(params.earring), false),
                         getJsonAttribute("Expression", ExpressionDetail.getItemNameById(params.expression), false),
                         getJsonAttribute("Background", BackgroundDetail.getItemNameById(params.background), false),
                         getJsonAttribute("Original", params.original ? "true" : "false", true),
