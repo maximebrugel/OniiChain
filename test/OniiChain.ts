@@ -13,7 +13,7 @@ describe("Unit tests", function () {
     this.signers.admin = signers[0];
   });
 
-  describe("Hypnosis", function () {
+  describe("OniiChain", function () {
     beforeEach(async function () {
       // Deploy libraries
       let accessoryDetailFactory = await hre.ethers.getContractFactory("AccessoryDetail");
@@ -40,8 +40,8 @@ describe("Unit tests", function () {
       let noseDetail = await noseDetailFactory.deploy();
       let tatooDetail = await tatooDetailFactory.deploy();
 
-      // Deploy Hypnosis Descriptor (by linking libraries)
-      let hypnosisDescriptorFactory = await hre.ethers.getContractFactory("HypnosisDescriptor", {
+      // Deploy OniiChainDescriptor (by linking libraries)
+      let oniiChainDescriptorFactory = await hre.ethers.getContractFactory("OniiChainDescriptor", {
         libraries: {
           AccessoryDetail: accessoryDetail.address,
           BackgroundDetail: backgroundDetail.address,
@@ -56,28 +56,28 @@ describe("Unit tests", function () {
           TatooDetail: tatooDetail.address,
         },
       });
-      let hypnosisDescriptor = await hypnosisDescriptorFactory.deploy();
+      let oniiChainDescriptor = await oniiChainDescriptorFactory.deploy();
 
-      // Deploy Hypnosis
-      let hypnosisFactory = await hre.ethers.getContractFactory("Hypnosis");
-      this.hypnosis = await hypnosisFactory.deploy(hypnosisDescriptor.address);
+      // Deploy OniiChain
+      let oniiChainFactory = await hre.ethers.getContractFactory("OniiChain");
+      this.oniiChain = await oniiChainFactory.deploy(oniiChainDescriptor.address);
     });
 
     it("Mint one NFT", async function () {
       this.timeout(400000000); // Big timeout
-      await svgTest(100, this.hypnosis);
+      await svgTest(100, this.oniiChain);
     });
   });
 });
 
-async function svgTest(loop: number, hypnosis: Contract) {
+async function svgTest(loop: number, oniiChain: Contract) {
   let count = 1;
   while (count <= loop) {
     await network.provider.send("evm_increaseTime", [Math.floor(Math.random() * 10000000)]);
     await network.provider.send("evm_mine");
-    await hypnosis.create(1);
-    let detail = await hypnosis.details(count);
-    let nft = await hypnosis.tokenURI(count);
+    await oniiChain.create(1);
+    let detail = await oniiChain.details(count);
+    let nft = await oniiChain.tokenURI(count);
 
     let bufJson = Buffer.from(nft.substring(29), "base64");
     let jsonObj = JSON.parse(bufJson.toString());
@@ -89,15 +89,15 @@ async function svgTest(loop: number, hypnosis: Contract) {
   }
 }
 
-async function scoreTest(loop: number, hypnosis: Contract) {
+async function scoreTest(loop: number, oniiChain: Contract) {
   console.log("Max => 106");
   let count = 0;
   let best = 0;
   while (count < loop) {
     await network.provider.send("evm_increaseTime", [Math.floor(Math.random() * 10000)]);
     await network.provider.send("evm_mine");
-    await hypnosis.create(1);
-    let detail = await hypnosis.details(count + 1);
+    await oniiChain.create(1);
+    let detail = await oniiChain.details(count + 1);
     count++;
     let total =
       detail.hair +

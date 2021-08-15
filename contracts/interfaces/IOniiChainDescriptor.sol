@@ -3,16 +3,16 @@ pragma solidity ^0.8.0;
 
 pragma abicoder v2;
 
-import "./IHypnosis.sol";
+import "./IOniiChain.sol";
 
 /// @title Describes Onii via URI
-interface IHypnosisDescriptor {
+interface IOniiChainDescriptor {
     /// @notice Produces the URI describing a particular Onii (token id)
     /// @dev Note this URI may be a data: URI with the JSON contents directly inlined
-    /// @param hypnosis The hypnosis contract
+    /// @param oniiChain The OniiChain contract
     /// @param tokenId The ID of the token for which to produce a description
     /// @return The URI of the ERC721-compliant metadata
-    function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view returns (string memory);
+    function tokenURI(IOniiChain oniiChain, uint256 tokenId) external view returns (string memory);
 
     /// @notice Generate randomly an ID for the hair item
     /// @param tokenId the current tokenId

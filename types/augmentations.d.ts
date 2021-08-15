@@ -8,7 +8,7 @@ import { Contract } from "ethers";
 
 declare module "mocha" {
   export interface Context {
-    hypnosis: Contract;
+    oniiChain: Contract;
     loadFixture: <T>(fixture: Fixture<T>) => Promise<T>;
     signers: Signers;
   }

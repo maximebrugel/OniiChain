@@ -1,3 +1,3 @@
-# hypnosis
+# OniiChain
 
 On-chain generated NFTs

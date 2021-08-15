@@ -29,7 +29,7 @@ async function main(): Promise<void> {
   let noseDetail = await deployLibrary(noseDetailFactory);
   let tatooDetail = await deployLibrary(tatooDetailFactory);
 
-  let hypnosisDescriptorFactory = await hre.ethers.getContractFactory("HypnosisDescriptor", {
+  let oniiChainDescriptorFactory = await hre.ethers.getContractFactory("OniiChainDescriptor", {
     libraries: {
       AccessoryDetail: accessoryDetail.address,
       BackgroundDetail: backgroundDetail.address,
@@ -44,11 +44,11 @@ async function main(): Promise<void> {
       TatooDetail: tatooDetail.address,
     },
   });
-  let hypnosisDescriptor = await hypnosisDescriptorFactory.deploy();
-  await hypnosisDescriptor.deployed();
+  let oniiChainDescriptor = await oniiChainDescriptorFactory.deploy();
+  await oniiChainDescriptor.deployed();
   await delay(60000);
   await hre.run("verify:verify", {
-    address: hypnosisDescriptor.address,
+    address: oniiChainDescriptor.address,
     libraries: {
       AccessoryDetail: accessoryDetail.address,
       BackgroundDetail: backgroundDetail.address,
@@ -64,14 +64,14 @@ async function main(): Promise<void> {
     },
   });
 
-  // Deploy Hypnosis
-  let hypnosisFactory = await hre.ethers.getContractFactory("Hypnosis");
-  let hypnosis = await hypnosisFactory.deploy(hypnosisDescriptor.address);
-  await hypnosis.deployed();
+  // Deploy OniiChain
+  let oniiChainFactory = await hre.ethers.getContractFactory("OniiChain");
+  let oniiChain = await oniiChainFactory.deploy(oniiChainDescriptor.address);
+  await oniiChain.deployed();
   await delay(60000);
   await hre.run("verify:verify", {
-    address: hypnosis.address,
-    constructorArguments: [hypnosisDescriptor.address],
+    address: oniiChain.address,
+    constructorArguments: [oniiChainDescriptor.address],
   });
 
   console.log("Deploy done");

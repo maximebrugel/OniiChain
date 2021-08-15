@@ -3,16 +3,15 @@ pragma solidity ^0.8.0;
 
 pragma abicoder v2;
 
-import "./interfaces/IHypnosisDescriptor.sol";
-import "./interfaces/IHypnosis.sol";
+import "./interfaces/IOniiChainDescriptor.sol";
+import "./interfaces/IOniiChain.sol";
 import "./libraries/NFTDescriptor.sol";
 import "./libraries/DetailHelper.sol";
 import "base64-sol/base64.sol";
-import "./Hypnosis.sol";
 
 /// @title Describes Onii
 /// @notice Produces a string containing the data URI for a JSON metadata string
-contract HypnosisDescriptor is IHypnosisDescriptor {
+contract OniiChainDescriptor is IOniiChainDescriptor {
     /// @dev Max value for defining probabilities
     uint256 internal constant MAX = 100000;
 
@@ -103,9 +102,9 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
         0
     ];
 
-    /// @inheritdoc IHypnosisDescriptor
-    function tokenURI(IHypnosis hypnosis, uint256 tokenId) external view override returns (string memory) {
-        NFTDescriptor.SVGParams memory params = getSVGParams(hypnosis, tokenId);
+    /// @inheritdoc IOniiChainDescriptor
+    function tokenURI(IOniiChain oniiChain, uint256 tokenId) external view override returns (string memory) {
+        NFTDescriptor.SVGParams memory params = getSVGParams(oniiChain, tokenId);
         params.background = getBackgroundId(params);
         string memory image = Base64.encode(bytes(NFTDescriptor.generateSVGImage(params)));
         string memory name = NFTDescriptor.generateName(params, tokenId);
@@ -136,59 +135,59 @@ contract HypnosisDescriptor is IHypnosisDescriptor {
             );
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateHairId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, HAIR_ITEMS, this.generateHairId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateEyeId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, EYE_ITEMS, this.generateEyeId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateEyebrowId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, EYEBROW_ITEMS, this.generateEyebrowId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateNoseId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, NOSE_ITEMS, this.generateNoseId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateMouthId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, MOUTH_ITEMS, this.generateMouthId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateTatooId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, TATOO_ITEMS, this.generateTatooId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateEarringsId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, EARRINGS_ITEMS, this.generateEarringsId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateAccessoryId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, ACCESSORY_ITEMS, this.generateAccessoryId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateExpressionId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, EXPRESSION_ITEMS, this.generateExpressionId.selector, tokenId);
     }
 
-    /// @inheritdoc IHypnosisDescriptor
+    /// @inheritdoc IOniiChainDescriptor
     function generateSkinId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
         return DetailHelper.generate(MAX, seed, SKIN_ITEMS, this.generateSkinId.selector, tokenId);
     }
 
-    /// @dev Get SVGParams from Hypnosis.Detail
-    function getSVGParams(IHypnosis hypnosis, uint256 tokenId) private view returns (NFTDescriptor.SVGParams memory) {
-        IHypnosis.Detail memory detail = hypnosis.details(tokenId);
+    /// @dev Get SVGParams from OniiChain.Detail
+    function getSVGParams(IOniiChain oniiChain, uint256 tokenId) private view returns (NFTDescriptor.SVGParams memory) {
+        IOniiChain.Detail memory detail = oniiChain.details(tokenId);
         return
             NFTDescriptor.SVGParams({
                 hair: detail.hair,

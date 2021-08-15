@@ -66,6 +66,6 @@ library DetailHelper {
                 return SafeCast.toUint8(i + 1);
             }
         }
-        revert("HypnosisDescriptor::pickItems: No item");
+        revert("DetailHelper::pickItems: No item");
     }
 }

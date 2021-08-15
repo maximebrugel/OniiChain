@@ -6,13 +6,13 @@ pragma abicoder v2;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "./interfaces/IHypnosis.sol";
-import "./interfaces/IHypnosisDescriptor.sol";
+import "./interfaces/IOniiChain.sol";
+import "./interfaces/IOniiChainDescriptor.sol";
 import "./chainlink/VRFConsumerBase.sol";
 
-/// @title Hypnosis NFTs
+/// @title OniiChain NFTs
 /// @notice On-chain generated NFTs
-contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFConsumerBase {
+contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VRFConsumerBase {
     /// @dev Price for one Onii
     uint256 private constant _unitPrice = 0.01 ether;
 
@@ -44,7 +44,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
     uint256 public chainlinkRate = 20;
 
     constructor(address _tokenDescriptor_)
-        ERC721("Hypnosis", "HYPNO")
+        ERC721("OniiChain", "ONII")
         VRFConsumerBase(
             0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B, // VRF Coordinator
             0x01BE23585060835E02B77ef475b0Cc51aA1e0709 // LINK Token
@@ -60,7 +60,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
 
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-        return IHypnosisDescriptor(_tokenDescriptor).tokenURI(this, tokenId);
+        return IOniiChainDescriptor(_tokenDescriptor).tokenURI(this, tokenId);
     }
 
     /// @notice Create randomly an Onii
@@ -69,7 +69,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
         require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
         createCall++;
 
-        // Every 20 calls, update randomResult
+        // Every "chainlinkRate" calls, update randomResult
         if (createCall % chainlinkRate == 0 && LINK.balanceOf(address(this)) >= fee) {
             requestRandomness(keyHash, fee);
         }
@@ -78,16 +78,16 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
             uint256 seed = (block.timestamp + randomResult) << (i + 1);
             uint256 nextTokenId = totalSupply() + 1;
             Detail memory newDetail = Detail({
-                hair: IHypnosisDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
-                eye: IHypnosisDescriptor(_tokenDescriptor).generateEyeId(nextTokenId, seed),
-                eyebrow: IHypnosisDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId, seed),
-                nose: IHypnosisDescriptor(_tokenDescriptor).generateNoseId(nextTokenId, seed),
-                mouth: IHypnosisDescriptor(_tokenDescriptor).generateMouthId(nextTokenId, seed),
-                tatoo: IHypnosisDescriptor(_tokenDescriptor).generateTatooId(nextTokenId, seed),
-                earrings: IHypnosisDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId, seed),
-                accessory: IHypnosisDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
-                expression: IHypnosisDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
-                skin: IHypnosisDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
+                hair: IOniiChainDescriptor(_tokenDescriptor).generateHairId(nextTokenId, seed),
+                eye: IOniiChainDescriptor(_tokenDescriptor).generateEyeId(nextTokenId, seed),
+                eyebrow: IOniiChainDescriptor(_tokenDescriptor).generateEyebrowId(nextTokenId, seed),
+                nose: IOniiChainDescriptor(_tokenDescriptor).generateNoseId(nextTokenId, seed),
+                mouth: IOniiChainDescriptor(_tokenDescriptor).generateMouthId(nextTokenId, seed),
+                tatoo: IOniiChainDescriptor(_tokenDescriptor).generateTatooId(nextTokenId, seed),
+                earrings: IOniiChainDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId, seed),
+                accessory: IOniiChainDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
+                expression: IOniiChainDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
+                skin: IOniiChainDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
                 original: true,
                 timestamp: block.timestamp,
                 creator: msg.sender
@@ -115,7 +115,7 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
         require(payable(0x838D23a8A17adaa6866969b86D35Ac0941C67510).send(address(this).balance));
     }
 
-    /// @inheritdoc IHypnosis
+    /// @inheritdoc IOniiChain
     function details(uint256 tokenId) external view override returns (Detail memory detail) {
         detail = _detail[tokenId];
     }
