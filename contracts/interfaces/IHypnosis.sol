@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 pragma abicoder v2;
 
+/// @title Hypnosis NFTs Interface
 interface IHypnosis {
     /// @notice Details about the Onii
     struct Detail {
