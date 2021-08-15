@@ -15,7 +15,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     /// @dev Max value for defining probabilities
     uint256 internal constant MAX = 100000;
 
-    uint256[] internal BACKGROUND_ITEMS = [750, 650, 575, 475, 400, 350, 300, 0];
+    uint256[] internal BACKGROUND_ITEMS = [750, 650, 575, 485, 400, 350, 300, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
     uint256[] internal TATOO_ITEMS = [25000, 18000, 12000, 6000, 3000, 1000, 40, 10, 0];
