@@ -110,7 +110,13 @@ library NFTDescriptor {
             !original
                 ? string(
                     abi.encodePacked(
-                        '<text transform="matrix(0.9345 -0.3561 0.3561 0.9345 278.3762 377.9179)" font-family="Anonymous Pro" fill="#FFAA73" font-size="9px">COPY</text>'
+                        '<g id="Copy">',
+                        '<path fill="none" stroke="#F26559" stroke-width="0.5" stroke-miterlimit="10" d="M239.5,300.6c-4.9,1.8-5.9,8.1,1.3,4.1"/>',
+                        '<path fill="none" stroke="#F26559" stroke-width="0.5" stroke-miterlimit="10" d="M242.9,299.5c-2.6,0.8-1.8,4.3,0.8,4.2 C246.3,303.1,245.6,298.7,242.9,299.5"/>',
+                        '<path fill="none" stroke="#F26559" stroke-width="0.5" stroke-miterlimit="10" d="M247.5,302.9c0.2-1.6-1.4-4-0.8-5.4 c0.4-1.2,2.5-1.4,3.2-0.3c0.1,1.5-0.9,2.7-2.3,2.5"/>',
+                        '<path fill="none" stroke="#F26559" stroke-width="0.5" stroke-miterlimit="10" d="M250.6,295.4c1.1-0.1,2.2,0,3.3,0.1 c0.5-0.8,0.7-1.7,0.5-2.7"/>',
+                        '<path fill="none" stroke="#F26559" stroke-width="0.5" stroke-miterlimit="10" d="M252.5,299.1c0.5-1.2,1.2-2.3,1.4-3.5"/>',
+                        "</g>"
                     )
                 )
                 : "";
