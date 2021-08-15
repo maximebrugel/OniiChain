@@ -136,7 +136,7 @@ library NFTDescriptor {
                     getJsonAttribute("Eyes", EyesDetail.getItemNameById(params.eye), false),
                     getJsonAttribute("Eyebrown", EyebrowDetail.getItemNameById(params.eyebrow), false),
                     abi.encodePacked(
-                        getJsonAttribute("Tatoo", TatooDetail.getItemNameById(params.tatoo), false),
+                        getJsonAttribute("Tattoo", TatooDetail.getItemNameById(params.tatoo), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
                         getJsonAttribute("Earrings", EarringsDetail.getItemNameById(params.earring), false),
                         getJsonAttribute("Expression", ExpressionDetail.getItemNameById(params.expression), false),
