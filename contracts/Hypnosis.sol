@@ -40,6 +40,9 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
     /// @dev Number received from chainlink RNG
     uint256 internal randomResult = 0;
 
+    /// @dev Rate to request RN to chainlink
+    uint256 public chainlinkRate = 20;
+
     constructor(address _tokenDescriptor_)
         ERC721("Hypnosis", "HYPNO")
         VRFConsumerBase(
@@ -64,6 +67,13 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
     /// @param qty The quantity to buy
     function create(uint256 qty) public payable nonReentrant {
         require(msg.value >= getUnitPrice() * qty, "Ether sent is not correct");
+        createCall++;
+
+        // Every 20 calls, update randomResult
+        if (createCall % chainlinkRate == 0 && LINK.balanceOf(address(this)) >= fee) {
+            requestRandomness(keyHash, fee);
+        }
+
         for (uint256 i; i < qty; i++) {
             uint256 seed = (block.timestamp + randomResult) << (i + 1);
             uint256 nextTokenId = totalSupply() + 1;
@@ -93,6 +103,11 @@ contract Hypnosis is ERC721Enumerable, Ownable, IHypnosis, ReentrancyGuard, VRFC
     /// @return The Onii price
     function getUnitPrice() public view returns (uint256) {
         return ((totalSupply() / _step) * _unitPrice) + _unitPrice;
+    }
+
+    function updateChainlinkRate(uint256 _chainlinkRate) external onlyOwner {
+        require(_chainlinkRate > 0, "Must be > 0");
+        chainlinkRate = _chainlinkRate;
     }
 
     /// @notice Send funds from sales to the owner
