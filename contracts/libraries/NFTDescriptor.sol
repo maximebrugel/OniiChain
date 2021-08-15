@@ -138,7 +138,8 @@ library NFTDescriptor {
                         getJsonAttribute("Tatoo", TatooDetail.getItemNameById(params.tatoo), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
                         getJsonAttribute("Earring", EarringsDetail.getItemNameById(params.earring), false),
-                        getJsonAttribute("Expression", EarringsDetail.getItemNameById(params.expression), true),
+                        getJsonAttribute("Expression", EarringsDetail.getItemNameById(params.expression), false),
+                        getJsonAttribute("Original", params.original ? "true" : "false", true),
                         "]"
                     )
                 )
