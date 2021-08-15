@@ -17,6 +17,7 @@ import "./details/ExpressionDetail.sol";
 import "./DetailHelper.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
+/// @notice Helper to generate SVGs
 library NFTDescriptor {
     struct SVGParams {
         uint8 hair;
@@ -138,7 +139,8 @@ library NFTDescriptor {
                         getJsonAttribute("Tatoo", TatooDetail.getItemNameById(params.tatoo), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
                         getJsonAttribute("Earring", EarringsDetail.getItemNameById(params.earring), false),
-                        getJsonAttribute("Expression", EarringsDetail.getItemNameById(params.expression), false),
+                        getJsonAttribute("Expression", ExpressionDetail.getItemNameById(params.expression), false),
+                        getJsonAttribute("Background", BackgroundDetail.getItemNameById(params.background), false),
                         getJsonAttribute("Original", params.original ? "true" : "false", true),
                         "]"
                     )
