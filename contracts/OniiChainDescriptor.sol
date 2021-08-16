@@ -15,14 +15,14 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     /// @dev Max value for defining probabilities
     uint256 internal constant MAX = 100000;
 
-    uint256[] internal BACKGROUND_ITEMS = [750, 650, 575, 485, 400, 350, 300, 0];
+    uint256[] internal BACKGROUND_ITEMS = [4150, 3500, 3180, 2900, 2400, 1900, 1200, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
-    uint256[] internal TATOO_ITEMS = [25000, 18000, 12000, 6000, 3000, 1000, 40, 10, 0];
+    uint256[] internal TATOO_ITEMS = [50000, 30000, 15000, 8000, 3000, 1000, 40, 10, 0];
     uint256[] internal EYEBROW_ITEMS = [50000, 20000, 0];
-    uint256[] internal EXPRESSION_ITEMS = [25000, 17000, 10000, 6000, 3000, 1000, 0];
-    uint256[] internal EARRINGS_ITEMS = [25000, 17000, 10000, 5000, 1000, 100, 30, 0];
-    uint256[] internal ACCESSORY_ITEMS = [10000, 3000, 30, 10, 0];
+    uint256[] internal EXPRESSION_ITEMS = [50000, 30000, 15000, 6000, 3000, 1000, 0];
+    uint256[] internal EARRINGS_ITEMS = [50000, 30000, 15000, 5000, 1000, 100, 30, 0];
+    uint256[] internal ACCESSORY_ITEMS = [20000, 10000, 50, 10, 0];
     uint256[] internal MOUTH_ITEMS = [
         80000,
         63000,
@@ -224,11 +224,13 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
 
     /// @dev Get item score based on his probability
     function itemScoreProba(uint8 item, uint256[] memory ITEMS) private pure returns (uint256) {
-        return ((item == 1 ? MAX : ITEMS[item - 2]) - ITEMS[item - 1]) / 1000;
+        uint256 raw = ((item == 1 ? MAX : ITEMS[item - 2]) - ITEMS[item - 1]);
+        return ((raw >= 1000) ? raw * 6 : raw) / 1000;
     }
 
     /// @dev Get item score based on his index
     function itemScorePosition(uint8 item, uint256[] memory ITEMS) private pure returns (uint256) {
-        return ITEMS[item - 1] / 1000;
+        uint256 raw = ITEMS[item - 1];
+        return ((raw >= 1000) ? raw * 6 : raw) / 1000;
     }
 }
