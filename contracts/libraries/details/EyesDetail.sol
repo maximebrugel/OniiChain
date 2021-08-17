@@ -95,8 +95,8 @@ library EyesDetail {
                 string(
                     abi.encodePacked(
                         eyesNoFill(Colors.WHITE),
-                        '<path fill="#FFFFFF" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M169.2,204.2c0.1,11.3-14.1,11.3-13.9,0C155.1,192.9,169.3,192.9,169.2,204.2z"/>',
-                        '<path fill="#FFFFFF" stroke="#000000" stroke-width="0.25" stroke-miterlimit="10" d="M243.1,204.3c0.1,11.3-14.1,11.3-13.9,0C229,193,243.2,193,243.1,204.3z"/>'
+                        '<path fill="#FFEE00" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M161.4,195.1c1.4,7.4,1.4,7.3,8.8,8.8 c-7.4,1.4-7.3,1.4-8.8,8.8c-1.4-7.4-1.4-7.3-8.8-8.8C160,202.4,159.9,202.5,161.4,195.1z"/>',
+                        '<path fill="#FFEE00" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M236.1,194.9c1.4,7.4,1.4,7.3,8.8,8.8 c-7.4,1.4-7.3,1.4-8.8,8.8c-1.4-7.4-1.4-7.3-8.8-8.8C234.8,202.3,234.7,202.3,236.1,194.9z"/>'
                     )
                 )
             );
