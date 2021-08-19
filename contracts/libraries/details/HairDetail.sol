@@ -6,7 +6,7 @@ pragma abicoder v2;
 import "base64-sol/base64.sol";
 import "./constants/Colors.sol";
 
-/// @title Eyes SVG generator
+/// @title Hair SVG generator
 library HairDetail {
     /// @dev Hair N°1 => Classic Brown
     function item_1() public pure returns (string memory) {
