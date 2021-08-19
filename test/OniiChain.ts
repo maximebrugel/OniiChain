@@ -20,25 +20,25 @@ describe("Unit tests", function () {
       let backgroundDetailFactory = await hre.ethers.getContractFactory("BackgroundDetail");
       let bodyDetailFactory = await hre.ethers.getContractFactory("BodyDetail");
       let earringsDetailFactory = await hre.ethers.getContractFactory("EarringsDetail");
-      let expressionDetailFactory = await hre.ethers.getContractFactory("ExpressionDetail");
+      let maskDetailFactory = await hre.ethers.getContractFactory("MaskDetail");
       let eyebrowDetailFactory = await hre.ethers.getContractFactory("EyebrowDetail");
       let eyesDetailFactory = await hre.ethers.getContractFactory("EyesDetail");
       let hairDetailFactory = await hre.ethers.getContractFactory("HairDetail");
       let mouthDetailFactory = await hre.ethers.getContractFactory("MouthDetail");
       let noseDetailFactory = await hre.ethers.getContractFactory("NoseDetail");
-      let tatooDetailFactory = await hre.ethers.getContractFactory("TatooDetail");
+      let markDetailFactory = await hre.ethers.getContractFactory("MarkDetail");
 
       let accessoryDetail = await accessoryDetailFactory.deploy();
       let backgroundDetail = await backgroundDetailFactory.deploy();
       let bodyDetail = await bodyDetailFactory.deploy();
       let earringsDetail = await earringsDetailFactory.deploy();
-      let expressionDetail = await expressionDetailFactory.deploy();
+      let maskDetail = await maskDetailFactory.deploy();
       let eyebrowDetail = await eyebrowDetailFactory.deploy();
       let eyesDetail = await eyesDetailFactory.deploy();
       let hairDetail = await hairDetailFactory.deploy();
       let mouthDetail = await mouthDetailFactory.deploy();
       let noseDetail = await noseDetailFactory.deploy();
-      let tatooDetail = await tatooDetailFactory.deploy();
+      let markDetail = await markDetailFactory.deploy();
 
       // Deploy OniiChainDescriptor (by linking libraries)
       let oniiChainDescriptorFactory = await hre.ethers.getContractFactory("OniiChainDescriptor", {
@@ -47,13 +47,13 @@ describe("Unit tests", function () {
           BackgroundDetail: backgroundDetail.address,
           BodyDetail: bodyDetail.address,
           EarringsDetail: earringsDetail.address,
-          ExpressionDetail: expressionDetail.address,
+          MaskDetail: maskDetail.address,
           EyebrowDetail: eyebrowDetail.address,
           EyesDetail: eyesDetail.address,
           HairDetail: hairDetail.address,
           MouthDetail: mouthDetail.address,
           NoseDetail: noseDetail.address,
-          TatooDetail: tatooDetail.address,
+          MarkDetail: markDetail.address,
         },
       });
       let oniiChainDescriptor = await oniiChainDescriptorFactory.deploy();
