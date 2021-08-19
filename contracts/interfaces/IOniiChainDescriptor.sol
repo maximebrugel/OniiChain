@@ -44,11 +44,11 @@ interface IOniiChainDescriptor {
     /// @return the mouth item id
     function generateMouthId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
-    /// @notice Generate randomly an ID for the tatoo item
+    /// @notice Generate randomly an ID for the mark item
     /// @param tokenId the current tokenId
     /// @param seed Used for the initialization of the number generator.
-    /// @return the tatoo item id
-    function generateTatooId(uint256 tokenId, uint256 seed) external view returns (uint8);
+    /// @return the mark item id
+    function generateMarkId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly an ID for the earrings item
     /// @param tokenId the current tokenId

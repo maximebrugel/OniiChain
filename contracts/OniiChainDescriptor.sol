@@ -18,7 +18,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     uint256[] internal BACKGROUND_ITEMS = [4150, 3500, 3180, 2900, 2400, 1900, 1200, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
-    uint256[] internal TATOO_ITEMS = [50000, 30000, 15000, 8000, 3000, 1000, 40, 10, 0];
+    uint256[] internal MARK_ITEMS = [50000, 30000, 15000, 8000, 3000, 1000, 40, 10, 0];
     uint256[] internal EYEBROW_ITEMS = [50000, 20000, 0];
     uint256[] internal EXPRESSION_ITEMS = [50000, 30000, 15000, 6000, 3000, 1000, 0];
     uint256[] internal EARRINGS_ITEMS = [50000, 30000, 15000, 5000, 1000, 100, 30, 0];
@@ -161,8 +161,8 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     }
 
     /// @inheritdoc IOniiChainDescriptor
-    function generateTatooId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, seed, TATOO_ITEMS, this.generateTatooId.selector, tokenId);
+    function generateMarkId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, MARK_ITEMS, this.generateMarkId.selector, tokenId);
     }
 
     /// @inheritdoc IOniiChainDescriptor
@@ -195,7 +195,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
                 eyebrow: detail.eyebrow,
                 nose: detail.nose,
                 mouth: detail.mouth,
-                tatoo: detail.tatoo,
+                mark: detail.mark,
                 earring: detail.earrings,
                 accessory: detail.accessory,
                 expression: detail.expression,
@@ -216,7 +216,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
             (itemScoreProba(params.skin, SKIN_ITEMS) / 2) +
             itemScoreProba(params.skin, SKIN_ITEMS) +
             itemScoreProba(params.nose, NOSE_ITEMS) +
-            itemScoreProba(params.tatoo, TATOO_ITEMS) +
+            itemScoreProba(params.mark, MARK_ITEMS) +
             itemScorePosition(params.eye, EYE_ITEMS) +
             itemScoreProba(params.eyebrow, EYEBROW_ITEMS);
         return DetailHelper.pickItems(score, BACKGROUND_ITEMS);

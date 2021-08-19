@@ -10,7 +10,7 @@ import "./details/MouthDetail.sol";
 import "./details/NoseDetail.sol";
 import "./details/EyesDetail.sol";
 import "./details/EyebrowDetail.sol";
-import "./details/TatooDetail.sol";
+import "./details/MarkDetail.sol";
 import "./details/AccessoryDetail.sol";
 import "./details/EarringsDetail.sol";
 import "./details/ExpressionDetail.sol";
@@ -25,7 +25,7 @@ library NFTDescriptor {
         uint8 eyebrow;
         uint8 nose;
         uint8 mouth;
-        uint8 tatoo;
+        uint8 mark;
         uint8 earring;
         uint8 accessory;
         uint8 expression;
@@ -60,7 +60,7 @@ library NFTDescriptor {
             string(
                 abi.encodePacked(
                     DetailHelper.getDetailSVG(address(BodyDetail), params.skin),
-                    DetailHelper.getDetailSVG(address(TatooDetail), params.tatoo),
+                    DetailHelper.getDetailSVG(address(MarkDetail), params.mark),
                     DetailHelper.getDetailSVG(address(MouthDetail), params.mouth),
                     DetailHelper.getDetailSVG(address(NoseDetail), params.nose),
                     DetailHelper.getDetailSVG(address(EyesDetail), params.eye),
@@ -136,7 +136,7 @@ library NFTDescriptor {
                     getJsonAttribute("Eyes", EyesDetail.getItemNameById(params.eye), false),
                     getJsonAttribute("Eyebrow", EyebrowDetail.getItemNameById(params.eyebrow), false),
                     abi.encodePacked(
-                        getJsonAttribute("Tattoo", TatooDetail.getItemNameById(params.tatoo), false),
+                        getJsonAttribute("Mark", MarkDetail.getItemNameById(params.mark), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
                         getJsonAttribute("Earrings", EarringsDetail.getItemNameById(params.earring), false),
                         getJsonAttribute("Expression", ExpressionDetail.getItemNameById(params.expression), false),

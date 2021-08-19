@@ -12,7 +12,7 @@ interface IOniiChain {
         uint8 eyebrow;
         uint8 nose;
         uint8 mouth;
-        uint8 tatoo;
+        uint8 mark;
         uint8 earrings;
         uint8 accessory;
         uint8 expression;

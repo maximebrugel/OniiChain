@@ -5,14 +5,14 @@ pragma abicoder v2;
 
 import "base64-sol/base64.sol";
 
-/// @title Tatoo SVG generator
-library TatooDetail {
-    /// @dev Tatoo N°1 => Nothing
+/// @title Mark SVG generator
+library MarkDetail {
+    /// @dev Mark N°1 => Nothing
     function item_1() public pure returns (string memory) {
         return "";
     }
 
-    /// @dev Tatoo N°2 => Freckle
+    /// @dev Mark N°2 => Freckle
     function item_2() public pure returns (string memory) {
         return
             base(
@@ -31,7 +31,7 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°3 => Chin
+    /// @dev Mark N°3 => Chin
     function item_3() public pure returns (string memory) {
         return
             base(
@@ -43,7 +43,7 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°4 => Moon
+    /// @dev Mark N°4 => Moon
     function item_4() public pure returns (string memory) {
         return
             base(
@@ -55,12 +55,12 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°5 => Dot
+    /// @dev Mark N°5 => Dot
     function item_5() public pure returns (string memory) {
         return base(string(abi.encodePacked('<circle cx="260.8" cy="215.8" r="2.1"/>')));
     }
 
-    /// @dev Tatoo N°6 => Scars 1
+    /// @dev Mark N°6 => Scars 1
     function item_6() public pure returns (string memory) {
         return
             base(
@@ -72,7 +72,7 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°7 => Scars 2
+    /// @dev Mark N°7 => Scars 2
     function item_7() public pure returns (string memory) {
         return
             base(
@@ -88,7 +88,7 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°8 => Ether
+    /// @dev Mark N°8 => Ether
     function item_8() public pure returns (string memory) {
         return
             base(
@@ -102,7 +102,7 @@ library TatooDetail {
             );
     }
 
-    /// @dev Tatoo N°9 => Tori
+    /// @dev Mark N°9 => Tori
     function item_9() public pure returns (string memory) {
         return
             base(
@@ -119,8 +119,8 @@ library TatooDetail {
             );
     }
 
-    /// @notice Return the tatoo name of the given id
-    /// @param id The tatoo Id
+    /// @notice Return the mark name of the given id
+    /// @param id The mark Id
     function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
@@ -146,6 +146,6 @@ library TatooDetail {
 
     /// @dev The base SVG for the hair
     function base(string memory children) private pure returns (string memory) {
-        return string(abi.encodePacked('<g id="Tatoo">', children, "</g>"));
+        return string(abi.encodePacked('<g id="Mark">', children, "</g>"));
     }
 }
