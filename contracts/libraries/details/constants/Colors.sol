@@ -7,7 +7,7 @@ pragma abicoder v2;
 library Colors {
     string internal constant BLACK = "33333D";
     string internal constant BLACK_DEEP = "000000";
-    string internal constant BLUE = "18D2F5";
+    string internal constant BLUE = "7FBCFF";
     string internal constant BROWN = "735742";
     string internal constant GRAY = "7F8B8C";
     string internal constant GREEN = "2FC47A";

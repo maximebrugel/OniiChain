@@ -13,7 +13,7 @@ import "./details/EyebrowDetail.sol";
 import "./details/MarkDetail.sol";
 import "./details/AccessoryDetail.sol";
 import "./details/EarringsDetail.sol";
-import "./details/ExpressionDetail.sol";
+import "./details/MaskDetail.sol";
 import "./DetailHelper.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
@@ -28,7 +28,7 @@ library NFTDescriptor {
         uint8 mark;
         uint8 earring;
         uint8 accessory;
-        uint8 expression;
+        uint8 mask;
         uint8 background;
         uint8 skin;
         bool original;
@@ -46,7 +46,7 @@ library NFTDescriptor {
                     generateSVGFace(params),
                     DetailHelper.getDetailSVG(address(EarringsDetail), params.earring),
                     DetailHelper.getDetailSVG(address(HairDetail), params.hair),
-                    DetailHelper.getDetailSVG(address(ExpressionDetail), params.expression),
+                    DetailHelper.getDetailSVG(address(MaskDetail), params.mask),
                     DetailHelper.getDetailSVG(address(AccessoryDetail), params.accessory),
                     generateCopy(params.original),
                     "</svg>"
@@ -139,7 +139,7 @@ library NFTDescriptor {
                         getJsonAttribute("Mark", MarkDetail.getItemNameById(params.mark), false),
                         getJsonAttribute("Accessory", AccessoryDetail.getItemNameById(params.accessory), false),
                         getJsonAttribute("Earrings", EarringsDetail.getItemNameById(params.earring), false),
-                        getJsonAttribute("Expression", ExpressionDetail.getItemNameById(params.expression), false),
+                        getJsonAttribute("Mask", MaskDetail.getItemNameById(params.mask), false),
                         getJsonAttribute("Background", BackgroundDetail.getItemNameById(params.background), false),
                         getJsonAttribute("Original", params.original ? "true" : "false", true),
                         "]"

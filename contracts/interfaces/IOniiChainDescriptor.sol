@@ -62,11 +62,11 @@ interface IOniiChainDescriptor {
     /// @return the accessory item id
     function generateAccessoryId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
-    /// @notice Generate randomly an ID for the expression item
+    /// @notice Generate randomly an ID for the mask item
     /// @param tokenId the current tokenId
     /// @param seed Used for the initialization of the number generator.
-    /// @return the expression item id
-    function generateExpressionId(uint256 tokenId, uint256 seed) external view returns (uint8);
+    /// @return the mask item id
+    function generateMaskId(uint256 tokenId, uint256 seed) external view returns (uint8);
 
     /// @notice Generate randomly the skin colors
     /// @param tokenId the current tokenId

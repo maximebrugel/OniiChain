@@ -86,7 +86,7 @@ contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VR
                 mark: IOniiChainDescriptor(_tokenDescriptor).generateMarkId(nextTokenId, seed),
                 earrings: IOniiChainDescriptor(_tokenDescriptor).generateEarringsId(nextTokenId, seed),
                 accessory: IOniiChainDescriptor(_tokenDescriptor).generateAccessoryId(nextTokenId, seed),
-                expression: IOniiChainDescriptor(_tokenDescriptor).generateExpressionId(nextTokenId, seed),
+                mask: IOniiChainDescriptor(_tokenDescriptor).generateMaskId(nextTokenId, seed),
                 skin: IOniiChainDescriptor(_tokenDescriptor).generateSkinId(nextTokenId, seed),
                 original: true,
                 timestamp: block.timestamp,
@@ -138,7 +138,7 @@ contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VR
                 detail.mark,
                 detail.earrings,
                 detail.accessory,
-                detail.expression,
+                detail.mask,
                 detail.skin
             )
         );

@@ -7,7 +7,7 @@ import "base64-sol/base64.sol";
 
 /// @title Accessory SVG generator
 library AccessoryDetail {
-    /// @dev Accessory N°1 => Nothing
+    /// @dev Accessory N°1 => Classic
     function item_1() public pure returns (string memory) {
         return "";
     }
@@ -75,7 +75,7 @@ library AccessoryDetail {
     function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
-            name = "Nothing";
+            name = "Classic";
         } else if (id == 2) {
             name = "Glasses";
         } else if (id == 3) {

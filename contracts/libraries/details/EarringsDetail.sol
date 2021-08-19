@@ -7,7 +7,7 @@ import "base64-sol/base64.sol";
 
 /// @title Earrings SVG generator
 library EarringsDetail {
-    /// @dev Earrings N°1 => Nothing
+    /// @dev Earrings N°1 => Classic
     function item_1() public pure returns (string memory) {
         return "";
     }
@@ -135,7 +135,7 @@ library EarringsDetail {
     function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
-            name = "Nothing";
+            name = "Classic";
         } else if (id == 2) {
             name = "Circle";
         } else if (id == 3) {

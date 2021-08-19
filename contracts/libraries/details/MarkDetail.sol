@@ -7,7 +7,7 @@ import "base64-sol/base64.sol";
 
 /// @title Mark SVG generator
 library MarkDetail {
-    /// @dev Mark N°1 => Nothing
+    /// @dev Mark N°1 => Classic
     function item_1() public pure returns (string memory) {
         return "";
     }
@@ -188,7 +188,7 @@ library MarkDetail {
     function getItemNameById(uint8 id) public pure returns (string memory name) {
         name = "";
         if (id == 1) {
-            name = "Nothing";
+            name = "Classic";
         } else if (id == 2) {
             name = "Blush Cheeks";
         } else if (id == 3) {

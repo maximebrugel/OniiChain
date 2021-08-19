@@ -15,7 +15,7 @@ interface IOniiChain {
         uint8 mark;
         uint8 earrings;
         uint8 accessory;
-        uint8 expression;
+        uint8 mask;
         uint8 skin;
         bool original;
         uint256 timestamp;

@@ -20,7 +20,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     uint256[] internal NOSE_ITEMS = [10, 0];
     uint256[] internal MARK_ITEMS = [50000, 30000, 15000, 8000, 3000, 1000, 40, 10, 0];
     uint256[] internal EYEBROW_ITEMS = [50000, 20000, 0];
-    uint256[] internal EXPRESSION_ITEMS = [50000, 30000, 15000, 6000, 3000, 1000, 0];
+    uint256[] internal MASK_ITEMS = [50000, 30000, 15000, 6000, 3000, 1000, 0];
     uint256[] internal EARRINGS_ITEMS = [50000, 30000, 15000, 5000, 1000, 100, 30, 0];
     uint256[] internal ACCESSORY_ITEMS = [20000, 10000, 50, 10, 0];
     uint256[] internal MOUTH_ITEMS = [
@@ -176,8 +176,8 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     }
 
     /// @inheritdoc IOniiChainDescriptor
-    function generateExpressionId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
-        return DetailHelper.generate(MAX, seed, EXPRESSION_ITEMS, this.generateExpressionId.selector, tokenId);
+    function generateMaskId(uint256 tokenId, uint256 seed) external view override returns (uint8) {
+        return DetailHelper.generate(MAX, seed, MASK_ITEMS, this.generateMaskId.selector, tokenId);
     }
 
     /// @inheritdoc IOniiChainDescriptor
@@ -198,7 +198,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
                 mark: detail.mark,
                 earring: detail.earrings,
                 accessory: detail.accessory,
-                expression: detail.expression,
+                mask: detail.mask,
                 skin: detail.skin,
                 original: detail.original,
                 background: 0,
@@ -211,7 +211,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
         uint256 score = itemScorePosition(params.hair, HAIR_ITEMS) +
             itemScoreProba(params.accessory, ACCESSORY_ITEMS) +
             itemScoreProba(params.earring, EARRINGS_ITEMS) +
-            itemScoreProba(params.expression, EXPRESSION_ITEMS) +
+            itemScoreProba(params.mask, MASK_ITEMS) +
             itemScorePosition(params.mouth, MOUTH_ITEMS) +
             (itemScoreProba(params.skin, SKIN_ITEMS) / 2) +
             itemScoreProba(params.skin, SKIN_ITEMS) +
