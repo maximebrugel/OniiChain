@@ -14,32 +14,31 @@ library EarringsDetail {
 
     /// @dev Earrings N°2 => Circle
     function item_2() public pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<ellipse cx="135.1" cy="243.2" rx="3" ry="3.4"/>',
-                        '<ellipse cx="286.1" cy="243.2" rx="3.3" ry="3.4"/>'
-                    )
-                )
-            );
+        return base(circle("000000"));
     }
 
-    /// @dev Earrings N°3 => Ring
+    /// @dev Earrings N°3 => Circle Silver
     function item_3() public pure returns (string memory) {
-        return
-            base(
-                string(
-                    abi.encodePacked(
-                        '<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M283.5,246c0,0-4.2,2-3.1,6.1c1,4.1,5.1,3.6,5.4,3.5s3.1-0.9,3-5"/>',
-                        '<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M134.3,244.7c0,0-4.2,2-3.1,6.1c1,4.1,5.1,3.6,5.4,3.5c0.3-0.1,3.1-0.9,3-5"/>'
-                    )
-                )
-            );
+        return base(circle("C7D2D4"));
     }
 
-    /// @dev Earrings N°4 => Heart
+    /// @dev Earrings N°4 => Ring
     function item_4() public pure returns (string memory) {
+        return base(ring("000000"));
+    }
+
+    /// @dev Earrings N°5 => Circle Gold
+    function item_5() public pure returns (string memory) {
+        return base(circle("FFDD00"));
+    }
+
+    /// @dev Earrings N°6 => Ring Gold
+    function item_6() public pure returns (string memory) {
+        return base(ring("FFDD00"));
+    }
+
+    /// @dev Earrings N°7 => Heart
+    function item_7() public pure returns (string memory) {
         return
             base(
                 string(
@@ -51,20 +50,25 @@ library EarringsDetail {
             );
     }
 
-    /// @dev Earrings N°5 => Gold
-    function item_5() public pure returns (string memory) {
+    /// @dev Earrings N°8 => Gold
+    function item_8() public pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<path d="M298.7,228.1l-4.7-1.6c0,0-0.1,0-0.1-0.1v-0.1c2.8-2.7,7.1-17.2,7.2-17.4c0-0.1,0.1-0.1,0.1-0.1l0,0c5.3,1.1,5.6,2.2,5.7,2.4c-3.1,5.4-8,16.7-8.1,16.8C298.9,228,298.8,228.1,298.7,228.1C298.8,228.1,298.8,228.1,298.7,228.1z" style="fill: #fff700;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.25px"/>'
+                        '<path d="M298.7,228.1l-4.7-1.6c0,0-0.1,0-0.1-0.1v-0.1c2.8-2.7,7.1-17.2,7.2-17.4c0-0.1,0.1-0.1,0.1-0.1l0,0c5.3,1.1,5.6,2.2,5.7,2.4c-3.1,5.4-8,16.7-8.1,16.8C298.9,228,298.8,228.1,298.7,228.1C298.8,228.1,298.8,228.1,298.7,228.1z" style="fill: #fff700;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.75px"/>'
                     )
                 )
             );
     }
 
-    /// @dev Earrings N°6 => Drop Heart
-    function item_6() public pure returns (string memory) {
+    /// @dev Earrings N°9 => Circle Diamond
+    function item_9() public pure returns (string memory) {
+        return base(circle("AAFFFD"));
+    }
+
+    /// @dev Earrings N°10 => Drop Heart
+    function item_10() public pure returns (string memory) {
         return
             base(
                 string(
@@ -78,8 +82,8 @@ library EarringsDetail {
             );
     }
 
-    /// @dev Earrings N°7 => Ether
-    function item_7() public pure returns (string memory) {
+    /// @dev Earrings N11 => Ether
+    function item_11() public pure returns (string memory) {
         return
             base(
                 string(
@@ -95,8 +99,8 @@ library EarringsDetail {
             );
     }
 
-    /// @dev Earrings N°8 => Drop Ether
-    function item_8() public pure returns (string memory) {
+    /// @dev Earrings N°12 => Drop Ether
+    function item_12() public pure returns (string memory) {
         return
             base(
                 string(
@@ -130,6 +134,36 @@ library EarringsDetail {
             );
     }
 
+    /// @dev Generate circle SVG with the given color
+    function circle(string memory color) private pure returns (string memory) {
+        return
+            string(
+                abi.encodePacked(
+                    '<ellipse fill="#',
+                    color,
+                    '" stroke="#000000" cx="135.1" cy="243.2" rx="3" ry="3.4"/>',
+                    '<ellipse fill="#',
+                    color,
+                    '" stroke="#000000" cx="286.1" cy="243.2" rx="3.3" ry="3.4"/>'
+                )
+            );
+    }
+
+    /// @dev Generate ring SVG with the given color
+    function ring(string memory color) private pure returns (string memory) {
+        return
+            string(
+                abi.encodePacked(
+                    '<path fill="none" stroke="#',
+                    color,
+                    '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M283.5,246c0,0-4.2,2-3.1,6.1c1,4.1,5.1,3.6,5.4,3.5s3.1-0.9,3-5"/>',
+                    '<path fill="none" stroke="#',
+                    color,
+                    '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M134.3,244.7c0,0-4.2,2-3.1,6.1c1,4.1,5.1,3.6,5.4,3.5c0.3-0.1,3.1-0.9,3-5"/>'
+                )
+            );
+    }
+
     /// @notice Return the earring name of the given id
     /// @param id The earring Id
     function getItemNameById(uint8 id) public pure returns (string memory name) {
@@ -139,16 +173,24 @@ library EarringsDetail {
         } else if (id == 2) {
             name = "Circle";
         } else if (id == 3) {
-            name = "Ring";
+            name = "Circle Silver";
         } else if (id == 4) {
-            name = "Heart";
+            name = "Ring";
         } else if (id == 5) {
-            name = "Gold";
+            name = "Circle Gold";
         } else if (id == 6) {
-            name = "Drop Heart";
+            name = "Ring Gold";
         } else if (id == 7) {
-            name = "Ether";
+            name = "Heart";
         } else if (id == 8) {
+            name = "Gold";
+        } else if (id == 9) {
+            name = "Circle Diamond";
+        } else if (id == 10) {
+            name = "Drop Heart";
+        } else if (id == 11) {
+            name = "Ether";
+        } else if (id == 12) {
             name = "Drop Ether";
         }
     }
