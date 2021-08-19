@@ -18,7 +18,7 @@ contract OniiChainDescriptor is IOniiChainDescriptor {
     uint256[] internal BACKGROUND_ITEMS = [4150, 3500, 3180, 2900, 2400, 1900, 1200, 0];
     uint256[] internal SKIN_ITEMS = [2000, 1000, 0];
     uint256[] internal NOSE_ITEMS = [10, 0];
-    uint256[] internal MARK_ITEMS = [50000, 30000, 15000, 8000, 3000, 1000, 40, 10, 0];
+    uint256[] internal MARK_ITEMS = [50000, 40000, 31550, 24550, 18550, 13550, 9050, 5550, 2550, 550, 50, 10, 0];
     uint256[] internal EYEBROW_ITEMS = [65000, 40000, 20000, 10000, 4000, 0];
     uint256[] internal MASK_ITEMS = [20000, 14000, 10000, 6000, 2000, 1000, 100, 0];
     uint256[] internal EARRINGS_ITEMS = [50000, 38000, 28000, 20000, 13000, 8000, 5000, 2900, 1000, 100, 30, 0];
