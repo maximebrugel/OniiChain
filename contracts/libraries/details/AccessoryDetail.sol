@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 pragma abicoder v2;
 
 import "base64-sol/base64.sol";
+import "./constants/Colors.sol";
 
 /// @title Accessory SVG generator
 library AccessoryDetail {
@@ -88,7 +89,7 @@ library AccessoryDetail {
 
     /// @dev Accessory N°10 => Sun Glasses
     function item_10() public pure returns (string memory) {
-        return base(glasses("000000", "000000", "1"));
+        return base(glasses(Colors.BLACK, Colors.BLACK_DEEP, "1"));
     }
 
     /// @dev Accessory N°11 => Monk Beads Diamond

@@ -61,7 +61,7 @@ library MaskDetail {
         return
             string(
                 abi.encodePacked(
-                    '<path opacity="0.99" fill="#',
+                    '<path fill="#',
                     color,
                     '" stroke="#000000" stroke-miterlimit="10" d=" M175.7,317.7c0,0,20,15.1,82.2,0c0,0-1.2-16.2,3.7-46.8l14-18.7c0,0-41.6-27.8-77.6-37.1c-1.1-0.3-3-0.7-4-0.2 c-19.1,8.1-51.5,33-51.5,33s7.5,20.9,9.9,22.9s24.8,19.4,24.8,19.4s0,0,0,0.1C177.3,291.2,178,298.3,175.7,317.7z"/>',
                     '<path fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M177.1,290.1 c0,0,18.3,14.7,26.3,15s15.1-3.8,15.9-4.3c0.9-0.4,11.6-4.5,25.2-14.1"/>',
