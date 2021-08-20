@@ -14,7 +14,7 @@ library AccessoryDetail {
 
     /// @dev Accessory N°2 => Glasses
     function item_2() public pure returns (string memory) {
-        return base(glasses("D1F5FF", "000000"));
+        return base(glasses("D1F5FF", "000000", "0.31"));
     }
 
     /// @dev Accessory N°3 => Bow Tie
@@ -60,7 +60,7 @@ library AccessoryDetail {
 
     /// @dev Accessory N°7 => Vintage Glasses
     function item_7() public pure returns (string memory) {
-        return base(glasses("FC55FF", "DFA500"));
+        return base(glasses("FC55FF", "DFA500", "0.31"));
     }
 
     /// @dev Accessory N°8 => Monk Beads Gold
@@ -88,7 +88,7 @@ library AccessoryDetail {
 
     /// @dev Accessory N°10 => Sun Glasses
     function item_10() public pure returns (string memory) {
-        return base(glasses("000000", "000000"));
+        return base(glasses("000000", "000000", "1"));
     }
 
     /// @dev Accessory N°11 => Monk Beads Diamond
@@ -171,8 +171,12 @@ library AccessoryDetail {
             );
     }
 
-    /// @dev Generate glasses with the given color
-    function glasses(string memory color, string memory stroke) private pure returns (string memory) {
+    /// @dev Generate glasses with the given color and opacity
+    function glasses(
+        string memory color,
+        string memory stroke,
+        string memory opacity
+    ) private pure returns (string memory) {
         return
             string(
                 abi.encodePacked(
@@ -182,10 +186,14 @@ library AccessoryDetail {
                     '<circle fill="none" stroke="#',
                     stroke,
                     '" stroke-miterlimit="10" cx="232.9" cy="201.7" r="23.9"/>',
-                    '<circle opacity="0.31" fill="#',
+                    '<circle opacity="',
+                    opacity,
+                    '" fill="#',
                     color,
                     '" cx="161.5" cy="201.7" r="23.9"/>',
-                    '<circle opacity="0.31" fill="#',
+                    '<circle opacity="',
+                    opacity,
+                    '" fill="#',
                     color,
                     '" cx="232.9" cy="201.7" r="23.9"/>',
                     '<path fill="none" stroke="#',
