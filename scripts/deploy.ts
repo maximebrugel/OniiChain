@@ -9,25 +9,25 @@ async function main(): Promise<void> {
   let backgroundDetailFactory = await hre.ethers.getContractFactory("BackgroundDetail");
   let bodyDetailFactory = await hre.ethers.getContractFactory("BodyDetail");
   let earringsDetailFactory = await hre.ethers.getContractFactory("EarringsDetail");
-  let expressionDetailFactory = await hre.ethers.getContractFactory("ExpressionDetail");
+  let maskDetailFactory = await hre.ethers.getContractFactory("MaskDetail");
   let eyebrowDetailFactory = await hre.ethers.getContractFactory("EyebrowDetail");
   let eyesDetailFactory = await hre.ethers.getContractFactory("EyesDetail");
   let hairDetailFactory = await hre.ethers.getContractFactory("HairDetail");
   let mouthDetailFactory = await hre.ethers.getContractFactory("MouthDetail");
   let noseDetailFactory = await hre.ethers.getContractFactory("NoseDetail");
-  let tatooDetailFactory = await hre.ethers.getContractFactory("TatooDetail");
+  let markDetailFactory = await hre.ethers.getContractFactory("MarkDetail");
 
   let accessoryDetail = await deployLibrary(accessoryDetailFactory);
   let backgroundDetail = await deployLibrary(backgroundDetailFactory);
   let bodyDetail = await deployLibrary(bodyDetailFactory);
   let earringsDetail = await deployLibrary(earringsDetailFactory);
-  let expressionDetail = await deployLibrary(expressionDetailFactory);
+  let maskDetail = await deployLibrary(maskDetailFactory);
   let eyebrowDetail = await deployLibrary(eyebrowDetailFactory);
   let eyesDetail = await deployLibrary(eyesDetailFactory);
   let hairDetail = await deployLibrary(hairDetailFactory);
   let mouthDetail = await deployLibrary(mouthDetailFactory);
   let noseDetail = await deployLibrary(noseDetailFactory);
-  let tatooDetail = await deployLibrary(tatooDetailFactory);
+  let markDetail = await deployLibrary(markDetailFactory);
 
   let oniiChainDescriptorFactory = await hre.ethers.getContractFactory("OniiChainDescriptor", {
     libraries: {
@@ -35,13 +35,13 @@ async function main(): Promise<void> {
       BackgroundDetail: backgroundDetail.address,
       BodyDetail: bodyDetail.address,
       EarringsDetail: earringsDetail.address,
-      ExpressionDetail: expressionDetail.address,
+      MaskDetail: maskDetail.address,
       EyebrowDetail: eyebrowDetail.address,
       EyesDetail: eyesDetail.address,
       HairDetail: hairDetail.address,
       MouthDetail: mouthDetail.address,
       NoseDetail: noseDetail.address,
-      TatooDetail: tatooDetail.address,
+      MarkDetail: markDetail.address,
     },
   });
   let oniiChainDescriptor = await oniiChainDescriptorFactory.deploy();
@@ -54,13 +54,13 @@ async function main(): Promise<void> {
       BackgroundDetail: backgroundDetail.address,
       BodyDetail: bodyDetail.address,
       EarringsDetail: earringsDetail.address,
-      ExpressionDetail: expressionDetail.address,
+      MaskDetail: maskDetail.address,
       EyebrowDetail: eyebrowDetail.address,
       EyesDetail: eyesDetail.address,
       HairDetail: hairDetail.address,
       MouthDetail: mouthDetail.address,
       NoseDetail: noseDetail.address,
-      TatooDetail: tatooDetail.address,
+      MarkDetail: markDetail.address,
     },
   });
 
