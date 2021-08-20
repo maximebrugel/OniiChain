@@ -118,7 +118,7 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°9 => O
+    /// @dev Mouth N°9 => Drool
     function item_9() public pure returns (string memory) {
         return
             base(
@@ -130,13 +130,13 @@ library MouthDetail {
             );
     }
 
-    /// @dev Mouth N°10 => Drool
+    /// @dev Mouth N°10 => O
     function item_10() public pure returns (string memory) {
         return
             base(
                 string(
                     abi.encodePacked(
-                        '<ellipse transform="matrix(0.9952 -9.745440e-02 9.745440e-02 0.9952 -24.6525 20.6528)" opacity="0.84" fill-rule="evenodd" clip-rule="evenodd" enable-background="new    " cx="199.1" cy="262.7" rx="3.2" ry="4.6"/>'
+                        '<ellipse transform="matrix(0.9952 -9.745440e-02 9.745440e-02 0.9952 -24.6525 20.6528)" opacity="0.84" fill-rule="evenodd" clip-rule="evenodd" cx="199.1" cy="262.7" rx="3.2" ry="4.6"/>'
                     )
                 )
             );
@@ -222,9 +222,9 @@ library MouthDetail {
         } else if (id == 8) {
             name = "Tongue";
         } else if (id == 9) {
-            name = "O";
-        } else if (id == 10) {
             name = "Drool";
+        } else if (id == 10) {
+            name = "O";
         } else if (id == 11) {
             name = "Dubu";
         } else if (id == 12) {
