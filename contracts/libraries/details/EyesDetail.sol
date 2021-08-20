@@ -58,9 +58,9 @@ library EyesDetail {
         return eyesNoFillAndColorPupils(Colors.WHITE, Colors.WHITE);
     }
 
-    /// @dev Eyes N°11 => Color Black/Pink
+    /// @dev Eyes N°11 => Color Black/Blue
     function item_11() public pure returns (string memory) {
-        return eyesNoFillAndColorPupils(Colors.BLACK, Colors.PINK);
+        return eyesNoFillAndColorPupils(Colors.BLACK, Colors.BLUE);
     }
 
     /// @dev Eyes N°12 => Color Black/Yellow
@@ -486,7 +486,7 @@ library EyesDetail {
         } else if (id == 10) {
             name = "Color White/White";
         } else if (id == 11) {
-            name = "Color Black/Pink";
+            name = "Color Black/Blue";
         } else if (id == 12) {
             name = "Color Black/Yellow";
         } else if (id == 13) {
