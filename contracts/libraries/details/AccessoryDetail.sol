@@ -191,14 +191,16 @@ library AccessoryDetail {
                     '" fill="#',
                     color,
                     '" cx="161.5" cy="201.7" r="23.9"/>',
-                    '<circle opacity="',
-                    opacity,
-                    '" fill="#',
-                    color,
-                    '" cx="232.9" cy="201.7" r="23.9"/>',
-                    '<path fill="none" stroke="#',
-                    stroke,
-                    '" stroke-miterlimit="10" d="M256.8,201.7l35.8-3.2 M185.5,201.7 c0,0,14.7-3.1,23.5,0 M137.6,201.7l-8.4-3.2"/>'
+                    abi.encodePacked(
+                        '<circle opacity="',
+                        opacity,
+                        '" fill="#',
+                        color,
+                        '" cx="232.9" cy="201.7" r="23.9"/>',
+                        '<path fill="none" stroke="#',
+                        stroke,
+                        '" stroke-miterlimit="10" d="M256.8,201.7l35.8-3.2 M185.5,201.7 c0,0,14.7-3.1,23.5,0 M137.6,201.7l-8.4-3.2"/>'
+                    )
                 )
             );
     }
