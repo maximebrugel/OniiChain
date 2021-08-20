@@ -137,6 +137,7 @@ library AccessoryDetail {
                         '<ellipse transform="matrix(0.4588 -0.8885 0.8885 0.4588 80.0823 294.4391)" fill="#FFFFFF" cx="281.8" cy="81.5" rx="2.1" ry="1.5"/>',
                         '<ellipse transform="matrix(0.8885 -0.4588 0.4588 0.8885 -21.756 74.6221)" fill="#FFFFFF" cx="142.7" cy="82.1" rx="1.5" ry="2.1"/>',
                         '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M159.6,101.4c0,0-1.1,4.4-7.4,7.2"/>',
+                        '<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M267.2,101.4c0,0,1.1,4.4,7.4,7.2"/>',
                         abi.encodePacked(
                             '<polygon opacity="0.68" fill="#7FFF35" points="126,189.5 185.7,191.8 188.6,199.6 184.6,207.4 157.3,217.9 128.6,203.7"/>',
                             '<polygon opacity="0.68" fill="#7FFF35" points="265.7,189.5 206.7,191.8 203.8,199.6 207.7,207.4 234.8,217.9 263.2,203.7"/>',
