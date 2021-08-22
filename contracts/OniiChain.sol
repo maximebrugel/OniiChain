@@ -113,9 +113,11 @@ contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VR
         chainlinkRate = _chainlinkRate;
     }
 
-    /// @notice Send funds from sales to the owner
+    /// @notice Send funds from sales to the team
     function withdrawAll() public payable onlyOwner {
-        require(payable(0x838D23a8A17adaa6866969b86D35Ac0941C67510).send(address(this).balance));
+        uint256 amount = address(this).balance;
+        require(payable(0x838D23a8A17adaa6866969b86D35Ac0941C67510).send((amount * 45) / 100));
+        require(payable(0x29B862E8c25e7f0fa5b2A89b65b186d18D45f54e).send((amount * 55) / 100));
     }
 
     /// @inheritdoc IOniiChain
