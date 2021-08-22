@@ -13,8 +13,11 @@ import "./chainlink/VRFConsumerBase.sol";
 /// @title OniiChain NFTs
 /// @notice On-chain generated NFTs
 contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VRFConsumerBase {
-    /// @dev Price for one Onii
-    uint256 private constant _unitPrice = 0.01 ether;
+    /// @dev Price for one Onii (at the beggining)
+    uint256 private constant _unitPrice = 0.02 ether;
+
+    /// @dev Increase of the price every step
+    uint256 private constant _increasedPrice = 0.005 ether;
 
     /// @dev Number of sales to increase the price
     uint256 private constant _step = 5000;
@@ -102,7 +105,7 @@ contract OniiChain is ERC721Enumerable, Ownable, IOniiChain, ReentrancyGuard, VR
     /// The price is progressive. Every 5000 sales, the price increases by 0.01 ether
     /// @return The Onii price
     function getUnitPrice() public view returns (uint256) {
-        return ((totalSupply() / _step) * _unitPrice) + _unitPrice;
+        return ((totalSupply() / _step) * _increasedPrice) + _unitPrice;
     }
 
     function updateChainlinkRate(uint256 _chainlinkRate) external onlyOwner {
